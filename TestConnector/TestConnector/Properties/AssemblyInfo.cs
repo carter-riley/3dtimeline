@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DatabaseConnector")]
+[assembly: AssemblyTitle("TestConnector")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DatabaseConnector")]
+[assembly: AssemblyProduct("TestConnector")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("bd7d1a2e-40d9-483a-b2c0-3bf7d4bc73c2")]
+[assembly: Guid("808ed50a-5fe7-4dc5-8125-2c7cd6a3d2d6")]
 
 // Version information for an assembly consists of the following four values:
 //

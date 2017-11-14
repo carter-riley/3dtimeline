@@ -1,0 +1,9 @@
+C:\Users\opatera\source\repos\TestConnector\TestConnector\bin\Debug\TestConnector.exe.config
+C:\Users\opatera\source\repos\TestConnector\TestConnector\bin\Debug\TestConnector.exe
+C:\Users\opatera\source\repos\TestConnector\TestConnector\bin\Debug\TestConnector.pdb
+C:\Users\opatera\source\repos\TestConnector\TestConnector\obj\Debug\TestConnector.csprojResolveAssemblyReference.cache
+C:\Users\opatera\source\repos\TestConnector\TestConnector\obj\Debug\TestConnector.csproj.CoreCompileInputs.cache
+C:\Users\opatera\source\repos\TestConnector\TestConnector\obj\Debug\TestConnector.exe
+C:\Users\opatera\source\repos\TestConnector\TestConnector\obj\Debug\TestConnector.pdb
+C:\Users\opatera\source\repos\TestConnector\TestConnector\bin\Debug\MySql.Data.dll
+C:\Users\opatera\source\repos\TestConnector\TestConnector\bin\Debug\MySql.Data.xml
