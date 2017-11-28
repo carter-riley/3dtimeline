@@ -5,19 +5,16 @@ using UnityEngine.UI;
 using MySql.Data.MySqlClient;
 using System.Data;
 
-public class TextBoxManager : MonoBehaviour
-{
+public class PictureFrameManager : MonoBehaviour {
 
-    public GameObject textBox;
+    public GameObject pictureFrame;
+    public MeshRenderer URL;
 
-    public Text theText;
+    public string url;
 
-
-    //public PlayerController PlayerCamera;
-
-    // Use this for initialization
-    void Start()
+    IEnumerator Start()
     {
+
         try
         {
             MySqlConnection connect;
@@ -38,7 +35,7 @@ public class TextBoxManager : MonoBehaviour
 
             }
 
-            string query = "SELECT * FROM artifacts LIMIT 1";
+            string query = "SELECT * FROM artifacts";
 
             //Create a list to store the result
             List<string>[] list = new List<string>[3];
@@ -58,8 +55,7 @@ public class TextBoxManager : MonoBehaviour
             {
                 // theText.text = dataReader["Record_id"];
 
-
-                theText.text = dataReader.GetString(1);
+                url = "http://as-dh.gonzaga.edu/omeka/files/original/" + dataReader.GetString(6);
 
                 // Console.WriteLine(dataReader["Date_id"]);
                 // Console.WriteLine(dataReader["Source"]);
@@ -80,10 +76,16 @@ public class TextBoxManager : MonoBehaviour
 
         }
 
+        Texture2D tex;
+        tex = new Texture2D(4, 4, TextureFormat.DXT1, false);
+        WWW www = new WWW(url);
+        yield return www;
+        www.LoadImageIntoTexture(tex);
+        GetComponent<Renderer>().material.mainTexture = tex;
     }
 
-    void Update()
-    {
-
-    }
+    // Update is called once per frame
+    void Update () {
+		
+	}
 }

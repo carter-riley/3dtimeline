@@ -746,6 +746,51 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
+--- !u!1 &854447396
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1128884684438520, guid: 1996532406b04ae4db5287773c2d7616,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 854447397}
+  - component: {fileID: 854447398}
+  m_Layer: 0
+  m_Name: Picture Frame Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &854447397
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4090988358696282, guid: 1996532406b04ae4db5287773c2d7616,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 854447396}
+  m_LocalRotation: {x: -0.0000000037252903, y: 0.17364816, z: 9.313226e-10, w: 0.9848078}
+  m_LocalPosition: {x: 1855.2017, y: 679.0625, z: -738.0596}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+  m_Children: []
+  m_Father: {fileID: 1683687252}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &854447398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 854447396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d6380e59cbf65b40af7409b1e717392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pictureFrame: {fileID: 1652547550}
+  URL: {fileID: 0}
+  url: https://docs.unity3d.com/uploads/Main/ShadowIntro.png
 --- !u!1 &918207123
 GameObject:
   m_ObjectHideFlags: 0
@@ -1109,10 +1154,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textBox: {fileID: 1104543486}
   theText: {fileID: 1580042160}
-  textFile: {fileID: 4900000, guid: 844dada53bd351b4a93a245b1e664000, type: 3}
-  textLines: []
-  currentLine: 0
-  endAtLine: 0
 --- !u!1 &1104543486
 GameObject:
   m_ObjectHideFlags: 0
@@ -1354,6 +1395,78 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+<<<<<<< HEAD
+=======
+--- !u!1001 &1477786604
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400002, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 42.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 19.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.8191521
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: -0.5735764
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000000, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 2}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 8400000, guid: a0b9ebb80e3b474438a15a6ed17abce5, type: 2}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1 &1508566167 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1969996341533552, guid: 1996532406b04ae4db5287773c2d7616,
+    type: 2}
+  m_PrefabInternal: {fileID: 526132285}
+--- !u!114 &1508566172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1508566167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d6380e59cbf65b40af7409b1e717392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pictureFrame: {fileID: 0}
+  URL: {fileID: 0}
+  url: https://docs.unity3d.com/uploads/Main/ShadowIntro.png
+>>>>>>> a2357716f94f807e1b72ea470d61345fdeb80271
 --- !u!1 &1519991627
 GameObject:
   m_ObjectHideFlags: 0
@@ -1520,6 +1633,7 @@ RectTransform:
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400000, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 2}
+<<<<<<< HEAD
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 57482985}
   m_LocalRotation: {x: -0, y: 0.8191521, z: -0, w: -0.5735764}
@@ -1530,6 +1644,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+  m_PrefabInternal: {fileID: 1477786604}
+--- !u!1 &1652547550 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1560964766168428, guid: 1996532406b04ae4db5287773c2d7616,
+    type: 2}
+  m_PrefabInternal: {fileID: 526132285}
+>>>>>>> a2357716f94f807e1b72ea470d61345fdeb80271
 --- !u!1 &1661967617
 GameObject:
   m_ObjectHideFlags: 0
@@ -1647,6 +1769,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1683687252 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4063215718293968, guid: 1996532406b04ae4db5287773c2d7616,
+    type: 2}
+  m_PrefabInternal: {fileID: 526132285}
 --- !u!1 &2058852654
 GameObject:
   m_ObjectHideFlags: 0

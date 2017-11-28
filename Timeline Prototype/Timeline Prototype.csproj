@@ -137,8 +137,15 @@
   <ItemGroup>
     <Compile Include="Assets\CameraDirectionMovement.cs" />
     <Compile Include="Assets\Clock\Scripts\Clock.cs" />
+<<<<<<< HEAD
     <Compile Include="Assets\hideHintText.cs" />
     <Compile Include="Assets\Movement.cs" />
+=======
+    <Compile Include="Assets\DatabaseManagerScript.cs" />
+    <Compile Include="Assets\DatabaseScript.cs" />
+    <Compile Include="Assets\PictureFrameManager.cs" />
+    <Compile Include="Assets\PictureManager.cs" />
+>>>>>>> a2357716f94f807e1b72ea470d61345fdeb80271
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
