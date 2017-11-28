@@ -62,9 +62,7 @@ namespace TestConnector
                 //Read the data and store them in the list
                 while (dataReader.Read())
                 {
-                    string id = dataReader.GetString(0);
-
-                    //string id = dataReader["Record_id"];
+                    Console.WriteLine(dataReader["Record_id"]);
                     Console.WriteLine(dataReader["Title"]);
                     Console.WriteLine(dataReader["Date_id"]);
                     Console.WriteLine(dataReader["Source"]);

@@ -6,16 +6,9 @@ using System;
 using System.Text;
 // using MySql.Data;
 using MySql.Data.MySqlClient;
-using UnityEngine.UI;
-
 
 public class DatabaseConnector : MonoBehaviour
 {
-
-    public GameObject textBox;
-    public Text theText;
-    public TextAsset textFile;
-    public string[] textLines;
 
     // Use this for initialization
     void Start()
@@ -67,9 +60,7 @@ public class DatabaseConnector : MonoBehaviour
             //Read the data and store them in the list
             while (dataReader.Read())
             {
-                // theText.text = dataReader["Record_id"];
-
-
+                Console.WriteLine(dataReader["Record_id"]);
                 Console.WriteLine(dataReader["Title"]);
                 Console.WriteLine(dataReader["Date_id"]);
                 Console.WriteLine(dataReader["Source"]);
@@ -77,6 +68,7 @@ public class DatabaseConnector : MonoBehaviour
                 Console.WriteLine(dataReader["format_type"]);
                 Console.WriteLine(dataReader["URL"]);
                 Console.WriteLine();
+
             }
 
             //close Data Reader                
