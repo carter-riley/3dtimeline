@@ -24,7 +24,7 @@ public class OnItemSelect4DELETE : MonoBehaviour
 
     void OnMouseDown()
     {
-        PlayerPrefs.SetInt("billboardNumber", 3);
+        PlayerPrefs.SetInt("billboardNumber", 2);
 
 
 #pragma warning disable CS0618 // Type or member is obsolete

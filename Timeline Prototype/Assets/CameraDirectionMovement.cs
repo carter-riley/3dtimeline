@@ -9,11 +9,17 @@ public class CameraDirectionMovement : MonoBehaviour {
 
     private float yaw = 0.0f;
     private float pitch = 0.0f;
-	
-	// Update is called once per frame
-	void Update () {
+
+
+    // Update is called once per frame
+    void Update () {
         yaw += speedH * Input.GetAxis("Mouse X");
-        pitch -= speedV * Input.GetAxis("Mouse Y");
+        if (!(pitch <= -35 && speedV * Input.GetAxis("Mouse Y") > 0 || pitch >= 20 && speedV * Input.GetAxis("Mouse Y") < 0))
+        {
+            pitch -= speedV * Input.GetAxis("Mouse Y");
+        }
+
+        //Debug.Log(pitch);
 
         transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
 	}

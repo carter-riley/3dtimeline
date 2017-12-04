@@ -144,12 +144,16 @@
     <Compile Include="Assets\Movement.cs" />
     <Compile Include="Assets\NewBehaviourScript.cs" />
     <Compile Include="Assets\NewBehaviourScript1.cs" />
+    <Compile Include="Assets\onItemDelete7.cs" />
+    <Compile Include="Assets\onItemDelete8.cs" />
     <Compile Include="Assets\OnItemSelect1DELETE.cs" />
     <Compile Include="Assets\OnItemSelect2DELETE.cs" />
     <Compile Include="Assets\OnItemSelect3DELETE.cs" />
     <Compile Include="Assets\OnItemSelect4DELETE.cs" />
     <Compile Include="Assets\OnItemSelect5DELETE.cs" />
     <Compile Include="Assets\OnItemSelect6DELETE.cs" />
+    <Compile Include="Assets\OnItemSelect7.cs" />
+    <Compile Include="Assets\OnItemSelect8.cs" />
     <Compile Include="Assets\PictureFrameManager1.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
@@ -166,10 +170,12 @@
     <Compile Include="Assets\Scripts\onItemSelect.cs" />
     <Compile Include="Assets\Scripts\TextBoxManager.cs" />
     <Compile Include="Assets\Scripts\TextBoxManager2.cs" />
+    <Compile Include="Assets\setCameraPosition.cs" />
     <Compile Include="Assets\setUI.cs" />
     <Compile Include="Assets\transitionToTimeline.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Materials\ely_hills\ely_hills.shader" />
     <None Include="Assets\Plugins\MySQL.Data.EntityFrameworkCore.Design.xml" />
     <None Include="Assets\Plugins\MySQL.Data.EntityFrameworkCore.xml" />
     <None Include="Assets\Plugins\MySql.Data.Entity.EF6.xml" />
