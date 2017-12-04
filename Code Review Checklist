@@ -1,0 +1,16 @@
+            Review
+
+-- Does it work properly/ do what it's supposed to?
+-- Are varaible declarations properly commented out?
+-- Are all functions, methods and classes documented?
+-- Does documented out code have an explanation?
+-- Is all of the code necessary?
+-- Is the code efficient?
+-- Is the documentation sufficient?
+
+
+          Corrections
+        
+-- If error is found, mark it and let the creator know. The creator has 3 days to fix the error
+-- Secondary group member will review the adjustments after patch has been applied
+

@@ -1,0 +1,14 @@
+C:\Users\criley2\source\repos\DatabaseConnector\DatabaseConnector\bin\Debug\DatabaseConnector.exe.config
+C:\Users\criley2\source\repos\DatabaseConnector\DatabaseConnector\bin\Debug\DatabaseConnector.exe
+C:\Users\criley2\source\repos\DatabaseConnector\DatabaseConnector\bin\Debug\DatabaseConnector.pdb
+C:\Users\criley2\source\repos\DatabaseConnector\DatabaseConnector\obj\Debug\DatabaseConnector.csprojResolveAssemblyReference.cache
+C:\Users\criley2\source\repos\DatabaseConnector\DatabaseConnector\obj\Debug\DatabaseConnector.csproj.CoreCompileInputs.cache
+C:\Users\criley2\source\repos\DatabaseConnector\DatabaseConnector\obj\Debug\DatabaseConnector.exe
+C:\Users\criley2\source\repos\DatabaseConnector\DatabaseConnector\obj\Debug\DatabaseConnector.pdb
+C:\Users\criley2\Documents\GitHub\3dtimeline\DatabaseConnector\DatabaseConnector\bin\Debug\DatabaseConnector.exe.config
+C:\Users\criley2\Documents\GitHub\3dtimeline\DatabaseConnector\DatabaseConnector\bin\Debug\DatabaseConnector.exe
+C:\Users\criley2\Documents\GitHub\3dtimeline\DatabaseConnector\DatabaseConnector\bin\Debug\DatabaseConnector.pdb
+C:\Users\criley2\Documents\GitHub\3dtimeline\DatabaseConnector\DatabaseConnector\obj\Debug\DatabaseConnector.csprojResolveAssemblyReference.cache
+C:\Users\criley2\Documents\GitHub\3dtimeline\DatabaseConnector\DatabaseConnector\obj\Debug\DatabaseConnector.csproj.CoreCompileInputs.cache
+C:\Users\criley2\Documents\GitHub\3dtimeline\DatabaseConnector\DatabaseConnector\obj\Debug\DatabaseConnector.exe
+C:\Users\criley2\Documents\GitHub\3dtimeline\DatabaseConnector\DatabaseConnector\obj\Debug\DatabaseConnector.pdb
