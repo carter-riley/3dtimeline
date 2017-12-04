@@ -21,7 +21,7 @@ public class onItemSelect : MonoBehaviour {
 
 	void OnMouseDown()
 	{
-		PlayerPrefs.SetInt ("billboardNumber", 0);
+		PlayerPrefs.SetInt ("billboardNumber", 1);
 
 
 #pragma warning disable CS0618 // Type or member is obsolete
