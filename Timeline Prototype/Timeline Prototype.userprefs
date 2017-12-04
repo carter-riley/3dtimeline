@@ -1,0 +1,17 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\onItemSelect.cs">
+    <Files>
+      <File FileName="Assets\OnItemSelect2DELETE.cs" Line="1" Column="1" />
+      <File FileName="Assets\AddNewBillboards.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\onItemSelect.cs" Line="1" Column="1" />
+      <File FileName="Assets\debugHelper.cs" Line="1" Column="1" />
+      <File FileName="Assets\OnItemSelect3DELETE.cs" Line="1" Column="1" />
+      <File FileName="Assets\ItemSelect2DELETE.cs" Line="11" Column="16" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
