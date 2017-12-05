@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
+[RequireComponent(typeof(AudioSource))]
 
 public class VideoPlayback : MonoBehaviour {
 
@@ -16,7 +19,7 @@ public class VideoPlayback : MonoBehaviour {
 
         audio = GetComponent<AudioSource>();
         audio.clip = movie.audioClip;
-        movie.Play();
+        movie.Pause();
         audio.Play();
     }
 	
