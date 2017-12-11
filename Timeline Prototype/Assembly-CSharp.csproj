@@ -86,7 +86,6 @@
      <Compile Include="Assets\Scripts\DatabaseConnector.cs" />
      <Compile Include="Assets\Scripts\MovementTesting.cs" />
      <Compile Include="Assets\Scripts\onItemSelect.cs" />
-     <Compile Include="Assets\Scripts\PlayVideo.cs" />
      <Compile Include="Assets\Scripts\TextBoxManager.cs" />
      <Compile Include="Assets\Scripts\TextBoxManager2.cs" />
      <Compile Include="Assets\Scripts\VideoPlayback.cs" />

@@ -9,7 +9,7 @@
 		Tags { "RenderType"="Opaque" }
 		LOD 100
 
-		Pass
+		Pass		//Pass in video file
 		{
 			CGPROGRAM
 			#pragma vertex vert
@@ -48,7 +48,7 @@
 			{
 				// sample the texture
 				fixed4 col = tex2D(_MainTex, i.uv);
-				// apply fog
+				// apply fog in Unity
 				UNITY_APPLY_FOG(i.fogCoord, col);
 				return col;
 			}

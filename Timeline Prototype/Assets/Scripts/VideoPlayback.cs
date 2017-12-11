@@ -20,7 +20,7 @@ public class VideoPlayback : MonoBehaviour {
         audio = GetComponent<AudioSource>();
         audio.clip = movie.audioClip;
         movie.Pause();
-        audio.Play();
+        audio.Pause();
     }
 	
 	// Update is called once per frame
@@ -29,11 +29,13 @@ public class VideoPlayback : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Space) && movie.isPlaying)  // Used to pause video playback with the spacebar
         {
             movie.Pause();
+            audio.Pause();
         }
 
         else if (Input.GetKeyDown(KeyCode.Space) && !movie.isPlaying) // Used to play the video after it has been paused
         {
             movie.Play();
+            audio.Play();
         }
 
     }
