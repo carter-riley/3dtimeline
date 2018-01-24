@@ -87,6 +87,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4063215718293968}
+  - component: {fileID: 65626236494462432}
+  - component: {fileID: 114685896559218160}
+  - component: {fileID: 54648354116078196}
   m_Layer: 0
   m_Name: Board 1
   m_TagString: Billboard
@@ -264,6 +267,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1969996341533552}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &54648354116078196
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1677513132594914}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &65380886612758384
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -276,6 +294,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 459.3915, y: 307.5682, z: 424.5016}
   m_Center: {x: -186.85756, y: 152.7819, z: -179.2178}
+--- !u!65 &65626236494462432
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1677513132594914}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65982781878270950
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -347,6 +377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42162a6e80db04f51886378917963634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hintText: {fileID: 0}
 --- !u!114 &114406335014849872
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -360,10 +391,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textBox: {fileID: 1243020704911198}
   theText: {fileID: 114821045658807856}
-  textFile: {fileID: 4900000, guid: a2cd9feed3ee3684691d98cd5931b2f7, type: 3}
-  textLines: []
-  currentLine: 0
-  endAtLine: 4
 --- !u!114 &114613427045568154
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -380,6 +407,17 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114685896559218160
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1677513132594914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa6a073ca188ae4684bcd1fe416dc0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114821045658807856
 MonoBehaviour:
   m_ObjectHideFlags: 1
