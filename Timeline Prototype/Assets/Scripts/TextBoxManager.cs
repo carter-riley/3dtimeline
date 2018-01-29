@@ -37,8 +37,13 @@ public class TextBoxManager : MonoBehaviour
             {
 
             }
+            GameObject parentObject = base.gameObject;
+            BillboardMonobehaviorFunctions monobehaviorFunctionsScript = this.GetComponentInParent<BillboardMonobehaviorFunctions>();
+            int newBoardNumber = monobehaviorFunctionsScript.boardNumber + 1;            
+            string query = "SELECT * FROM philanthropytable WHERE Number = " + newBoardNumber; //  WHERE number = " + newBoardNumber + 1;
 
-            string query = "SELECT * FROM philanthropytable WHERE Record_id = 212";
+            //theText.text = newBoardNumber;
+            // Debug.Log(newBoardNumber);
 
             //Create a list to store the result
             List<string>[] list = new List<string>[3];
@@ -57,7 +62,6 @@ public class TextBoxManager : MonoBehaviour
             while (dataReader.Read())
             {
                 // theText.text = dataReader["Record_id"];
-
 
                 theText.text = dataReader.GetString(1);
 

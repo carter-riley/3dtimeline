@@ -22,4 +22,8 @@ public class BillboardMonobehaviorFunctions : MonoBehaviour {
 
         Application.LoadLevel("EventView");
     }
+
+    public int getBoardNumber() {
+        return boardNumber;
+    }
 }
