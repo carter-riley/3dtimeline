@@ -137,6 +137,8 @@
   <ItemGroup>
     <Compile Include="Assets\AddNewBillboards.cs" />
     <Compile Include="Assets\BillboardMonobehaviorFunctions.cs" />
+    <Compile Include="Assets\buttonMovement.cs" />
+    <Compile Include="Assets\buttons.cs" />
     <Compile Include="Assets\CameraDirectionMovement.cs" />
     <Compile Include="Assets\Clock\Scripts\Clock.cs" />
     <Compile Include="Assets\debugHelper.cs" />
