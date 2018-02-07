@@ -6,6 +6,7 @@ public class BillboardMonobehaviorFunctions : MonoBehaviour {
 
 
     public int boardNumber;
+    public string table;
 	// Use this for initialization
 	void Start () {
 		
