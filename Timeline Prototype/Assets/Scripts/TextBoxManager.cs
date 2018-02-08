@@ -25,7 +25,7 @@ public class TextBoxManager : MonoBehaviour
 
             //Connection string for Connector/ODBC 3.51
             // Driver={MariaDB ODBC 3.0 Driver};
-            string MyConString = "Server=localhost;UID=root;Database=omeka1;PWD=team7;Port=3306";
+            string MyConString = "Server=147.222.163.1;UID=criley2;Database=criley2_DB;PWD=;Port=3306";
 
             connect = new MySql.Data.MySqlClient.MySqlConnection();
 
@@ -37,8 +37,14 @@ public class TextBoxManager : MonoBehaviour
             {
 
             }
+            GameObject parentObject = base.gameObject;
+            BillboardMonobehaviorFunctions monobehaviorFunctionsScript = this.GetComponentInParent<BillboardMonobehaviorFunctions>();
+            int newBoardNumber = monobehaviorFunctionsScript.boardNumber + 1;
+            string currentNarrative = monobehaviorFunctionsScript.table;
+            string query = "SELECT * FROM " + currentNarrative + " WHERE Number = " + newBoardNumber;
 
-            string query = "SELECT * FROM philanthropytable WHERE Record_id = 212";
+            //theText.text = newBoardNumber;
+            // Debug.Log(newBoardNumber);
 
             //Create a list to store the result
             List<string>[] list = new List<string>[3];
@@ -57,7 +63,6 @@ public class TextBoxManager : MonoBehaviour
             while (dataReader.Read())
             {
                 // theText.text = dataReader["Record_id"];
-
 
                 theText.text = dataReader.GetString(1);
 

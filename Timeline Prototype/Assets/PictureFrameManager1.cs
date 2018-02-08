@@ -23,7 +23,7 @@ public class PictureFrameManager1 : MonoBehaviour
 
             //Connection string for Connector/ODBC 3.51
             // Driver={MariaDB ODBC 3.0 Driver};
-            string MyConString = "Server=localhost;UID=root;Database=omeka1;PWD=team7;Port=3306";
+            string MyConString = "Server=147.222.163.1;UID=criley2;Database=criley2_DB;PWD=;Port=3306";
 
             connect = new MySql.Data.MySqlClient.MySqlConnection();
 
@@ -36,7 +36,16 @@ public class PictureFrameManager1 : MonoBehaviour
 
             }
 
-            string query = "SELECT * FROM artifacts";
+
+            GameObject parentObject = base.gameObject;
+            
+            BillboardMonobehaviorFunctions monobehaviorFunctionsScript = this.GetComponentInParent<BillboardMonobehaviorFunctions>();
+            int newBoardNumber = monobehaviorFunctionsScript.boardNumber + 1;
+            string currentNarrative = monobehaviorFunctionsScript.table;
+            string query = "SELECT * FROM " + currentNarrative + " WHERE Number = " + newBoardNumber;
+
+
+
 
             //Create a list to store the result
             List<string>[] list = new List<string>[3];
@@ -55,9 +64,17 @@ public class PictureFrameManager1 : MonoBehaviour
             while (dataReader.Read())
             {
                 // theText.text = dataReader["Record_id"];
+                try
+                {
+                    webAddress = "http://as-dh.gonzaga.edu/omeka/files/original/" + dataReader.GetString(7);
 
-                webAddress = "http://as-dh.gonzaga.edu/omeka/files/original/" + dataReader.GetString(6);
+                }
+                catch
+                {
+                    webAddress = "http://placecorgi.com/260.jpg";
+                }
 
+                
                 // Console.WriteLine(dataReader["Date_id"]);
                 // Console.WriteLine(dataReader["Source"]);
                 // Console.WriteLine(dataReader["Type_of"]);
@@ -77,12 +94,21 @@ public class PictureFrameManager1 : MonoBehaviour
 
         }
 
+        // print(webAddress);
+
         Texture2D tex;
         tex = new Texture2D(4, 4, TextureFormat.DXT1, false);
         WWW www = new WWW(webAddress);
         yield return www;
         www.LoadImageIntoTexture(tex);
         GetComponent<Renderer>().material.mainTexture = tex;
+
+        // print("Texture: x = " + tex.width + ", y = " + tex.height);
+        // print("Texture ratio is " + tex.width/tex.height);
+
+        int aspectRatio = tex.width / tex.height;
+
+        // GetComponent<Transform>().localScale.Scale(new Vector3(0F, 1F, 0.05F));
     }
 
     // Update is called once per frame

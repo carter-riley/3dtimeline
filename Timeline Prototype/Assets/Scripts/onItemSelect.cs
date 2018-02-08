@@ -8,9 +8,9 @@ public class onItemSelect : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         //Debug.Log("Loaded");
-        hintText.alpha = 0f;
-        hintText.interactable = false;
-        hintText.blocksRaycasts = false;
+        //hintText.alpha = 0f;
+        //hintText.interactable = false;
+        //hintText.blocksRaycasts = false;
 	}
 	
 	// Update is called once per frame
@@ -34,11 +34,11 @@ public class onItemSelect : MonoBehaviour {
 
     void OnMouseEnter()
     {
-        hintText.alpha = 1;
+        //hintText.alpha = 1;
     }
 
     private void OnMouseExit()
     {
-        hintText.alpha = 0f;
+        //hintText.alpha = 0f;
     }
 }
