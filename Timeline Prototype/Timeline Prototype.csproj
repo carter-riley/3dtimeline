@@ -142,6 +142,7 @@
     <Compile Include="Assets\CameraDirectionMovement.cs" />
     <Compile Include="Assets\Clock\Scripts\Clock.cs" />
     <Compile Include="Assets\debugHelper.cs" />
+    <Compile Include="Assets\DescriptionManager.cs" />
     <Compile Include="Assets\hideHintText.cs" />
     <Compile Include="Assets\ItemSelect2DELETE.cs" />
     <Compile Include="Assets\Movement.cs" />
@@ -157,6 +158,8 @@
     <Compile Include="Assets\OnItemSelect6DELETE.cs" />
     <Compile Include="Assets\OnItemSelect7.cs" />
     <Compile Include="Assets\OnItemSelect8.cs" />
+    <Compile Include="Assets\openDetailView.cs" />
+    <Compile Include="Assets\openImageView.cs" />
     <Compile Include="Assets\PictureFrameManager1.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
