@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/EventView.unity
     guid: 31564473a9a914b499f734d50787d42d
+  - enabled: 1
+    path: Assets/imageView.unity
+    guid: 32666174bd278f64984494a8c95910e3
