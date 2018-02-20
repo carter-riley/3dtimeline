@@ -23,7 +23,7 @@ public class PictureFrameManager1 : MonoBehaviour
 
             //Connection string for Connector/ODBC 3.51
             // Driver={MariaDB ODBC 3.0 Driver};
-            string MyConString = "Server=147.222.163.1;UID=criley2;Database=criley2_DB;PWD=;Port=3306";
+            string MyConString = "Server=147.222.163.1;UID=sdg7;Database=sdg7_DB;PWD=3dTimeline;Port=3306";
 
             connect = new MySql.Data.MySqlClient.MySqlConnection();
 
