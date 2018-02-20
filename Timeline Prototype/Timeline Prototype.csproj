@@ -178,6 +178,7 @@
     <Compile Include="Assets\Scripts\TextBoxManager2.cs" />
     <Compile Include="Assets\setCameraPosition.cs" />
     <Compile Include="Assets\setUI.cs" />
+    <Compile Include="Assets\StreamVideo.cs" />
     <Compile Include="Assets\transitionToTimeline.cs" />
   </ItemGroup>
   <ItemGroup>
