@@ -141,6 +141,7 @@
     <Compile Include="Assets\buttons.cs" />
     <Compile Include="Assets\CameraDirectionMovement.cs" />
     <Compile Include="Assets\Clock\Scripts\Clock.cs" />
+    <Compile Include="Assets\DateManager.cs" />
     <Compile Include="Assets\debugHelper.cs" />
     <Compile Include="Assets\DescriptionManager.cs" />
     <Compile Include="Assets\hideHintText.cs" />

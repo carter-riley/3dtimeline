@@ -4,9 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using MySql.Data.MySqlClient;
 using System.Data;
-using System;
 
-public class TextBoxManager : MonoBehaviour
+public class DateManager : MonoBehaviour
 {
 
     public GameObject textBox;
@@ -26,7 +25,7 @@ public class TextBoxManager : MonoBehaviour
 
             //Connection string for Connector/ODBC 3.51
             // Driver={MariaDB ODBC 3.0 Driver};
-            string MyConString = "Server=147.222.163.1;UID=sdg7;Database=sdg7_DB;PWD=3dTimeline;Port=3306";
+            string MyConString = "Server=147.222.163.1;UID=criley2;Database=criley2_DB;PWD=;Port=3306";
 
             connect = new MySql.Data.MySqlClient.MySqlConnection();
 
@@ -64,6 +63,7 @@ public class TextBoxManager : MonoBehaviour
             while (dataReader.Read())
             {
                 // theText.text = dataReader["Record_id"];
+
                 theText.text = dataReader.GetString(1);
 
                 // Console.WriteLine(dataReader["Date_id"]);
