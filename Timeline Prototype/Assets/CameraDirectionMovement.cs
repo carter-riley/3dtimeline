@@ -48,9 +48,19 @@ public class CameraDirectionMovement : MonoBehaviour
         if (isRotating)
         {
             Vector3 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition - mouseOrigin);
-
-            transform.RotateAround(transform.position, transform.right, -pos.y * turnSpeed);
-            transform.RotateAround(transform.position, Vector3.up, pos.x * turnSpeed);
+            bool inBottom = Camera.main.transform.eulerAngles.x <= 30 && Camera.main.transform.eulerAngles.x >= 0;
+            bool inTop = Camera.main.transform.eulerAngles.x >= 315 && Camera.main.transform.eulerAngles.x <= 360;
+            if ((Camera.main.transform.eulerAngles.x > 325 && inTop || pos.y < 0 && inTop) || (Camera.main.transform.eulerAngles.x < 23 && inBottom || pos.y > 0 && inBottom)) { //top bound
+                {
+                    transform.RotateAround(transform.position, transform.right, -pos.y * turnSpeed);
+                    transform.RotateAround(transform.position, Vector3.up, pos.x * turnSpeed);
+                }
+            }
+            print("inBottom == " + inBottom);
+            print("pos.y == " + pos.y);
+            print("Camera.main.transform.eulerAngles.x" + Camera.main.transform.eulerAngles.x);
+            //print("y == " + Camera.main.transform.eulerAngles.y);
+            //print("z == " + Camera.main.transform.eulerAngles.z);
         }
     }
 }
