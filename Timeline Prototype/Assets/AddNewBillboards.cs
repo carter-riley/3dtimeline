@@ -6,6 +6,8 @@ public class AddNewBillboards : MonoBehaviour {
 
 	public GameObject prefab;
 	public int numberOfObjects = 20;
+    public int zPosition = 19;
+    public string nameOfTimeline;
     //public float radius = 5f;
 
     public List<GameObject> billboardsList = new List<GameObject>();
@@ -18,12 +20,12 @@ public class AddNewBillboards : MonoBehaviour {
         {
             if (left)
             {
-                xPosition = -25f;
+                xPosition = -25f + zPosition;
                 left = false;
             }
             else
             {
-                xPosition = 125f;
+                xPosition = 125f + zPosition;
                 left = true;
             }
 
@@ -32,6 +34,7 @@ public class AddNewBillboards : MonoBehaviour {
             GameObject newBillboard = Instantiate(prefab, pos, Quaternion.identity);
             newBillboard.transform.localScale = new Vector3(0.1F, 0.1F, 0.1F);
             newBillboard.GetComponent<BillboardMonobehaviorFunctions>().boardNumber = billboardsList.Count;
+            newBillboard.GetComponent<BillboardMonobehaviorFunctions>().table = nameOfTimeline;
 
 
             billboardsList.Add(newBillboard);
