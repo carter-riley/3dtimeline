@@ -136,6 +136,46 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\AddNewBillboards.cs" />
+    <Compile Include="Assets\Battlehub\Integration\IntegrationCommon.cs" />
+    <Compile Include="Assets\Battlehub\Integration\MeshCombinerIntegration.cs" />
+    <Compile Include="Assets\Battlehub\Integration\MeshDeformerIntegration.cs" />
+    <Compile Include="Assets\Battlehub\Integration\WiresIntegration.cs" />
+    <Compile Include="Assets\Battlehub\MeshCombiner\Scripts\MeshUtils.cs" />
+    <Compile Include="Assets\Battlehub\MeshDeformer2\Scripts\ControlPoint.cs" />
+    <Compile Include="Assets\Battlehub\MeshDeformer2\Scripts\MeshDeformer.cs" />
+    <Compile Include="Assets\Battlehub\MeshDeformer2\Scripts\MeshDeformerRuntimeCmd.cs" />
+    <Compile Include="Assets\Battlehub\MeshDeformer2\Scripts\MeshExtensions.cs" />
+    <Compile Include="Assets\Battlehub\MeshDeformer2\Scripts\MeshSubdivider.cs" />
+    <Compile Include="Assets\Battlehub\MeshDeformer2\Scripts\Scaffold.cs" />
+    <Compile Include="Assets\Battlehub\MeshDeformer2\Scripts\ScaffoldWrapper.cs" />
+    <Compile Include="Assets\Battlehub\MeshEditor\Scripts\DrawNormals.cs" />
+    <Compile Include="Assets\Battlehub\PivotEditor\Scripts\MeshUtils.cs" />
+    <Compile Include="Assets\Battlehub\PivotEditor\Scripts\Pivot.cs" />
+    <Compile Include="Assets\Battlehub\PivotEditor\Scripts\PivotDesignTime.cs" />
+    <Compile Include="Assets\Battlehub\RTHandles\Scripts\BaseHandle.cs" />
+    <Compile Include="Assets\Battlehub\RTHandles\Scripts\GLCamera.cs" />
+    <Compile Include="Assets\Battlehub\RTHandles\Scripts\GLRenderer.cs" />
+    <Compile Include="Assets\Battlehub\RTHandles\Scripts\MouseOrbit.cs" />
+    <Compile Include="Assets\Battlehub\RTHandles\Scripts\PositionHandle.cs" />
+    <Compile Include="Assets\Battlehub\RTHandles\Scripts\RotationHandle.cs" />
+    <Compile Include="Assets\Battlehub\RTHandles\Scripts\RuntimeHandles.cs" />
+    <Compile Include="Assets\Battlehub\RTHandles\Scripts\RuntimeHierarchy.cs" />
+    <Compile Include="Assets\Battlehub\RTHandles\Scripts\RuntimeSceneView.cs" />
+    <Compile Include="Assets\Battlehub\RTHandles\Scripts\ScaleHandle.cs" />
+    <Compile Include="Assets\Battlehub\SplineEditor\Scripts\CurveUtils.cs" />
+    <Compile Include="Assets\Battlehub\SplineEditor\Scripts\Spline.cs" />
+    <Compile Include="Assets\Battlehub\SplineEditor\Scripts\SplineBase.cs" />
+    <Compile Include="Assets\Battlehub\SplineEditor\Scripts\SplineControlPoint.cs" />
+    <Compile Include="Assets\Battlehub\SplineEditor\Scripts\SplineFollow.cs" />
+    <Compile Include="Assets\Battlehub\SplineEditor\Scripts\SplineFollowOffsetEval.cs" />
+    <Compile Include="Assets\Battlehub\SplineEditor\Scripts\SplineRuntimeCmd.cs" />
+    <Compile Include="Assets\Battlehub\SplineEditor\Scripts\SplineRuntimeEditor.cs" />
+    <Compile Include="Assets\Battlehub\UIControls\ItemContainer.cs" />
+    <Compile Include="Assets\Battlehub\UIControls\ItemsControl.cs" />
+    <Compile Include="Assets\Battlehub\UIControls\ListBox.cs" />
+    <Compile Include="Assets\Battlehub\UIControls\ListBoxItem.cs" />
+    <Compile Include="Assets\Battlehub\Utils\EditorStopwatch.cs" />
+    <Compile Include="Assets\Battlehub\Utils\Run.cs" />
     <Compile Include="Assets\BillboardMonobehaviorFunctions.cs" />
     <Compile Include="Assets\buttonMovement.cs" />
     <Compile Include="Assets\buttons.cs" />
@@ -183,6 +223,13 @@
     <Compile Include="Assets\transitionToTimeline.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Battlehub\MeshCombiner\MeshCombiner Documentation.txt" />
+    <None Include="Assets\Battlehub\RTHandles\Shaders\Resources\Shape.shader" />
+    <None Include="Assets\Battlehub\RTHandles\Shaders\Resources\VertexColor.shader" />
+    <None Include="Assets\Battlehub\RTHandles\Shaders\Resources\VertexColorBillboard.shader" />
+    <None Include="Assets\Battlehub\RTHandles\Shaders\Resources\VertexColorClip.shader" />
+    <None Include="Assets\Battlehub\SplineEditor\Shaders\Resources\SSBillboard.shader" />
+    <None Include="Assets\Battlehub\SplineEditor\Shaders\Resources\Spline.shader" />
     <None Include="Assets\Materials\ely_hills\ely_hills.shader" />
     <None Include="Assets\Plugins\MySQL.Data.EntityFrameworkCore.Design.xml" />
     <None Include="Assets\Plugins\MySQL.Data.EntityFrameworkCore.xml" />

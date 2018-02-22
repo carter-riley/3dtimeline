@@ -182,6 +182,13 @@
     <Compile Include="Assets\Standard Assets\Editor\Water\Water4\WaterEditorUtility.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Battlehub\MeshCombiner\MeshCombiner Documentation.txt" />
+    <None Include="Assets\Battlehub\RTHandles\Shaders\Resources\Shape.shader" />
+    <None Include="Assets\Battlehub\RTHandles\Shaders\Resources\VertexColor.shader" />
+    <None Include="Assets\Battlehub\RTHandles\Shaders\Resources\VertexColorBillboard.shader" />
+    <None Include="Assets\Battlehub\RTHandles\Shaders\Resources\VertexColorClip.shader" />
+    <None Include="Assets\Battlehub\SplineEditor\Shaders\Resources\SSBillboard.shader" />
+    <None Include="Assets\Battlehub\SplineEditor\Shaders\Resources\Spline.shader" />
     <None Include="Assets\Materials\ely_hills\ely_hills.shader" />
     <None Include="Assets\Plugins\MySQL.Data.EntityFrameworkCore.Design.xml" />
     <None Include="Assets\Plugins\MySQL.Data.EntityFrameworkCore.xml" />

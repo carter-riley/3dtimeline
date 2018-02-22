@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -63,15 +63,22 @@ public class PictureFrameManager1 : MonoBehaviour
             //Read the data and store them in the list
             while (dataReader.Read())
             {
-                // theText.text = dataReader["Record_id"];
-                try
+                if (dataReader.GetString(4) == "Video")
                 {
-                    webAddress = "http://as-dh.gonzaga.edu/omeka/files/original/" + dataReader.GetString(7);
-
+                    webAddress = dataReader.GetString(7);
                 }
-                catch
+                else
                 {
-                    webAddress = "http://placecorgi.com/260.jpg";
+                    // theText.text = dataReader["Record_id"];
+                    try
+                    {
+                        webAddress = "http://as-dh.gonzaga.edu/omeka/files/original/" + dataReader.GetString(7);
+
+                    }
+                    catch
+                    {
+                        webAddress = "http://placecorgi.com/260.jpg";
+                    }
                 }
 
                 

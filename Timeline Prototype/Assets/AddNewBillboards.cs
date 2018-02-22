@@ -60,7 +60,8 @@ public class AddNewBillboards : MonoBehaviour {
 
             Vector3 pos = new Vector3(i - (i * 200), 0, xPosition);
             GameObject newBillboard = Instantiate(prefab, pos, Quaternion.identity);
-            newBillboard.transform.localScale = new Vector3(0.1F, 0.1F, 0.1F);
+            //newBillboard.transform.localScale = new Vector3(0.1F, 0.1F, 0.1F);
+            newBillboard.transform.position = new Vector3(newBillboard.transform.position.x, newBillboard.transform.position.y+7, newBillboard.transform.position.z);
             newBillboard.GetComponent<BillboardMonobehaviorFunctions>().boardNumber = billboardsList.Count;
             newBillboard.GetComponent<BillboardMonobehaviorFunctions>().table = nameOfTimeline;
 

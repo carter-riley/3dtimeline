@@ -182,10 +182,34 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Battlehub\Integration\Editor\CommandsPanel.cs" />
+    <Compile Include="Assets\Battlehub\MeshCombiner\Scripts\Editor\CommandsPanel.cs" />
+    <Compile Include="Assets\Battlehub\MeshCombiner\Scripts\Editor\MeshToolsMenu.cs" />
+    <Compile Include="Assets\Battlehub\MeshDeformer2\Scripts\Editor\CommandsPanel.cs" />
+    <Compile Include="Assets\Battlehub\MeshDeformer2\Scripts\Editor\ControlPointEditor.cs" />
+    <Compile Include="Assets\Battlehub\MeshDeformer2\Scripts\Editor\MeshDeformerEditor.cs" />
+    <Compile Include="Assets\Battlehub\MeshDeformer2\Scripts\Editor\MeshDeformerMenu.cs" />
+    <Compile Include="Assets\Battlehub\MeshDeformer2\Scripts\Editor\MeshDeformerPostprocessor.cs" />
+    <Compile Include="Assets\Battlehub\MeshDeformer2\Scripts\Editor\ScaffoldEditor.cs" />
+    <Compile Include="Assets\Battlehub\MeshEditor\Scripts\Editor\DrawNormalsEditor.cs" />
+    <Compile Include="Assets\Battlehub\MeshEditor\Scripts\Editor\DrawNormalsMenu.cs" />
+    <Compile Include="Assets\Battlehub\PivotEditor\Scripts\Editor\MeshToolsMenu.cs" />
+    <Compile Include="Assets\Battlehub\PivotEditor\Scripts\Editor\PivotPointEditor.cs" />
+    <Compile Include="Assets\Battlehub\SplineEditor\Scripts\Editor\SplineBaseEditor.cs" />
+    <Compile Include="Assets\Battlehub\SplineEditor\Scripts\Editor\SplineControlPointEditor.cs" />
+    <Compile Include="Assets\Battlehub\SplineEditor\Scripts\Editor\SplineEditor.cs" />
+    <Compile Include="Assets\Battlehub\SplineEditor\Scripts\Editor\SplineMenu.cs" />
     <Compile Include="Assets\Editor\NewEditModeTest.cs" />
     <Compile Include="Assets\Editor\NewPlayModeTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Battlehub\MeshCombiner\MeshCombiner Documentation.txt" />
+    <None Include="Assets\Battlehub\RTHandles\Shaders\Resources\Shape.shader" />
+    <None Include="Assets\Battlehub\RTHandles\Shaders\Resources\VertexColor.shader" />
+    <None Include="Assets\Battlehub\RTHandles\Shaders\Resources\VertexColorBillboard.shader" />
+    <None Include="Assets\Battlehub\RTHandles\Shaders\Resources\VertexColorClip.shader" />
+    <None Include="Assets\Battlehub\SplineEditor\Shaders\Resources\SSBillboard.shader" />
+    <None Include="Assets\Battlehub\SplineEditor\Shaders\Resources\Spline.shader" />
     <None Include="Assets\Materials\ely_hills\ely_hills.shader" />
     <None Include="Assets\Plugins\MySQL.Data.EntityFrameworkCore.Design.xml" />
     <None Include="Assets\Plugins\MySQL.Data.EntityFrameworkCore.xml" />

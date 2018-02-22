@@ -19,6 +19,9 @@ public class TextBoxManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        theText.fontSize = 40;
+        theText.alignment = TextAnchor.MiddleCenter;
+
         try
         {
             MySqlConnection connect;

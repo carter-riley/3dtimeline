@@ -19,7 +19,8 @@ public class BillboardMonobehaviorFunctions : MonoBehaviour {
 
     private void OnMouseDown()
     {
-        PlayerPrefs.SetInt("billboardNumber", this.gameObject.GetComponent<BillboardMonobehaviorFunctions>().boardNumber);
+        print("called????");
+        //PlayerPrefs.SetInt("billboardNumber", this.gameObject.GetComponent<BillboardMonobehaviorFunctions>().boardNumber);
 
         Application.LoadLevel("EventView");
     }
