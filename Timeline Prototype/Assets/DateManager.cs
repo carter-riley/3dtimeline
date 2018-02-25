@@ -4,20 +4,23 @@ using UnityEngine;
 using UnityEngine.UI;
 using MySql.Data.MySqlClient;
 using System.Data;
+using System;
+
 
 public class DateManager : MonoBehaviour
 {
 
     public GameObject textBox;
-
     public Text theText;
-
-
-    //public PlayerController PlayerCamera;
 
     // Use this for initialization
     void Start()
     {
+
+        int boardNumber = PlayerPrefs.GetInt("boardNumber") + 1;
+
+        string table = PlayerPrefs.GetString("table");
+
         try
         {
             MySqlConnection connect;
@@ -25,7 +28,7 @@ public class DateManager : MonoBehaviour
 
             //Connection string for Connector/ODBC 3.51
             // Driver={MariaDB ODBC 3.0 Driver};
-            string MyConString = "Server=147.222.163.1;UID=criley2;Database=criley2_DB;PWD=;Port=3306";
+            string MyConString = "Server=147.222.163.1;UID=sdg7;Database=sdg7_DB;PWD=3dTimeline;Port=3306";
 
             connect = new MySql.Data.MySqlClient.MySqlConnection();
 
@@ -37,11 +40,7 @@ public class DateManager : MonoBehaviour
             {
 
             }
-            GameObject parentObject = base.gameObject;
-            BillboardMonobehaviorFunctions monobehaviorFunctionsScript = this.GetComponentInParent<BillboardMonobehaviorFunctions>();
-            int newBoardNumber = monobehaviorFunctionsScript.boardNumber + 1;
-            string currentNarrative = monobehaviorFunctionsScript.table;
-            string query = "SELECT * FROM " + currentNarrative + " WHERE Number = " + newBoardNumber;
+            string query = "SELECT * FROM " + table + " WHERE Number = " + boardNumber;
 
             //theText.text = newBoardNumber;
             // Debug.Log(newBoardNumber);
@@ -63,8 +62,7 @@ public class DateManager : MonoBehaviour
             while (dataReader.Read())
             {
                 // theText.text = dataReader["Record_id"];
-
-                theText.text = dataReader.GetString(1);
+                theText.text = dataReader.GetString(2);
 
                 // Console.WriteLine(dataReader["Date_id"]);
                 // Console.WriteLine(dataReader["Source"]);
@@ -84,9 +82,9 @@ public class DateManager : MonoBehaviour
         {
 
         }
-
     }
 
+    // Update is called once per frame
     void Update()
     {
 

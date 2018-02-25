@@ -10,7 +10,7 @@ public class BillboardMonobehaviorFunctions : MonoBehaviour {
     public string table;
 	// Use this for initialization
 	void Start () {
-		
+        print("Table is: " + table + ", boardNumber is: " + boardNumber);
 	}
 	
 	// Update is called once per frame
@@ -24,10 +24,22 @@ public class BillboardMonobehaviorFunctions : MonoBehaviour {
         //PlayerPrefs.SetInt("billboardNumber", this.gameObject.GetComponent<BillboardMonobehaviorFunctions>().boardNumber);
 
         // Application.LoadLevel("EventView");
+
+        PlayerPrefs.SetInt("boardNumber", boardNumber);
+        PlayerPrefs.SetString("table", table);
+
+
+        // DontDestroyOnLoad(gameObject);
+
         SceneManager.LoadScene("EventView");
     }
 
     public int getBoardNumber() {
         return boardNumber;
+    }
+
+    public string getTable ()
+    {
+        return table;
     }
 }
