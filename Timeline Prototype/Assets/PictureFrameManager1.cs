@@ -36,16 +36,15 @@ public class PictureFrameManager1 : MonoBehaviour
 
             }
 
-
             GameObject parentObject = base.gameObject;
             
             BillboardMonobehaviorFunctions monobehaviorFunctionsScript = this.GetComponentInParent<BillboardMonobehaviorFunctions>();
             int newBoardNumber = monobehaviorFunctionsScript.boardNumber + 1;
+
+
             string currentNarrative = monobehaviorFunctionsScript.table;
+
             string query = "SELECT * FROM " + currentNarrative + " WHERE Number = " + newBoardNumber;
-
-
-
 
             //Create a list to store the result
             List<string>[] list = new List<string>[3];
@@ -66,6 +65,7 @@ public class PictureFrameManager1 : MonoBehaviour
                 if (dataReader.GetString(4) == "Video")
                 {
                     webAddress = dataReader.GetString(7);
+                    // StreamVideo.playVideo(dataReader.GetString(7));
                 }
                 else
                 {
@@ -77,7 +77,13 @@ public class PictureFrameManager1 : MonoBehaviour
                     }
                     catch
                     {
-                        webAddress = "http://placecorgi.com/260.jpg";
+                        if (newBoardNumber % 3 == 0) {
+                            webAddress = "http://grfx.cstv.com/photos/schools/gonz/sports/genrel/auto_original/8870368.jpeg";
+                        } else if(newBoardNumber % 3 == 1) {
+                            webAddress = "http://grfx.cstv.com/photos/schools/gonz/sports/genrel/auto_original/8870367.jpeg";
+                        } else if(newBoardNumber % 3 == 2) {
+                            webAddress = "http://grfx.cstv.com/schools/gonz/graphics/auto/GUBulldogWallpaper1024x768.jpg";
+                        }
                     }
                 }
 

@@ -12,6 +12,7 @@ public class TextBoxManager : MonoBehaviour
     public GameObject textBox;
 
     public Text theText;
+    public int fontSize;
 
 
     //public PlayerController PlayerCamera;
@@ -20,7 +21,7 @@ public class TextBoxManager : MonoBehaviour
     void Start()
     {
         theText.fontSize = 40;
-        theText.alignment = TextAnchor.MiddleCenter;
+        theText.alignment = TextAnchor.UpperCenter;
 
         try
         {

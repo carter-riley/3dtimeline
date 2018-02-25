@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BillboardMonobehaviorFunctions : MonoBehaviour {
 
@@ -22,7 +23,8 @@ public class BillboardMonobehaviorFunctions : MonoBehaviour {
         print("called????");
         //PlayerPrefs.SetInt("billboardNumber", this.gameObject.GetComponent<BillboardMonobehaviorFunctions>().boardNumber);
 
-        Application.LoadLevel("EventView");
+        // Application.LoadLevel("EventView");
+        SceneManager.LoadScene("EventView");
     }
 
     public int getBoardNumber() {

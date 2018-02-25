@@ -26,14 +26,16 @@ public class StreamVideo : MonoBehaviour
 
     private AudioSource audioSource;
 
+    public string videoURL;
+
     // Use this for initialization
     void Start()
     {
         Application.runInBackground = true;
-        StartCoroutine(playVideo());
+        StartCoroutine(playVideo(videoURL));
     }
 
-    IEnumerator playVideo()
+    public IEnumerator playVideo(string url)
     {
 
         //Add VideoPlayer to the GameObject
@@ -53,8 +55,8 @@ public class StreamVideo : MonoBehaviour
 
         // Vide clip from Url
         videoPlayer.source = VideoSource.Url;
-        videoPlayer.url = "http://mirrors.standaloneinstaller.com/video-sample/metaxas-keller-Bell.mp4";
-
+        // videoPlayer.url = "http://mirrors.standaloneinstaller.com/video-sample/metaxas-keller-Bell.mp4";
+        videoPlayer.url = url;
 
         //Set Audio Output to AudioSource
         videoPlayer.audioOutputMode = VideoAudioOutputMode.AudioSource;

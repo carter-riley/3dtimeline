@@ -77,18 +77,15 @@ LightmapSettings:
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
     m_PVRBounces: 2
-    m_PVRFilterTypeDirect: 0
-    m_PVRFilterTypeIndirect: 0
-    m_PVRFilterTypeAO: 0
+    m_PVRFiltering: 0
     m_PVRFilteringMode: 1
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
     m_PVRFilteringGaussRadiusAO: 2
-    m_PVRFilteringAtrousPositionSigmaDirect: 0.5
-    m_PVRFilteringAtrousPositionSigmaIndirect: 2
-    m_PVRFilteringAtrousPositionSigmaAO: 1
-    m_ShowResolutionOverlay: 1
+    m_PVRFilteringAtrousColorSigma: 1
+    m_PVRFilteringAtrousNormalSigma: 1
+    m_PVRFilteringAtrousPositionSigma: 1
   m_LightingDataAsset: {fileID: 112000002, guid: 994cf823c8e5e9d408be52d33318d815,
     type: 2}
   m_UseShadowmask: 1
@@ -111,8 +108,6 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
-    debug:
-      m_Flags: 0
   m_NavMeshData: {fileID: 0}
 --- !u!1 &78533742
 GameObject:
@@ -124,6 +119,7 @@ GameObject:
   - component: {fileID: 78533743}
   - component: {fileID: 78533745}
   - component: {fileID: 78533744}
+  - component: {fileID: 78533747}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -142,14 +138,34 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1338012246}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 80, y: -246}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 462.04, y: 267.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &78533744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 78533742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7eec8f9847318249a44840de029355f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Image: {fileID: 0}
+  URL: {fileID: 0}
+  webAddress: 
+--- !u!222 &78533745
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 78533742}
+--- !u!114 &78533747
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -176,12 +192,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!222 &78533745
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 78533742}
 --- !u!1 &89867618
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,7 +259,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Date
+  m_Text: 2/24/2018
 --- !u!222 &89867621
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -458,7 +468,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1338012246}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -486,7 +496,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 15
+    m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -495,11 +505,32 @@ MonoBehaviour:
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Generic Text for the description asdfjkl;asdfjkl;jkl;asdfjkl;asdfjkl;asdfjkl;sdfjkl;
-    asdfjkl;asdfsdfjklsdfjkljklsdf asdfjkljklasdfjkljkl;asdjklfajksdfjkljkl ajkl;sdfj
-    jklasjkl;df jkl;asdf jkl;askdfkl;a
+  m_Text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae
+    finibus purus. Proin at risus eu lorem sodales volutpat. Phasellus non tortor
+    facilisis, dictum sem eget, sollicitudin orci. Fusce sed faucibus lorem, eu sagittis
+    ipsum. Duis sollicitudin nunc luctus odio interdum mattis. Curabitur suscipit
+    lectus nisi, ultrices rhoncus neque egestas at. Suspendisse viverra neque at fermentum
+    tincidunt.\r\n\r\nAenean aliquam vitae lectus at rutrum. In cursus felis et tellus
+    tempor, ac pellentesque nisi fringilla. Suspendisse potenti. Pellentesque ac porttitor
+    diam, a rhoncus massa. Proin nec sapien orci. Duis volutpat diam est, ac mollis
+    elit elementum eu. Aenean ut purus quis nisi tincidunt imperdiet quis nec leo.
+    Nulla hendrerit sapien risus, at aliquet quam sodales eu. Nulla ac auctor nulla.
+    In posuere nec felis sed pretium. Praesent ullamcorper, nisi in malesuada malesuada,
+    est risus semper tortor, non rutrum magna arcu sed felis. Morbi non rhoncus mi.
+    Vestibulum at orci fermentum, mollis urna vel, molestie nibh. Pellentesque at
+    interdum eros, sollicitudin elementum lacus. Duis lorem orci, fermentum quis lorem
+    id, accumsan blandit ex. Integer ut ex odio.\r\n\r\nInterdum et malesuada fames
+    ac ante ipsum primis in faucibus. Proin a eros posuere, suscipit libero quis,
+    gravida lorem. Mauris ac massa at enim mollis accumsan eget ac tortor. Sed vel
+    consequat tortor. Proin et dui nec eros lacinia laoreet. Suspendisse vestibulum
+    erat in metus auctor, ac fringilla erat sodales. Sed suscipit odio vitae elit
+    aliquam imperdiet. Vivamus in enim justo. Suspendisse urna lorem, mattis et sem
+    eget, eleifend fermentum nibh. Mauris eleifend tempus mi molestie blandit. Donec
+    libero magna, pellentesque quis enim id, porta euismod risus. Nam eu leo turpis.
+    Praesent at enim dignissim, dapibus orci eget, consequat tortor. Etiam eu cursus
+    diam. Fusce gravida lobortis pulvinar. Nam sed sollicitudin odio, ac maximus justo."
 --- !u!222 &933422194
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -577,11 +608,11 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+  m_StereoMirrorMode: 0
 --- !u!4 &1035821723
 Transform:
   m_ObjectHideFlags: 0
@@ -681,8 +712,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 2041795968}
-  - {fileID: 933422192}
   - {fileID: 78533743}
+  - {fileID: 933422192}
   - {fileID: 89867619}
   - {fileID: 465785097}
   - {fileID: 1650164849}
@@ -955,7 +986,6 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -971,7 +1001,6 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -989,9 +1018,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1998210550
@@ -1024,7 +1053,6 @@ GameObject:
   - component: {fileID: 2041795968}
   - component: {fileID: 2041795970}
   - component: {fileID: 2041795969}
-  - component: {fileID: 2041795971}
   m_Layer: 5
   m_Name: Title Text
   m_TagString: Untagged
@@ -1082,23 +1110,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Title Text
+  m_Text: Event Title
 --- !u!222 &2041795970
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2041795967}
---- !u!114 &2041795971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2041795967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 043a4f6b976d51949974ded242668096, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textBox: {fileID: 2041795967}
-  theText: {fileID: 0}

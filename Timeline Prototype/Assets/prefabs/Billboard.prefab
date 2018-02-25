@@ -316,6 +316,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textBox: {fileID: 1391889401474942}
   theText: {fileID: 114991551139439836}
+  fontSize: 0
 --- !u!114 &114257700240193390
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -390,6 +391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boardNumber: 0
+  table: 
 --- !u!114 &114991551139439836
 MonoBehaviour:
   m_ObjectHideFlags: 1
