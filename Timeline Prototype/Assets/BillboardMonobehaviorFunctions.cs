@@ -10,7 +10,7 @@ public class BillboardMonobehaviorFunctions : MonoBehaviour {
     public string table;
 	// Use this for initialization
 	void Start () {
-        print("Table is: " + table + ", boardNumber is: " + boardNumber);
+        // print("Table is: " + table + ", boardNumber is: " + boardNumber);
 	}
 	
 	// Update is called once per frame

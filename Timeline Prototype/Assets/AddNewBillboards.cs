@@ -42,7 +42,9 @@ public class AddNewBillboards : MonoBehaviour {
             connect.Close();
         }
         catch (MySql.Data.MySqlClient.MySqlException ex)
-        {}
+        {
+            print("File: AddNewBillboards.cs. Exception: + " + ex);
+        }
 
         for (int i = 0; i < numberOfObjects; i++)
         {

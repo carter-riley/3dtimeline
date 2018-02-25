@@ -40,15 +40,15 @@ public class EventViewPictureManager : MonoBehaviour
 
             }
 
-            GameObject parentObject = base.gameObject;
+            // GameObject parentObject = base.gameObject;
 
-            BillboardMonobehaviorFunctions monobehaviorFunctionsScript = this.GetComponentInParent<BillboardMonobehaviorFunctions>();
-            int newBoardNumber = monobehaviorFunctionsScript.boardNumber + 1;
+            // BillboardMonobehaviorFunctions monobehaviorFunctionsScript = this.GetComponentInParent<BillboardMonobehaviorFunctions>();
+            // int newBoardNumber = monobehaviorFunctionsScript.boardNumber + 1;
 
 
-            string currentNarrative = monobehaviorFunctionsScript.table;
+            // string currentNarrative = monobehaviorFunctionsScript.table;
 
-            string query = "SELECT * FROM " + currentNarrative + " WHERE Number = " + newBoardNumber;
+            string query = "SELECT * FROM " + table + " WHERE Number = " + boardNumber;
 
             //Create a list to store the result
             List<string>[] list = new List<string>[3];
@@ -81,15 +81,15 @@ public class EventViewPictureManager : MonoBehaviour
                     }
                     catch
                     {
-                        if (newBoardNumber % 3 == 0)
+                        if (boardNumber % 3 == 0)
                         {
                             webAddress = "http://grfx.cstv.com/photos/schools/gonz/sports/genrel/auto_original/8870368.jpeg";
                         }
-                        else if (newBoardNumber % 3 == 1)
+                        else if (boardNumber % 3 == 1)
                         {
                             webAddress = "http://grfx.cstv.com/photos/schools/gonz/sports/genrel/auto_original/8870367.jpeg";
                         }
-                        else if (newBoardNumber % 3 == 2)
+                        else if (boardNumber % 3 == 2)
                         {
                             webAddress = "http://grfx.cstv.com/schools/gonz/graphics/auto/GUBulldogWallpaper1024x768.jpg";
                         }
@@ -113,13 +113,13 @@ public class EventViewPictureManager : MonoBehaviour
         }
         catch (MySql.Data.MySqlClient.MySqlException ex)
         {
-
+            print("File: EventViewPictureManager.cs. Exception: + " + ex);
         }
 
         // print(webAddress);
 
         Texture2D tex;
-        tex = new Texture2D(4, 4, TextureFormat.DXT1, false);
+        tex = new Texture2D(128, 128);
         WWW www = new WWW(webAddress);
         yield return www;
         www.LoadImageIntoTexture(tex);

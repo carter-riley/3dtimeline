@@ -80,7 +80,7 @@ public class DateManager : MonoBehaviour
         }
         catch (MySql.Data.MySqlClient.MySqlException ex)
         {
-
+            print("File: DateManager.cs. Exception: + " + ex);
         }
     }
 

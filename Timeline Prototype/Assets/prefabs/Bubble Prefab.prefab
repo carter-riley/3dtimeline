@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 65278896552298412}
   - component: {fileID: 23191363006664224}
   - component: {fileID: 114183110400832652}
+  - component: {fileID: 114214762837331404}
   m_Layer: 0
   m_Name: PicFrame
   m_TagString: Untagged
@@ -231,6 +232,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -246,6 +248,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -263,6 +266,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -278,6 +282,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -295,6 +300,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -310,6 +316,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -327,6 +334,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -342,6 +350,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -433,6 +442,21 @@ MonoBehaviour:
   pictureFrame: {fileID: 0}
   URL: {fileID: 0}
   webAddress: 
+--- !u!114 &114214762837331404
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1599359453973282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df76f5aa2e911b8458c8db511275b5ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pictureFrame: {fileID: 0}
+  image: {fileID: 0}
+  videoToPlay: {fileID: 0}
+  videoURL: 
 --- !u!114 &114450248867605832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -529,6 +553,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textBox: {fileID: 1588680705612508}
   theText: {fileID: 114450248867605832}
+  fontSize: 0
 --- !u!114 &114932882425750974
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -8,7 +8,7 @@ public class debugHelper : MonoBehaviour {
 	void Start () {
 		int billboardNumber = PlayerPrefs.GetInt ("billboardNumber");
 
-		Debug.Log (billboardNumber);
+		// Debug.Log (billboardNumber);
 	}
 	
 	// Update is called once per frame

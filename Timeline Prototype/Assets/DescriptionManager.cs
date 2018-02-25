@@ -65,7 +65,7 @@ public class DescriptionManager : MonoBehaviour
         }
         catch (MySql.Data.MySqlClient.MySqlException ex)
         {
-
+            print("File: DescriptionManager.cs. Exception: + " + ex);
         }
 
     }
