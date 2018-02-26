@@ -28,6 +28,8 @@ public class BillboardMonobehaviorFunctions : MonoBehaviour {
         PlayerPrefs.SetInt("boardNumber", boardNumber);
         PlayerPrefs.SetString("table", table);
 
+        PlayerPrefs.SetFloat("xPos", Camera.main.transform.position.x);
+        PlayerPrefs.SetFloat("zPos", Camera.main.transform.position.z);
 
         // DontDestroyOnLoad(gameObject);
 

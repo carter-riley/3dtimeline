@@ -11,17 +11,12 @@ public class setCameraPosition : MonoBehaviour {
 
         
 
-        int cameraPosition = PlayerPrefs.GetInt("cameraPosition");
+        //int cameraPosition = PlayerPrefs.GetInt("cameraPosition");
+        float cameraXPos = PlayerPrefs.GetFloat("xPos");
+        float cameraZPos = PlayerPrefs.GetFloat("zPos");
 
-        if (cameraPosition != null)
-        {
-            mainCamera.transform.position = new Vector3(cameraPosition, 11, 19);
-        }
-        else
-        {
-        mainCamera.transform.position = new Vector3(cameraPosition, 11, 19); //starting postion
+        mainCamera.transform.position = new Vector3(cameraXPos, 11, cameraZPos); //starting postion
 
-        }
     }
 	
 	// Update is called once per frame
