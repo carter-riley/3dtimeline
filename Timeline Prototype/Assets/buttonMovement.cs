@@ -16,6 +16,9 @@ public class buttonMovement : MonoBehaviour
     public float turnSpeed = 4.0f;      // Speed of camera turning when mouse moves in along an axis
     public float panSpeed = 4.0f;       // Speed of the camera when being panned
     public float zoomSpeed = 4.0f;
+
+    public GameObject pathGameObject1;
+
 /*
     yaw += speedH* Input.GetAxis("Mouse X");
         if (!(pitch <= -35 && speedV* Input.GetAxis("Mouse Y") > 0 || pitch >= 20 && speedV* Input.GetAxis("Mouse Y") < 0))
@@ -38,12 +41,45 @@ public void moveCameraForward()
         //Camera.main.transform.Translate(new Vector3(0, 0, 100));
         Camera.main.transform.position += Camera.main.transform.forward * Time.deltaTime * 500; //change the 500 to a public variable named movement speed
         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, Camera.main.transform.position.z);
+
+        //detecting if above path
+        RaycastHit hit;
+        Ray downRay = new Ray(Camera.main.transform.position, Vector3.down);
+        if (Physics.Raycast(downRay, out hit, 20)) {
+            //print("above something");
+            if (hit.transform.gameObject == pathGameObject1)
+            {
+                //print("above path");
+            }
+            else {
+                //Camera.main.transform.position += Camera.main.transform.InverseTransformDirection(Camera.main.transform.forward) * Time.deltaTime * 500; //change the 500 to a public variable named movement speed
+                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, 20); //11 is a majic number which is the height the camera should be at// 20 is the middle of the path
+            }
+        }
+      
         //This code moves the player straight forward -- keep 4 ltr--- Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 100, Camera.main.transform.position.y, Camera.main.transform.position.z);
     }
     public void moveBackwards()
     {
         Camera.main.transform.position += Camera.main.transform.forward * Time.deltaTime * -500; //change the 500 to a public variable named movement speed
         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, Camera.main.transform.position.z);
+
+        //detecting if above path
+        RaycastHit hit;
+        Ray downRay = new Ray(Camera.main.transform.position, Vector3.down);
+        if (Physics.Raycast(downRay, out hit, 20))
+        {
+            //print("above something");
+            if (hit.transform.gameObject == pathGameObject1)
+            {
+                //print("above path");
+            }
+            else
+            {
+                //Camera.main.transform.position += Camera.main.transform.InverseTransformDirection(Camera.main.transform.forward) * Time.deltaTime * 500; //change the 500 to a public variable named movement speed
+                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, 20); //11 is a majic number which is the height the camera should be at// 20 is the middle of the path
+            }
+        }
     }
     public void moveLeft()
     {
@@ -53,4 +89,5 @@ public void moveCameraForward()
     {
         Camera.main.transform.Translate(new Vector2(20, 0));
     }
+
 }
