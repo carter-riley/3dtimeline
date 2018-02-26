@@ -120,7 +120,7 @@ public class StreamVideo : MonoBehaviour
         //Disable Play on Awake for both Video and Audio
         videoPlayer.playOnAwake = false;
         audioSource.playOnAwake = false;
-        audioSource.Pause();
+        //audioSource.Pause();
 
         //We want to play from video clip not from url
 

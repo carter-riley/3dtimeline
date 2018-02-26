@@ -68,7 +68,20 @@ public class TextBoxManager : MonoBehaviour
             while (dataReader.Read())
             {
                 // theText.text = dataReader["Record_id"];
-                theText.text = dataReader.GetString(1);
+
+                string data = "";
+
+                try
+                {
+                    data += dataReader.GetString(2) + "\n";
+                } catch
+                {
+                    print("Date is null for billboard " + newBoardNumber + " on narrative " + currentNarrative);
+                }
+
+                data += dataReader.GetString(1);
+
+                theText.text = data;
 
                 // Console.WriteLine(dataReader["Date_id"]);
                 // Console.WriteLine(dataReader["Source"]);
