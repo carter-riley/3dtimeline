@@ -83,7 +83,7 @@ public class StreamVideo : MonoBehaviour
                 if (dataReader.GetString(4) == "Video")
                 {
                     // videoURL = dataReader.GetString(7);
-                    videoURL = "http://mirrors.standaloneinstaller.com/video-sample/metaxas-keller-Bell.mp4";
+                    videoURL = "http://as-dh.gonzaga.edu/omeka/files/original/e6647e31afaaa530789fa209e03f865b.mp4";
 
                     isVideo = true;
                     // StreamVideo.playVideo(dataReader.GetString(7));
@@ -128,7 +128,7 @@ public class StreamVideo : MonoBehaviour
 
         // Vide clip from Url
         videoPlayer.source = VideoSource.Url;
-        // videoPlayer.url = "http://mirrors.standaloneinstaller.com/video-sample/metaxas-keller-Bell.mp4";
+        // videoPlayer.url = "http://as-dh.gonzaga.edu/omeka/files/original/e6647e31afaaa530789fa209e03f865b.mp4";
         videoPlayer.url = url;
 
         //Set Audio Output to AudioSource
