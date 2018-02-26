@@ -64,7 +64,7 @@ public class PictureFrameManager1 : MonoBehaviour
             {
                 if (dataReader.GetString(4) == "Video")
                 {
-                    webAddress = dataReader.GetString(7);
+                    webAddress = "http://as-dh.gonzaga.edu/omeka/files/original/" + dataReader.GetString(7);
                     // StreamVideo.playVideo(dataReader.GetString(7));
                 }
                 else

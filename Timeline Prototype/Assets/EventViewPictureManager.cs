@@ -130,6 +130,8 @@ public class EventViewPictureManager : MonoBehaviour
 
         int aspectRatio = tex.width / tex.height;
 
+        PlayerPrefs.SetString("URL", webAddress);
+
         // GetComponent<Transform>().localScale.Scale(new Vector3(0F, 1F, 0.05F));
     }
 
