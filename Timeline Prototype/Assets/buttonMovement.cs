@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class buttonMovement : MonoBehaviour
 {
-
+    public Button left;
+    public Button right;
     public float speedH = 2.0f;
     public float speedV = 2.0f;
 
@@ -18,18 +20,44 @@ public class buttonMovement : MonoBehaviour
     public float zoomSpeed = 4.0f;
 
     public GameObject pathGameObject1;
-/*
-    yaw += speedH* Input.GetAxis("Mouse X");
-        if (!(pitch <= -35 && speedV* Input.GetAxis("Mouse Y") > 0 || pitch >= 20 && speedV* Input.GetAxis("Mouse Y") < 0))
+    /*
+        yaw += speedH* Input.GetAxis("Mouse X");
+            if (!(pitch <= -35 && speedV* Input.GetAxis("Mouse Y") > 0 || pitch >= 20 && speedV* Input.GetAxis("Mouse Y") < 0))
+            {
+                pitch -= speedV* Input.GetAxis("Mouse Y");
+    }
+
+        //Debug.Log(pitch);
+
+        transform.eulerAngles = new Vector3(pitch, yaw, 0.0f); */
+    void Start()
+    {
+        left.gameObject.SetActive(false);
+        right.gameObject.SetActive(false);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        float zcor = Camera.main.transform.position.z;
+        if (zcor < 351 && zcor > 60)
         {
-            pitch -= speedV* Input.GetAxis("Mouse Y");
-}
+            left.gameObject.SetActive(true);
+            right.gameObject.SetActive(true);
+        }
+        if (zcor > -249 && zcor < 43)
+        {
+            left.gameObject.SetActive(true);
+            right.gameObject.SetActive(true);
+        }
+        if (zcor < 52 && zcor > 50)
+        {
+            left.gameObject.SetActive(false);
+            right.gameObject.SetActive(false);
+        }
+    }
 
-    //Debug.Log(pitch);
-
-    transform.eulerAngles = new Vector3(pitch, yaw, 0.0f); */
-
-public void moveCameraForward()
+    public void moveCameraForward()
     {
         /*
         Camera.main.transform.position = new Vector3(
@@ -50,7 +78,7 @@ public void moveCameraForward()
 
             }
             else {
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, 20); // 11 is a magic number which is the height the camera should be at// 20 is a magic number which is the center of the path
+                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, 53); // 11 is a magic number which is the height the camera should be at// 20 is a magic number which is the center of the path
             }
         }
     }
@@ -69,7 +97,7 @@ public void moveCameraForward()
             }
             else
             {
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, 20); // 11 is a magic number which is the height the camera should be at// 20 is a magic number which is the center of the path
+                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, 53); // 11 is a magic number which is the height the camera should be at// 20 is a magic number which is the center of the path
             }
         }
     }

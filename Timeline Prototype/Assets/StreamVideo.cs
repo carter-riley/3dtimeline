@@ -83,7 +83,7 @@ public class StreamVideo : MonoBehaviour
                 if (dataReader.GetString(4) == "Video")
                 {
                     // videoURL = dataReader.GetString(7);
-                    videoURL = "http://as-dh.gonzaga.edu/omeka/files/original/e6647e31afaaa530789fa209e03f865b.mp4";
+                    videoURL = "http://as-dh.gonzaga.edu/omeka/files/original/" + dataReader.GetString(7);
 
                     isVideo = true;
                     // StreamVideo.playVideo(dataReader.GetString(7));

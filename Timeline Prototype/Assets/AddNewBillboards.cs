@@ -10,6 +10,7 @@ public class AddNewBillboards : MonoBehaviour {
 	public GameObject prefab;
     public int zPosition = 19;
     public string nameOfTimeline;
+    public int howClose;
     //public float radius = 5f;
 
     public List<GameObject> billboardsList = new List<GameObject>();
@@ -60,7 +61,7 @@ public class AddNewBillboards : MonoBehaviour {
             }
 
 
-            Vector3 pos = new Vector3(i - (i * 200), 0, xPosition);
+            Vector3 pos = new Vector3((i - (i * 200))-howClose, 0, xPosition);
             GameObject newBillboard = Instantiate(prefab, pos, Quaternion.identity);
             //newBillboard.transform.localScale = new Vector3(0.1F, 0.1F, 0.1F);
             newBillboard.transform.position = new Vector3(newBillboard.transform.position.x, newBillboard.transform.position.y+7, newBillboard.transform.position.z);

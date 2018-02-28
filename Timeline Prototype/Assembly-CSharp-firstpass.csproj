@@ -148,16 +148,20 @@
      <Compile Include="Assets\Standard Assets\Vehicles\Car\Scripts\WheelEffects.cs" />
      <None Include="Assets\Plugins\MySql.Data.xml" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
+     <None Include="Assets\Materials\ely_hills\ely_hills.shader" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
      <None Include="Assets\Scripts\MySql.Data.xml" />
      <None Include="Assets\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />
+     <None Include="Assets\Battlehub\RTHandles\Shaders\Resources\Shape.shader" />
      <None Include="Assets\Plugins\MySQL.Data.EntityFrameworkCore.xml" />
      <None Include="Assets\Scripts\MySQL.Data.EntityFrameworkCore.Design.xml" />
      <None Include="Assets\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularSmooth.shader" />
      <None Include="Assets\Standard Assets\Effects\Projectors\Guidelines.txt" />
      <None Include="Assets\Scripts\MySql.Web.xml" />
+     <None Include="Assets\Battlehub\RTHandles\Shaders\Resources\VertexColorClip.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Readme.txt" />
      <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\DiffuseReflectiveShader.shader" />
+     <None Include="Assets\Battlehub\SplineEditor\Shaders\Resources\SSBillboard.shader" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\Resources\obj2.txt" />
      <None Include="Assets\Standard Assets\Vehicles\Aircraft\AircraftGuidelines.txt" />
@@ -167,6 +171,7 @@
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
      <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpec.shader" />
      <None Include="Assets\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
+     <None Include="Assets\Battlehub\MeshCombiner\MeshCombiner Documentation.txt" />
      <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
      <None Include="Assets\Scripts\MySQL.Data.EntityFrameworkCore.xml" />
      <None Include="Assets\Standard Assets\Fonts\OpenSans\License!.txt" />
@@ -176,7 +181,9 @@
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
      <None Include="Assets\Scripts\MySql.Data.Entity.EF6.xml" />
      <None Include="Assets\Standard Assets\Effects\Projectors\Shaders\ProjectorLight.shader" />
+     <None Include="Assets\Battlehub\RTHandles\Shaders\Resources\VertexColorBillboard.shader" />
      <None Include="Assets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
+     <None Include="Assets\Battlehub\SplineEditor\Shaders\Resources\Spline.shader" />
      <None Include="Assets\Standard Assets\Vehicles\Car\CarGuidelines.txt" />
      <None Include="Assets\Standard Assets\Effects\Projectors\Shaders\ProjectorMultiply.shader" />
      <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
@@ -191,6 +198,7 @@
      <None Include="Assets\Resources\example.txt" />
      <None Include="Assets\Plugins\MySQL.Data.EntityFrameworkCore.Design.xml" />
      <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
+     <None Include="Assets\Battlehub\RTHandles\Shaders\Resources\VertexColor.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -213,37 +221,37 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
  </Reference>
  <Reference Include="MySql.Data">
- <HintPath>C:/Users/Nash/Documents/2017 Fall/Senior Design/3dtimeline/3dtimeline/3dtimeline/Timeline Prototype/Assets/Plugins/MySql.Data.dll</HintPath>
+ <HintPath>D:/SeniorDesign/3dtimeline/Timeline Prototype/Assets/Plugins/MySql.Data.dll</HintPath>
  </Reference>
  <Reference Include="MySql.Data.Entity.EF6">
- <HintPath>C:/Users/Nash/Documents/2017 Fall/Senior Design/3dtimeline/3dtimeline/3dtimeline/Timeline Prototype/Assets/Plugins/MySql.Data.Entity.EF6.dll</HintPath>
+ <HintPath>D:/SeniorDesign/3dtimeline/Timeline Prototype/Assets/Plugins/MySql.Data.Entity.EF6.dll</HintPath>
  </Reference>
  <Reference Include="MySQL.Data.EntityFrameworkCore.Design">
- <HintPath>C:/Users/Nash/Documents/2017 Fall/Senior Design/3dtimeline/3dtimeline/3dtimeline/Timeline Prototype/Assets/Plugins/MySQL.Data.EntityFrameworkCore.Design.dll</HintPath>
+ <HintPath>D:/SeniorDesign/3dtimeline/Timeline Prototype/Assets/Plugins/MySQL.Data.EntityFrameworkCore.Design.dll</HintPath>
  </Reference>
  <Reference Include="MySQL.Data.EntityFrameworkCore">
- <HintPath>C:/Users/Nash/Documents/2017 Fall/Senior Design/3dtimeline/3dtimeline/3dtimeline/Timeline Prototype/Assets/Plugins/MySQL.Data.EntityFrameworkCore.dll</HintPath>
+ <HintPath>D:/SeniorDesign/3dtimeline/Timeline Prototype/Assets/Plugins/MySQL.Data.EntityFrameworkCore.dll</HintPath>
  </Reference>
  <Reference Include="MySql.Web">
- <HintPath>C:/Users/Nash/Documents/2017 Fall/Senior Design/3dtimeline/3dtimeline/3dtimeline/Timeline Prototype/Assets/Plugins/MySql.Web.dll</HintPath>
+ <HintPath>D:/SeniorDesign/3dtimeline/Timeline Prototype/Assets/Plugins/MySql.Web.dll</HintPath>
  </Reference>
  <Reference Include="System.Data">
- <HintPath>C:/Users/Nash/Documents/2017 Fall/Senior Design/3dtimeline/3dtimeline/3dtimeline/Timeline Prototype/Assets/Plugins/System.Data.dll</HintPath>
+ <HintPath>D:/SeniorDesign/3dtimeline/Timeline Prototype/Assets/Plugins/System.Data.dll</HintPath>
  </Reference>
  <Reference Include="MySql.Data">
- <HintPath>C:/Users/Nash/Documents/2017 Fall/Senior Design/3dtimeline/3dtimeline/3dtimeline/Timeline Prototype/Assets/Scripts/MySql.Data.dll</HintPath>
+ <HintPath>D:/SeniorDesign/3dtimeline/Timeline Prototype/Assets/Scripts/MySql.Data.dll</HintPath>
  </Reference>
  <Reference Include="MySql.Data.Entity.EF6">
- <HintPath>C:/Users/Nash/Documents/2017 Fall/Senior Design/3dtimeline/3dtimeline/3dtimeline/Timeline Prototype/Assets/Scripts/MySql.Data.Entity.EF6.dll</HintPath>
+ <HintPath>D:/SeniorDesign/3dtimeline/Timeline Prototype/Assets/Scripts/MySql.Data.Entity.EF6.dll</HintPath>
  </Reference>
  <Reference Include="MySQL.Data.EntityFrameworkCore.Design">
- <HintPath>C:/Users/Nash/Documents/2017 Fall/Senior Design/3dtimeline/3dtimeline/3dtimeline/Timeline Prototype/Assets/Scripts/MySQL.Data.EntityFrameworkCore.Design.dll</HintPath>
+ <HintPath>D:/SeniorDesign/3dtimeline/Timeline Prototype/Assets/Scripts/MySQL.Data.EntityFrameworkCore.Design.dll</HintPath>
  </Reference>
  <Reference Include="MySQL.Data.EntityFrameworkCore">
- <HintPath>C:/Users/Nash/Documents/2017 Fall/Senior Design/3dtimeline/3dtimeline/3dtimeline/Timeline Prototype/Assets/Scripts/MySQL.Data.EntityFrameworkCore.dll</HintPath>
+ <HintPath>D:/SeniorDesign/3dtimeline/Timeline Prototype/Assets/Scripts/MySQL.Data.EntityFrameworkCore.dll</HintPath>
  </Reference>
  <Reference Include="MySql.Web">
- <HintPath>C:/Users/Nash/Documents/2017 Fall/Senior Design/3dtimeline/3dtimeline/3dtimeline/Timeline Prototype/Assets/Scripts/MySql.Web.dll</HintPath>
+ <HintPath>D:/SeniorDesign/3dtimeline/Timeline Prototype/Assets/Scripts/MySql.Web.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
