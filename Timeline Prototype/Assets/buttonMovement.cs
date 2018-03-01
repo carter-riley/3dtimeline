@@ -7,6 +7,7 @@ public class buttonMovement : MonoBehaviour
 {
     public Button left;
     public Button right;
+    public Text pathwayName;
     public float speedH = 2.0f;
     public float speedV = 2.0f;
 
@@ -34,6 +35,7 @@ public class buttonMovement : MonoBehaviour
     {
         left.gameObject.SetActive(false);
         right.gameObject.SetActive(false);
+        pathwayName.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
@@ -44,16 +46,19 @@ public class buttonMovement : MonoBehaviour
         {
             left.gameObject.SetActive(true);
             right.gameObject.SetActive(true);
+            pathwayName.gameObject.SetActive(false);
         }
         if (zcor > -249 && zcor < 43)
         {
             left.gameObject.SetActive(true);
             right.gameObject.SetActive(true);
+            pathwayName.gameObject.SetActive(false);
         }
         if (zcor < 52 && zcor > 50)
         {
             left.gameObject.SetActive(false);
             right.gameObject.SetActive(false);
+            pathwayName.gameObject.SetActive(true);
         }
     }
 
