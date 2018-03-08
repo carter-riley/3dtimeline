@@ -8,6 +8,7 @@ using System;
 public class AddNewBillboards : MonoBehaviour {
 
 	public GameObject prefab;
+    public GameObject prefabNoImage;
     public int zPosition = 19;
     public string nameOfTimeline;
     public int howClose;
@@ -20,6 +21,8 @@ public class AddNewBillboards : MonoBehaviour {
         bool left = true;
         float xPosition;
         int numberOfObjects = 5;
+        List<String> imageType = new List<String>();
+
 
         try
         {
@@ -40,6 +43,26 @@ public class AddNewBillboards : MonoBehaviour {
                 numberOfObjects = dataReader.GetUInt16(0);
             }
             dataReader.Close();
+
+            query = "SELECT format_type FROM " + nameOfTimeline;
+            MySqlCommand secondQuery = new MySqlCommand(query, connect);
+            MySqlDataReader imageReader = secondQuery.ExecuteReader();
+
+            while (imageReader.Read())
+            {
+                try
+                {
+                    imageType.Add(imageReader.GetString(0));
+                    print(imageReader.GetString(0));
+                }
+                catch
+                {
+                    imageType.Add("Null");
+                }
+
+            }
+
+            imageReader.Close();
             connect.Close();
         }
         catch (MySql.Data.MySqlClient.MySqlException ex)
@@ -62,7 +85,14 @@ public class AddNewBillboards : MonoBehaviour {
 
 
             Vector3 pos = new Vector3((i - (i * 200))-howClose, 0, xPosition);
-            GameObject newBillboard = Instantiate(prefab, pos, Quaternion.identity);
+            GameObject newBillboard;
+            print("i is: " + i + " and current image type is: " + imageType[i]);
+
+            if (imageType[i].Equals("PNG") || imageType[i].Equals("JPG") || imageType[i].Equals("PDF") || imageType[i].Equals("MP4")) { //should check image not null in database
+                newBillboard = Instantiate(prefab, pos, Quaternion.identity); //loads prefab with image
+            } else {
+                newBillboard = Instantiate(prefabNoImage, pos, Quaternion.identity);
+            }
             //newBillboard.transform.localScale = new Vector3(0.1F, 0.1F, 0.1F);
             newBillboard.transform.position = new Vector3(newBillboard.transform.position.x, newBillboard.transform.position.y+7, newBillboard.transform.position.z);
             newBillboard.GetComponent<BillboardMonobehaviorFunctions>().boardNumber = billboardsList.Count;
