@@ -430,6 +430,7 @@
     <Compile Include="Assets\StreamVideo.cs" />
     <Compile Include="Assets\TextManager.cs" />
     <Compile Include="Assets\TitleManager.cs" />
+    <Compile Include="Assets\transitionScene.cs" />
     <Compile Include="Assets\TransitionToImageView.cs" />
     <Compile Include="Assets\transitionToTimeline.cs" />
   </ItemGroup>

@@ -22,7 +22,10 @@ public class AddNewBillboards : MonoBehaviour {
         bool left = true;
         float xPosition;
         int numberOfObjects = 5;
+<<<<<<< HEAD
         
+=======
+>>>>>>> 3dd7770b92c033f4ee9c998591627e771f166c8b
 
         try
         {
@@ -44,6 +47,7 @@ public class AddNewBillboards : MonoBehaviour {
             }
             dataReader.Close();
 
+<<<<<<< HEAD
             query = "SELECT * FROM " + nameOfTimeline;
             cmd = new MySqlCommand(query, connect);
             //Create a data reader and Execute the command
