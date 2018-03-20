@@ -14,6 +14,7 @@ public class TextBoxManager : MonoBehaviour
     public Text theText;
     public int fontSize;
 
+    public GameObject managerObject; //gotta drag in the _Manager Object!!!!!!!!!
 
     //public PlayerController PlayerCamera;
 
@@ -23,85 +24,39 @@ public class TextBoxManager : MonoBehaviour
         theText.fontSize = 40;
         theText.alignment = TextAnchor.UpperCenter;
 
-        try
-        {
-            MySqlConnection connect;
+        // GameObject parentObject = base.gameObject;
+        // AddNewBillboards addNewBillBoards = this.GetComponentInParent<AddNewBillboards>();
 
+        // print(AddNewBillboards.GetComponentInParent<List<String>>().get);
 
-            //Connection string for Connector/ODBC 3.51
-            // Driver={MariaDB ODBC 3.0 Driver};
-            string MyConString = "Server=147.222.163.1;UID=sdg7;Database=sdg7_DB;PWD=3dTimeline;Port=3306";
+        //GameObject parentObject = base.gameObject;
+        //AddNewBillboards addNewBillboardsScript = this
 
-            connect = new MySql.Data.MySqlClient.MySqlConnection();
+        //AddNewBillboards addNewBillboardsScript = managerObject.GetComponent<AddNewBillboards>(); //this creates a script which u can then access ur variables from
+        //addNewBillboardsScript.watevaUWannaGet //this is rougly how u should be able to access the variables
+        // string title = GetComponent<AddNewBillboards>().titleList[0];
+        // List<String> titleList = FindObjectOfType<AddNewBillboards>().titleList;
 
-            connect.ConnectionString = MyConString;
+        // print("TextBoxManager Line 40");
+        // print(titleList);
 
-            connect.Open();
+        //print(GetComponent<AddNewBillboards>().titleList[0]);
 
-            if (connect.State == ConnectionState.Open)
-            {
+        int count = FindObjectOfType<NarrativeManager>().count;
 
-            }
-            GameObject parentObject = base.gameObject;
-            BillboardMonobehaviorFunctions monobehaviorFunctionsScript = this.GetComponentInParent<BillboardMonobehaviorFunctions>();
-            int newBoardNumber = monobehaviorFunctionsScript.boardNumber + 1;
-            string currentNarrative = monobehaviorFunctionsScript.table;
-            string query = "SELECT * FROM " + currentNarrative + " WHERE Number = " + newBoardNumber;
-
-            //theText.text = newBoardNumber;
-            // Debug.Log(newBoardNumber);
-
-            //Create a list to store the result
-            List<string>[] list = new List<string>[3];
-            list[0] = new List<string>();
-            list[1] = new List<string>();
-            list[2] = new List<string>();
-
-            //Open connection
-
-            //Create Command
-            MySqlCommand cmd = new MySqlCommand(query, connect);
-            //Create a data reader and Execute the command
-            MySqlDataReader dataReader = cmd.ExecuteReader();
-
-            //Read the data and store them in the list
-            while (dataReader.Read())
-            {
-                // theText.text = dataReader["Record_id"];
-
-                string data = "";
-
-                try
-                {
-                    data += dataReader.GetString(2) + "\n";
-                } catch
-                {
-                    print("Date is null for billboard " + newBoardNumber + " on narrative " + currentNarrative);
-                }
-
-                data += dataReader.GetString(1);
-
-                theText.text = data;
-
-                // Console.WriteLine(dataReader["Date_id"]);
-                // Console.WriteLine(dataReader["Source"]);
-                // Console.WriteLine(dataReader["Type_of"]);
-                // Console.WriteLine(dataReader["format_type"]);
-                // Console.WriteLine(dataReader["URL"]);
-            }
-
-            //close Data Reader                
-            dataReader.Close();
-            connect.Close();
-
-            // Console.ReadKey();
-
-        }
-        catch (MySql.Data.MySqlClient.MySqlException ex)
-        {
-
+        if (FindObjectOfType<NarrativeManager>().dateList[count] == "Null" || FindObjectOfType<NarrativeManager>().titleList[count].Contains(theText.text = FindObjectOfType<NarrativeManager>().dateList[count])) {
+            theText.text = FindObjectOfType<NarrativeManager>().titleList[count];
+        } else {
+            theText.text = FindObjectOfType<NarrativeManager>().dateList[count] + "\n" + FindObjectOfType<NarrativeManager>().titleList[count];
         }
 
+        // GameObject parentObject = base.gameObject;
+        // BillboardMonobehaviorFunctions monobehaviorFunctionsScript = this.GetComponentInParent<BillboardMonobehaviorFunctions>();
+        // int newBoardNumber = monobehaviorFunctionsScript.boardNumber + 1;
+
+        FindObjectOfType<NarrativeManager>().count++;
+
+        // titleList.RemoveAt(0);
     }
 
     void Update()

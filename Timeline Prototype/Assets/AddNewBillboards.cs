@@ -15,11 +15,14 @@ public class AddNewBillboards : MonoBehaviour {
 
     public List<GameObject> billboardsList = new List<GameObject>();
 
-	// Use this for initialization
-	void Start () {
+
+
+    // Use this for initialization
+    void Start () {
         bool left = true;
         float xPosition;
         int numberOfObjects = 5;
+        
 
         try
         {
@@ -40,6 +43,52 @@ public class AddNewBillboards : MonoBehaviour {
                 numberOfObjects = dataReader.GetUInt16(0);
             }
             dataReader.Close();
+
+            query = "SELECT * FROM " + nameOfTimeline;
+            cmd = new MySqlCommand(query, connect);
+            //Create a data reader and Execute the command
+            MySqlDataReader newReader = cmd.ExecuteReader();
+            while (newReader.Read())
+            {
+                // 0: Record_id
+                // 1: Title
+                // 2: Date
+                // 3: Source
+                // 4: Type_of
+                // 5: format_type
+                // 6: description
+                // 7: URL
+                // newReader[0] + ", " + newReader[1] + ", " + newReader[2] + ", " + newReader[3] + ", " + newReader[4] + ", " + newReader[5] + ", " + newReader[6] + ", " + newReader[7]);
+
+                // FindObjectOfType<NarrativeManager>().
+                FindObjectOfType<NarrativeManager>().titleList.Add(newReader.GetString(1));
+                // print(newReader.GetString(1));
+                // print(titleList[0]);
+                FindObjectOfType<NarrativeManager>().descriptionList.Add(newReader.GetString(6));
+                try
+                {
+                    FindObjectOfType<NarrativeManager>().dateList.Add(newReader.GetString(2));
+                } catch
+                {
+                    FindObjectOfType<NarrativeManager>().dateList.Add("Null");
+                }
+                try
+                {
+                    FindObjectOfType<NarrativeManager>().typeList.Add(newReader.GetString(5));
+                } catch
+                {
+                    FindObjectOfType<NarrativeManager>().typeList.Add("Null");
+                }
+                try
+                {
+                    FindObjectOfType<NarrativeManager>().urlList.Add(newReader.GetString(7));
+                } catch
+                {
+                    FindObjectOfType<NarrativeManager>().urlList.Add("Null");
+                }
+            }
+
+            newReader.Close();
             connect.Close();
         }
         catch (MySql.Data.MySqlClient.MySqlException ex)
