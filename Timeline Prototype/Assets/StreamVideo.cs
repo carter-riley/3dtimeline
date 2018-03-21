@@ -169,6 +169,12 @@ public class StreamVideo : MonoBehaviour
         Debug.Log("Done Playing Video");
     }
 
+    public void Seek(int frame)
+    {
+        videoPlayer.frame = frame;
+    }
+
+
     // Update is called once per frame
     void Update()
     {
