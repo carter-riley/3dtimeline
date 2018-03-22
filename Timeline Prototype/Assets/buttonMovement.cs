@@ -50,52 +50,52 @@ public class buttonMovement : MonoBehaviour
         // For Philanthropy Path
         if (zcor < 351 && zcor > 60)
         {
-            left.gameObject.SetActive(true);
-            right.gameObject.SetActive(true);
+            //left.gameObject.SetActive(true);
+            //right.gameObject.SetActive(true);
             pathwayName1.gameObject.SetActive(false);
         }
         if (zcor > -243 && zcor < 43)
         {
-            left.gameObject.SetActive(true);
-            right.gameObject.SetActive(true);
+            //left.gameObject.SetActive(true);
+            //right.gameObject.SetActive(true);
             pathwayName1.gameObject.SetActive(false);
         }
         if (zcor < 52 && zcor > 50)
         {
-            left.gameObject.SetActive(false);
-            right.gameObject.SetActive(false);
+            //left.gameObject.SetActive(false);
+            //right.gameObject.SetActive(false);
             pathwayName1.gameObject.SetActive(true);
         }
         // For Coming of Age Pathway
         if (zcor > 346 && zcor < 357)
         {
-            left.gameObject.SetActive(false);
-            right.gameObject.SetActive(false);
+            //left.gameObject.SetActive(false);
+            //right.gameObject.SetActive(false);
             pathwayName2.gameObject.SetActive(true);
         }
         if (zcor > 357 && zcor < 390)
         {
-            left.gameObject.SetActive(true);
-            right.gameObject.SetActive(true);
+            //left.gameObject.SetActive(true);
+            //right.gameObject.SetActive(true);
             pathwayName2.gameObject.SetActive(false);
         }
         if (zcor < 346 && zcor > 60)
         {
-            left.gameObject.SetActive(true);
-            right.gameObject.SetActive(true);
+            //left.gameObject.SetActive(true);
+            //right.gameObject.SetActive(true);
             pathwayName2.gameObject.SetActive(false);
         }
         // For Gonzaga Pathway 
         if (zcor < -243 && zcor > -255)
         {
-            left.gameObject.SetActive(false);
-            right.gameObject.SetActive(false);
+            //left.gameObject.SetActive(false);
+            //right.gameObject.SetActive(false);
             pathwayName3.gameObject.SetActive(true);
         }
         if (zcor < -255 && zcor > -700)
         {
-            left.gameObject.SetActive(true);
-            right.gameObject.SetActive(true);
+            //left.gameObject.SetActive(true);
+            //right.gameObject.SetActive(true);
             pathwayName3.gameObject.SetActive(false);
         }
     }
@@ -123,7 +123,7 @@ public class buttonMovement : MonoBehaviour
             }
             else
             {
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, 53); // 11 is a magic number which is the height the camera should be at// 20 is a magic number which is the center of the path
+                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, Camera.main.transform.position.z); // 11 is a magic number which is the height the camera should be at// 20 is a magic number which is the center of the path
             }
         }
     }
@@ -142,10 +142,40 @@ public class buttonMovement : MonoBehaviour
             }
             else
             {
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, 53); // 11 is a magic number which is the height the camera should be at// 20 is a magic number which is the center of the path
+                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, Camera.main.transform.position.z); // 11 is a magic number which is the height the camera should be at// 20 is a magic number which is the center of the path // z should be fixed to a certain point depending on which path the player is on
             }
         }
     }
+
+    public void moveCameraForwardFast()
+    {
+        /*
+        Camera.main.transform.position = new Vector3(
+
+        0, Mathf.Clamp(Camera.main.transform.position.y, 0, 10), 20);
+        */
+
+        //Camera.main.transform.Translate(new Vector3(0, 0, 100));
+        Camera.main.transform.position += Camera.main.transform.forward * Time.deltaTime * 50000; //change the 500 to a public variable named movement speed
+        Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, Camera.main.transform.position.z);
+        //This code moves the player straight forward -- keep 4 ltr--- Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 100, Camera.main.transform.position.y, Camera.main.transform.position.z);
+
+        RaycastHit hit;
+        Ray downRay = new Ray(Camera.main.transform.position, Vector3.down);
+        if (Physics.Raycast(downRay, out hit, 20))
+        {
+            if (hit.transform.gameObject == pathGameObject1)
+            {
+
+            }
+            else
+            {
+                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, Camera.main.transform.position.z); // 11 is a magic number which is the height the camera should be at// 20 is a magic number which is the center of the path
+            }
+        }
+    }
+
+
     public void moveLeft()
     {
         Camera.main.transform.Translate(new Vector2(-20, 0));

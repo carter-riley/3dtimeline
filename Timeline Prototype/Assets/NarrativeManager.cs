@@ -10,6 +10,7 @@ public class NarrativeManager : MonoBehaviour {
     public List<String> dateList = new List<String>();
     public List<String> typeList = new List<String>();
     public List<String> urlList = new List<String>();
+    public int currentNumber = 0;
     public int count = 0;
 
     // Use this for initialization

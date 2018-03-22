@@ -61,6 +61,7 @@ public class AddNewBillboards : MonoBehaviour {
                 // newReader[0] + ", " + newReader[1] + ", " + newReader[2] + ", " + newReader[3] + ", " + newReader[4] + ", " + newReader[5] + ", " + newReader[6] + ", " + newReader[7]);
 
                 // FindObjectOfType<NarrativeManager>().
+                
                 FindObjectOfType<NarrativeManager>().titleList.Add(newReader.GetString(1));
                 // print(newReader.GetString(1));
                 // print(titleList[0]);
@@ -95,8 +96,8 @@ public class AddNewBillboards : MonoBehaviour {
         {
             print("File: AddNewBillboards.cs. Exception: + " + ex);
         }
-
-        for (int i = 0; i < numberOfObjects; i++)
+        print("objects: " + numberOfObjects);
+        for (int i = FindObjectOfType<NarrativeManager>().currentNumber; i < numberOfObjects + FindObjectOfType<NarrativeManager>().currentNumber; i++)
         {
             if (left)
             {
@@ -109,19 +110,56 @@ public class AddNewBillboards : MonoBehaviour {
                 left = true;
             }
 
+            double date;
+            if (double.TryParse(FindObjectOfType<NarrativeManager>().dateList[i], out date))
+                Console.WriteLine(date);
+                
 
-            Vector3 pos = new Vector3((i - (i * 200))-howClose, 0, xPosition);
+            else
+                Console.WriteLine("String could not be parsed.");
+            if(date == 0)
+            {
+                date = 1950;
+            }
+            int stag = 0;
+            for(int j = 0; j<i; j++)
+            {
+                if(FindObjectOfType<NarrativeManager>().dateList[i] == FindObjectOfType<NarrativeManager>().dateList[j])
+                {
+                    date = date + 0.6;
+                    stag++;
+                }
+            }
+            float date1 = (float)date;
+            print(FindObjectOfType<NarrativeManager>().titleList[i]);
+            print(i + "," + date + "x: " + (date - 1950) * 100);
+            Vector3 pos = new Vector3((date1 - 1950) * 100, 0, xPosition);
+
             GameObject newBillboard = Instantiate(prefab, pos, Quaternion.identity);
             //newBillboard.transform.localScale = new Vector3(0.1F, 0.1F, 0.1F);
-            newBillboard.transform.position = new Vector3(newBillboard.transform.position.x, newBillboard.transform.position.y+7, newBillboard.transform.position.z);
+            int zOffset = 0;
+            if (stag > 0)
+            {
+                if (stag % 2 == 0)
+                {
+                    zOffset = -20;
+                }
+                else
+                {
+                    zOffset = 20;
+                }
+            }
+            newBillboard.transform.position = new Vector3(newBillboard.transform.position.x, newBillboard.transform.position.y+7, newBillboard.transform.position.z + zOffset);
+            newBillboard.transform.Rotate(0,360,0);
             newBillboard.GetComponent<BillboardMonobehaviorFunctions>().boardNumber = billboardsList.Count;
             newBillboard.GetComponent<BillboardMonobehaviorFunctions>().table = nameOfTimeline;
 
 
             billboardsList.Add(newBillboard);
         }
+        FindObjectOfType<NarrativeManager>().currentNumber += numberOfObjects;
 
-	}
+    }
 
 	// Update is called once per frame
 	void Update () {

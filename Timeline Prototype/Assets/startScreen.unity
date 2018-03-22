@@ -499,12 +499,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0de1eeebdaeeae46b8f0355d8502094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xPosPhilanthropy: 830
-  zPosPhilanthropy: 0
-  xPosComingOfAge: 830
-  zPosComingOfAge: 0
-  xPosGonzaga: 830
-  zPosGonzaga: 0
+  xPosPhilanthropy: 7300
+  zPosPhilanthropy: 53
+  xPosComingOfAge: 7300
+  zPosComingOfAge: 353
+  xPosGonzaga: 7300
+  zPosGonzaga: 247
 --- !u!1 &1066931234
 GameObject:
   m_ObjectHideFlags: 0
