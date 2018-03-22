@@ -371,7 +371,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -293.23, y: -39.4}
+  m_AnchoredPosition: {x: -306, y: -39.4}
   m_SizeDelta: {x: 264.6, y: 376.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &706588789
@@ -687,7 +687,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 271.8, y: -36.5}
+  m_AnchoredPosition: {x: 286, y: -36.5}
   m_SizeDelta: {x: 307.5, y: 381.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1544422599
@@ -934,8 +934,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5.3, y: 126.8}
-  m_SizeDelta: {x: 785.9, y: 96.3}
+  m_AnchoredPosition: {x: 8.3, y: 107}
+  m_SizeDelta: {x: 813.1, y: 96.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1911348785
 MonoBehaviour:
@@ -963,19 +963,17 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: This 3D Timeline application is dedicated to Myrtle Woldson and will be
-    put on display in the Myrtle Woldson Performing Arts Center located at Gonzaga
-    University. In collaboration with humanities students, we have created a program
-    containing three paths corresponding to highlight different story-lines. Users
-    can navigate through time looking for intersecting artifacts and view the media
-    associated with each themed story line. There is also the ability to click on
-    an artifact to learn more about it, play videos and view pictures
+  m_Text: This 3D Timeline application is dedicated to Myrtle Woldson. This timeline
+    contains three paths corresponding to highlight different story-lines. Users can
+    navigate through time by clicking the buttons on the bottom of the screen and
+    and view the media associated with each themed story line. You may also click
+    on an artifact to learn more about it, play videos and view pictures.
 --- !u!222 &1911348786
 CanvasRenderer:
   m_ObjectHideFlags: 0
