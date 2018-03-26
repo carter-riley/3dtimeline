@@ -61,7 +61,16 @@ public class AddNewBillboards : MonoBehaviour {
                 // newReader[0] + ", " + newReader[1] + ", " + newReader[2] + ", " + newReader[3] + ", " + newReader[4] + ", " + newReader[5] + ", " + newReader[6] + ", " + newReader[7]);
 
                 // FindObjectOfType<NarrativeManager>().
-                
+
+                try
+                {
+                    print(newReader.GetString(1) + " " + newReader.GetString(7));
+                } catch
+                {
+                    print(newReader.GetString(1) + " Null");
+                }
+
+
                 FindObjectOfType<NarrativeManager>().titleList.Add(newReader.GetString(1));
                 // print(newReader.GetString(1));
                 // print(titleList[0]);
@@ -154,10 +163,9 @@ public class AddNewBillboards : MonoBehaviour {
             newBillboard.GetComponent<BillboardMonobehaviorFunctions>().boardNumber = billboardsList.Count;
             newBillboard.GetComponent<BillboardMonobehaviorFunctions>().table = nameOfTimeline;
 
-
             billboardsList.Add(newBillboard);
         }
-        FindObjectOfType<NarrativeManager>().currentNumber += numberOfObjects;
+        // FindObjectOfType<NarrativeManager>().currentNumber += numberOfObjects;
 
     }
 

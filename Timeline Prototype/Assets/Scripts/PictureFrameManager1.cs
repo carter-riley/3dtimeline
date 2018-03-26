@@ -15,29 +15,38 @@ public class PictureFrameManager1 : MonoBehaviour
 
     IEnumerator Start()
     {
-        int count = FindObjectOfType<NarrativeManager>().count;
-
+        // int count = FindObjectOfType<NarrativeManager>().pictureCount;
+        // print("Picture frame manager, current title is: " + FindObjectOfType<NarrativeManager>().titleList[0]);
+        // print("URL is: " + FindObjectOfType<NarrativeManager>().urlList[0]);
 
         // print(webAddress);
 
-        if (FindObjectOfType<NarrativeManager>().typeList[count] == "Video")
+        // print(FindObjectOfType<NarrativeManager>().urlList[0]);
+
+        if (FindObjectOfType<NarrativeManager>().urlList[0] != "Null" || FindObjectOfType<NarrativeManager>().urlList[0].Contains(".pdf"))
         {
-            webAddress = "http://as-dh.gonzaga.edu/omeka/files/original/" + FindObjectOfType<NarrativeManager>().urlList[count];
+            webAddress = "http://as-dh.gonzaga.edu/omeka/files/original/" + FindObjectOfType<NarrativeManager>().urlList[0];
+        }
+        FindObjectOfType<NarrativeManager>().urlList.RemoveAt(0);
+        FindObjectOfType<NarrativeManager>().typeList.RemoveAt(0);
+        /*
+        if (FindObjectOfType<NarrativeManager>().typeList[0] == "Video")
+        {
+            webAddress = "http://as-dh.gonzaga.edu/omeka/files/original/" + FindObjectOfType<NarrativeManager>().urlList[0];
             // StreamVideo.playVideo(dataReader.GetString(7));
         }
         else
         {
-            // theText.text = dataReader["Record_id"];
             try
             {
-                webAddress = "http://as-dh.gonzaga.edu/omeka/files/original/" + FindObjectOfType<NarrativeManager>().urlList[count];
-
+                webAddress = "http://as-dh.gonzaga.edu/omeka/files/original/" + FindObjectOfType<NarrativeManager>().urlList[0];
             }
             catch
             {
-
+                print("Picture at " + count + "does not have a picture associated with it or is a pdf");
             }
         }
+        */
 
         Texture2D tex;
         tex = new Texture2D(4, 4, TextureFormat.DXT1, false);
@@ -46,12 +55,8 @@ public class PictureFrameManager1 : MonoBehaviour
         www.LoadImageIntoTexture(tex);
         GetComponent<Renderer>().material.mainTexture = tex;
 
-        // print("Texture: x = " + tex.width + ", y = " + tex.height);
-        // print("Texture ratio is " + tex.width/tex.height);
 
-        // int aspectRatio = tex.width / tex.height;
-
-        // GetComponent<Transform>().localScale.Scale(new Vector3(0F, 1F, 0.05F));
+        // FindObjectOfType<NarrativeManager>().pictureCount++;
     }
 
     // Update is called once per frame
