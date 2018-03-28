@@ -4,10 +4,13 @@ using UnityEngine;
 using MySql.Data.MySqlClient;
 using System.Data;
 using System;
+using UnityEngine.UI;
 
-public class AddNewBillboards : MonoBehaviour {
+public class AddNewBillboards : MonoBehaviour
+{
 
-	public GameObject prefab;
+    
+    public GameObject prefab;
     public int zPosition = 19;
     public string nameOfTimeline;
     public int howClose;
@@ -18,7 +21,9 @@ public class AddNewBillboards : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
+        
         bool left = true;
         float xPosition;
         int numberOfObjects = 5;
@@ -32,7 +37,7 @@ public class AddNewBillboards : MonoBehaviour {
             connect.ConnectionString = MyConString;
             connect.Open();
             if (connect.State == ConnectionState.Open)
-            {}
+            { }
             string query = "SELECT COUNT(*) FROM " + nameOfTimeline;
             MySqlCommand cmd = new MySqlCommand(query, connect);
             //Create a data reader and Execute the command
@@ -78,21 +83,24 @@ public class AddNewBillboards : MonoBehaviour {
                 try
                 {
                     FindObjectOfType<NarrativeManager>().dateList.Add(newReader.GetString(2));
-                } catch
+                }
+                catch
                 {
                     FindObjectOfType<NarrativeManager>().dateList.Add("Null");
                 }
                 try
                 {
                     FindObjectOfType<NarrativeManager>().typeList.Add(newReader.GetString(5));
-                } catch
+                }
+                catch
                 {
                     FindObjectOfType<NarrativeManager>().typeList.Add("Null");
                 }
                 try
                 {
                     FindObjectOfType<NarrativeManager>().urlList.Add(newReader.GetString(7));
-                } catch
+                }
+                catch
                 {
                     FindObjectOfType<NarrativeManager>().urlList.Add("Null");
                 }
@@ -122,18 +130,18 @@ public class AddNewBillboards : MonoBehaviour {
             double date;
             if (double.TryParse(FindObjectOfType<NarrativeManager>().dateList[i], out date))
                 Console.WriteLine(date);
-                
+
 
             else
                 Console.WriteLine("String could not be parsed.");
-            if(date == 0)
+            if (date == 0)
             {
                 date = 1950;
             }
             int stag = 0;
-            for(int j = 0; j<i; j++)
+            for (int j = 0; j < i; j++)
             {
-                if(FindObjectOfType<NarrativeManager>().dateList[i] == FindObjectOfType<NarrativeManager>().dateList[j])
+                if (FindObjectOfType<NarrativeManager>().dateList[i] == FindObjectOfType<NarrativeManager>().dateList[j])
                 {
                     date = date + 0.6;
                     stag++;
@@ -158,8 +166,8 @@ public class AddNewBillboards : MonoBehaviour {
                     zOffset = 20;
                 }
             }
-            newBillboard.transform.position = new Vector3(newBillboard.transform.position.x, newBillboard.transform.position.y+7, newBillboard.transform.position.z + zOffset);
-            newBillboard.transform.Rotate(0,360,0);
+            newBillboard.transform.position = new Vector3(newBillboard.transform.position.x, newBillboard.transform.position.y + 7, newBillboard.transform.position.z + zOffset);
+            newBillboard.transform.Rotate(0, 360, 0);
             newBillboard.GetComponent<BillboardMonobehaviorFunctions>().boardNumber = billboardsList.Count;
             newBillboard.GetComponent<BillboardMonobehaviorFunctions>().table = nameOfTimeline;
 
@@ -169,8 +177,9 @@ public class AddNewBillboards : MonoBehaviour {
 
     }
 
-	// Update is called once per frame
-	void Update () {
-
-	}
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 }

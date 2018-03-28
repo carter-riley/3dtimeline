@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class buttonMovement : MonoBehaviour
 {
+    public Text yearText;
+    public float yearDisplay;
     public Button left;
     public Button right;
     public Button resetButton;
@@ -55,6 +57,9 @@ public class buttonMovement : MonoBehaviour
 
     void Start()
     {
+
+        yearDisplay = 0;
+        yearText.text = "Year:  " + yearDisplay.ToString();
         gonzagaPath = this.gameObject.GetComponent<addPathways>().planeGonzaga;
         philanthropyPath = this.gameObject.GetComponent<addPathways>().planePhilanthropy;
         comingOfAgePath = this.gameObject.GetComponent<addPathways>().planeComingOfAge;
@@ -124,6 +129,7 @@ public class buttonMovement : MonoBehaviour
                 }
             }
         }
+        updateTime();
     }
     public void moveBackwards()
     {
@@ -172,6 +178,7 @@ public class buttonMovement : MonoBehaviour
                 }
             }
         }
+        updateTime();
     }
 
     public void moveCameraForwardFast()
@@ -228,6 +235,7 @@ public class buttonMovement : MonoBehaviour
                     Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, middleOfComingOfAgePath);
                 }
             }
+            updateTime();
         }
     }
 
@@ -260,5 +268,13 @@ public class buttonMovement : MonoBehaviour
                 Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, 50); // 11 is a magic number which is the height the camera should be at// 20 is a magic number which is the center of the path
             }
         }
+    }
+    public void updateTime()
+    {
+        Vector3 pos = transform.position;
+        pos.x = Camera.main.transform.position.x;
+        yearDisplay = (pos.x / 100) + 1950;
+        yearText.text = yearDisplay.ToString();
+        print(yearText.text);
     }
 }
