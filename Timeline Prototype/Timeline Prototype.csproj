@@ -135,6 +135,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\addPathways.cs" />
     <Compile Include="Assets\Battlehub\Integration\IntegrationCommon.cs" />
     <Compile Include="Assets\Battlehub\Integration\MeshCombinerIntegration.cs" />
     <Compile Include="Assets\Battlehub\Integration\MeshDeformerIntegration.cs" />

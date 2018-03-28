@@ -33,7 +33,9 @@ public class BillboardMonobehaviorFunctions : MonoBehaviour {
 
         // DontDestroyOnLoad(gameObject);
 
+        DontDestroyOnLoad(this.gameObject);
         SceneManager.LoadScene("EventView");
+
     }
 
     public int getBoardNumber() {

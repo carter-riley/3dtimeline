@@ -8,9 +8,9 @@ public class buttonMovement : MonoBehaviour
     public Button left;
     public Button right;
     public Button resetButton;
-    public Text pathwayName1;
-    public Text pathwayName2;
-    public Text pathwayName3;
+    public Text philanthropyPathTitle;
+    public Text comingOfAgePathTitle;
+    public Text gonzagaPathTitle;
     public float speedH = 2.0f;
     public float speedV = 2.0f;
 
@@ -34,71 +34,49 @@ public class buttonMovement : MonoBehaviour
         //Debug.Log(pitch);
 
         transform.eulerAngles = new Vector3(pitch, yaw, 0.0f); */
+    //void Start()
+    //{
+    //    left.gameObject.SetActive(false);
+    //    right.gameObject.SetActive(false);
+    //    pathwayName1.gameObject.SetActive(false);
+    //    pathwayName2.gameObject.SetActive(false);
+    //    pathwayName3.gameObject.SetActive(false);
+    //}
+
+    //public GameObject referenceToManager;
+
+    GameObject gonzagaPath;
+    GameObject philanthropyPath;
+    GameObject comingOfAgePath;
+
+    int middleOfGonzagaPath;
+    int middleOfPhilanthropyPath;
+    int middleOfComingOfAgePath;
+
     void Start()
     {
-        left.gameObject.SetActive(false);
-        right.gameObject.SetActive(false);
-        pathwayName1.gameObject.SetActive(false);
-        pathwayName2.gameObject.SetActive(false);
-        pathwayName3.gameObject.SetActive(false);
+        gonzagaPath = this.gameObject.GetComponent<addPathways>().planeGonzaga;
+        philanthropyPath = this.gameObject.GetComponent<addPathways>().planePhilanthropy;
+        comingOfAgePath = this.gameObject.GetComponent<addPathways>().planeComingOfAge;
+
+        middleOfGonzagaPath = this.gameObject.GetComponent<JumpNarratives>().gonzagaZLoc;
+        middleOfPhilanthropyPath = this.gameObject.GetComponent<JumpNarratives>().philanthropyZLoc;
+        middleOfComingOfAgePath = this.gameObject.GetComponent<JumpNarratives>().comingOfAgeZLoc;
+        //int test = this.gameObject.GetComponent<addPathways>().xScaleGonzaga;
+        //print("HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        //print(test);
+        //print(gonzagaPath);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        float zcor = Camera.main.transform.position.z;
-        // For Philanthropy Path
-        if (zcor < 351 && zcor > 60)
-        {
-            //left.gameObject.SetActive(true);
-            //right.gameObject.SetActive(true);
-            pathwayName1.gameObject.SetActive(false);
-        }
-        if (zcor > -243 && zcor < 43)
-        {
-            //left.gameObject.SetActive(true);
-            //right.gameObject.SetActive(true);
-            pathwayName1.gameObject.SetActive(false);
-        }
-        if (zcor < 52 && zcor > 50)
-        {
-            //left.gameObject.SetActive(false);
-            //right.gameObject.SetActive(false);
-            pathwayName1.gameObject.SetActive(true);
-        }
-        // For Coming of Age Pathway
-        if (zcor > 346 && zcor < 357)
-        {
-            //left.gameObject.SetActive(false);
-            //right.gameObject.SetActive(false);
-            pathwayName2.gameObject.SetActive(true);
-        }
-        if (zcor > 357 && zcor < 390)
-        {
-            //left.gameObject.SetActive(true);
-            //right.gameObject.SetActive(true);
-            pathwayName2.gameObject.SetActive(false);
-        }
-        if (zcor < 346 && zcor > 60)
-        {
-            //left.gameObject.SetActive(true);
-            //right.gameObject.SetActive(true);
-            pathwayName2.gameObject.SetActive(false);
-        }
-        // For Gonzaga Pathway 
-        if (zcor < -243 && zcor > -255)
-        {
-            //left.gameObject.SetActive(false);
-            //right.gameObject.SetActive(false);
-            pathwayName3.gameObject.SetActive(true);
-        }
-        if (zcor < -255 && zcor > -700)
-        {
-            //left.gameObject.SetActive(true);
-            //right.gameObject.SetActive(true);
-            pathwayName3.gameObject.SetActive(false);
-        }
-    }
+    
+
+    //GameObject gonzagaPath = referenceToManager.GetComponent<addPathways>().gonzagaPath;
+
+    //GameObject gonzagaPath = super.GetComponent<addPathways>.gonzagaPath;
+    //GameObject GonzagaPath = this.GetComponent<addPathways>().GonzagaPath;
+    //GameObject PhilanthropyPath;
+    //GameObject ComingOfAgePath;
+
 
     public void moveCameraForward()
     {
@@ -117,13 +95,33 @@ public class buttonMovement : MonoBehaviour
         Ray downRay = new Ray(Camera.main.transform.position, Vector3.down);
         if (Physics.Raycast(downRay, out hit, 20))
         {
-            if (hit.transform.gameObject == pathGameObject1)
+            //print(hit.transform.gameObject);
+            //print(gonzagaPath);
+            if (hit.transform.gameObject == gonzagaPath)
             {
+                gonzagaPathTitle.gameObject.SetActive(true);
+                philanthropyPathTitle.gameObject.SetActive(false);
+                comingOfAgePathTitle.gameObject.SetActive(false);
 
+            } else if (hit.transform.gameObject == philanthropyPath) {
+                philanthropyPathTitle.gameObject.SetActive(true);
+                gonzagaPathTitle.gameObject.SetActive(false);
+                comingOfAgePathTitle.gameObject.SetActive(false);
+
+            } else if (hit.transform.gameObject == comingOfAgePath) {
+                comingOfAgePathTitle.gameObject.SetActive(true);
+                gonzagaPathTitle.gameObject.SetActive(false);
+                philanthropyPathTitle.gameObject.SetActive(false);
             }
             else
             {
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, Camera.main.transform.position.z); // 11 is a magic number which is the height the camera should be at// 20 is a magic number which is the center of the path
+                if (gonzagaPathTitle.IsActive()) {
+                    Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, middleOfGonzagaPath); // 11 is a magic number which is the height the camera should be at
+                } else if (philanthropyPathTitle.IsActive()) {
+                    Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, middleOfPhilanthropyPath);
+                } else if (comingOfAgePathTitle.IsActive()) {
+                    Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, middleOfComingOfAgePath);
+                }
             }
         }
     }
@@ -136,13 +134,42 @@ public class buttonMovement : MonoBehaviour
         Ray downRay = new Ray(Camera.main.transform.position, Vector3.down);
         if (Physics.Raycast(downRay, out hit, 20))
         {
-            if (hit.transform.gameObject == pathGameObject1)
+            print(hit.transform.gameObject);
+            print(gonzagaPath);
+            if (hit.transform.gameObject == gonzagaPath)
             {
+                gonzagaPathTitle.gameObject.SetActive(true);
+                philanthropyPathTitle.gameObject.SetActive(false);
+                comingOfAgePathTitle.gameObject.SetActive(false);
 
+            }
+            else if (hit.transform.gameObject == philanthropyPath)
+            {
+                philanthropyPathTitle.gameObject.SetActive(true);
+                gonzagaPathTitle.gameObject.SetActive(false);
+                comingOfAgePathTitle.gameObject.SetActive(false);
+
+            }
+            else if (hit.transform.gameObject == comingOfAgePath)
+            {
+                comingOfAgePathTitle.gameObject.SetActive(true);
+                gonzagaPathTitle.gameObject.SetActive(false);
+                philanthropyPathTitle.gameObject.SetActive(false);
             }
             else
             {
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, Camera.main.transform.position.z); // 11 is a magic number which is the height the camera should be at// 20 is a magic number which is the center of the path // z should be fixed to a certain point depending on which path the player is on
+                if (gonzagaPathTitle.IsActive())
+                {
+                    Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, middleOfGonzagaPath); // 11 is a magic number which is the height the camera should be at
+                }
+                else if (philanthropyPathTitle.IsActive())
+                {
+                    Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, middleOfPhilanthropyPath);
+                }
+                else if (comingOfAgePathTitle.IsActive())
+                {
+                    Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, middleOfComingOfAgePath);
+                }
             }
         }
     }
@@ -164,13 +191,42 @@ public class buttonMovement : MonoBehaviour
         Ray downRay = new Ray(Camera.main.transform.position, Vector3.down);
         if (Physics.Raycast(downRay, out hit, 20))
         {
-            if (hit.transform.gameObject == pathGameObject1)
+            print(hit.transform.gameObject);
+            print(gonzagaPath);
+            if (hit.transform.gameObject == gonzagaPath)
             {
+                gonzagaPathTitle.gameObject.SetActive(true);
+                philanthropyPathTitle.gameObject.SetActive(false);
+                comingOfAgePathTitle.gameObject.SetActive(false);
 
+            }
+            else if (hit.transform.gameObject == philanthropyPath)
+            {
+                philanthropyPathTitle.gameObject.SetActive(true);
+                gonzagaPathTitle.gameObject.SetActive(false);
+                comingOfAgePathTitle.gameObject.SetActive(false);
+
+            }
+            else if (hit.transform.gameObject == comingOfAgePath)
+            {
+                comingOfAgePathTitle.gameObject.SetActive(true);
+                gonzagaPathTitle.gameObject.SetActive(false);
+                philanthropyPathTitle.gameObject.SetActive(false);
             }
             else
             {
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, Camera.main.transform.position.z); // 11 is a magic number which is the height the camera should be at// 20 is a magic number which is the center of the path
+                if (gonzagaPathTitle.IsActive())
+                {
+                    Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, middleOfGonzagaPath); // 11 is a magic number which is the height the camera should be at
+                }
+                else if (philanthropyPathTitle.IsActive())
+                {
+                    Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, middleOfPhilanthropyPath);
+                }
+                else if (comingOfAgePathTitle.IsActive())
+                {
+                    Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, middleOfComingOfAgePath);
+                }
             }
         }
     }
