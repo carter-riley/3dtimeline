@@ -24,21 +24,22 @@ public class TextBoxManager : MonoBehaviour
 
         // print("Text box manager, current title is: " + FindObjectOfType<NarrativeManager>().titleList[0] + ", url is " + FindObjectOfType<NarrativeManager>().urlList[0]);
 
+        string currentDate = GetComponentInParent<BillboardMonobehaviorFunctions>().date;
+        string currentTitle = GetComponentInParent<BillboardMonobehaviorFunctions>().title;
 
         // int count = FindObjectOfType<NarrativeManager>().textCount;
 
-        if (FindObjectOfType<NarrativeManager>().dateList[0] == "Null" || FindObjectOfType<NarrativeManager>().titleList[0].Contains(theText.text = FindObjectOfType<NarrativeManager>().dateList[0])) {
-            theText.text = FindObjectOfType<NarrativeManager>().titleList[0];
+        if (currentDate == "Null" || currentTitle.Contains(currentDate)) {
+            theText.text = currentTitle;
         } else {
-            theText.text = FindObjectOfType<NarrativeManager>().dateList[0] + "\n" + FindObjectOfType<NarrativeManager>().titleList[0];
+            theText.text = currentDate + "\n" + currentTitle;
         }
+
+        // print(currentDate + " " + currentTitle);
 
         // GameObject parentObject = base.gameObject;
         // BillboardMonobehaviorFunctions monobehaviorFunctionsScript = this.GetComponentInParent<BillboardMonobehaviorFunctions>();
         // int newBoardNumber = monobehaviorFunctionsScript.boardNumber + 1;
-
-        FindObjectOfType<NarrativeManager>().titleList.RemoveAt(0);
-        FindObjectOfType<NarrativeManager>().dateList.RemoveAt(0);
 
 
         // FindObjectOfType<NarrativeManager>().textCount++;

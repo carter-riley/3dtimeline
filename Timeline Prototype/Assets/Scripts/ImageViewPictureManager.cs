@@ -13,7 +13,12 @@ public class ImageViewPictureManager : MonoBehaviour {
 
     // Use this for initialization
     IEnumerator Start () {
-        string URL = PlayerPrefs.GetString("URL");
+        string address = EventViewData.Address;
+
+        // string URL = "http://as-dh.gonzaga.edu/omeka/files/original/" + address;
+
+        string URL = "http://placecorgi.com/260";
+
 
         Texture2D tex;
         tex = new Texture2D(128, 128);

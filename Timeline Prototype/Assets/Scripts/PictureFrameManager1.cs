@@ -23,12 +23,19 @@ public class PictureFrameManager1 : MonoBehaviour
 
         // print(FindObjectOfType<NarrativeManager>().urlList[0]);
 
-        if (FindObjectOfType<NarrativeManager>().urlList[0] != "Null" || FindObjectOfType<NarrativeManager>().urlList[0].Contains(".pdf"))
-        {
-            webAddress = "http://as-dh.gonzaga.edu/omeka/files/original/" + FindObjectOfType<NarrativeManager>().urlList[0];
-        }
-        FindObjectOfType<NarrativeManager>().urlList.RemoveAt(0);
-        FindObjectOfType<NarrativeManager>().typeList.RemoveAt(0);
+        string address = GetComponentInParent<BillboardMonobehaviorFunctions>().artifactURL;
+        string type = GetComponentInParent<BillboardMonobehaviorFunctions>().artifactType;
+
+        // print(address);
+
+        //if (address != "Null" || address.Contains(".pdf"))
+        //{
+        webAddress = "http://as-dh.gonzaga.edu/omeka/files/original/" + address;
+        //}
+
+
+        // FindObjectOfType<NarrativeManager>().urlList.RemoveAt(0);
+        // FindObjectOfType<NarrativeManager>().typeList.RemoveAt(0);
         /*
         if (FindObjectOfType<NarrativeManager>().typeList[0] == "Video")
         {

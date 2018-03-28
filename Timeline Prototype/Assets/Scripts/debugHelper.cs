@@ -6,7 +6,7 @@ public class debugHelper : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		int billboardNumber = PlayerPrefs.GetInt ("billboardNumber");
+		// int billboardNumber = PlayerPrefs.GetInt ("billboardNumber");
 
 		// Debug.Log (billboardNumber);
 	}

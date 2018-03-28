@@ -197,6 +197,7 @@
     <Compile Include="Assets\Scripts\debugHelper.cs" />
     <Compile Include="Assets\Scripts\DescriptionManager.cs" />
     <Compile Include="Assets\Scripts\DescriptionMananger.cs" />
+    <Compile Include="Assets\Scripts\EventViewData.cs" />
     <Compile Include="Assets\Scripts\EventViewPictureManager.cs" />
     <Compile Include="Assets\Scripts\hideHintText.cs" />
     <Compile Include="Assets\Scripts\ImageViewPictureManager.cs" />

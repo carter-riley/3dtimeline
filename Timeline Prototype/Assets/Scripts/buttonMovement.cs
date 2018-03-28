@@ -134,8 +134,8 @@ public class buttonMovement : MonoBehaviour
         Ray downRay = new Ray(Camera.main.transform.position, Vector3.down);
         if (Physics.Raycast(downRay, out hit, 20))
         {
-            print(hit.transform.gameObject);
-            print(gonzagaPath);
+            //print(hit.transform.gameObject);
+            //print(gonzagaPath);
             if (hit.transform.gameObject == gonzagaPath)
             {
                 gonzagaPathTitle.gameObject.SetActive(true);
@@ -191,8 +191,8 @@ public class buttonMovement : MonoBehaviour
         Ray downRay = new Ray(Camera.main.transform.position, Vector3.down);
         if (Physics.Raycast(downRay, out hit, 20))
         {
-            print(hit.transform.gameObject);
-            print(gonzagaPath);
+            // print(hit.transform.gameObject);
+            // print(gonzagaPath);
             if (hit.transform.gameObject == gonzagaPath)
             {
                 gonzagaPathTitle.gameObject.SetActive(true);

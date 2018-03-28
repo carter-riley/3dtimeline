@@ -62,13 +62,13 @@ public class AddNewBillboards : MonoBehaviour {
 
                 // FindObjectOfType<NarrativeManager>().
 
-                try
-                {
-                    print(newReader.GetString(1) + " " + newReader.GetString(7));
-                } catch
-                {
-                    print(newReader.GetString(1) + " Null");
-                }
+                //try
+                //{
+                //    // print(newReader.GetString(1) + " " + newReader.GetString(7));
+                //} catch
+                //{
+                //    print(newReader.GetString(1) + " Null");
+                //}
 
 
                 FindObjectOfType<NarrativeManager>().titleList.Add(newReader.GetString(1));
@@ -105,7 +105,7 @@ public class AddNewBillboards : MonoBehaviour {
         {
             print("File: AddNewBillboards.cs. Exception: + " + ex);
         }
-        print("objects: " + numberOfObjects);
+        // print("objects: " + numberOfObjects);
         for (int i = FindObjectOfType<NarrativeManager>().currentNumber; i < numberOfObjects + FindObjectOfType<NarrativeManager>().currentNumber; i++)
         {
             if (left)
@@ -140,8 +140,8 @@ public class AddNewBillboards : MonoBehaviour {
                 }
             }
             float date1 = (float)date;
-            print(FindObjectOfType<NarrativeManager>().titleList[i]);
-            print(i + "," + date + "x: " + (date - 1950) * 100);
+            // print(FindObjectOfType<NarrativeManager>().titleList[i]);
+            // print(i + "," + date + "x: " + (date - 1950) * 100);
             Vector3 pos = new Vector3((date1 - 1950) * 100, 0, xPosition);
 
             GameObject newBillboard = Instantiate(prefab, pos, Quaternion.identity);
