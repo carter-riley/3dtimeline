@@ -233,6 +233,8 @@
     <Compile Include="Assets\Scripts\TransitionToImageView.cs" />
     <Compile Include="Assets\Scripts\transitionToTimeline.cs" />
     <Compile Include="Assets\Scripts\VideoStreamButton.cs" />
+    <Compile Include="Assets\StreamVideo2.cs" />
+    <Compile Include="Assets\VideoController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Battlehub\MeshCombiner\MeshCombiner Documentation.txt" />
