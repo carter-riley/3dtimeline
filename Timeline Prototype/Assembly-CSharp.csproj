@@ -149,6 +149,8 @@
      <Compile Include="Assets\Scripts\TransitionToImageView.cs" />
      <Compile Include="Assets\Scripts\transitionToTimeline.cs" />
      <Compile Include="Assets\Scripts\VideoStreamButton.cs" />
+     <Compile Include="Assets\StreamVideo2.cs" />
+     <Compile Include="Assets\VideoController.cs" />
      <None Include="Assets\Plugins\MySql.Data.xml" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Materials\ely_hills\ely_hills.shader" />
