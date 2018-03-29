@@ -17334,6 +17334,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 57482986}
+  philanthropyPathTitle: {fileID: 1126810275}
+  comingOfAgePathTitle: {fileID: 1291745041}
+  gonzagaPathTitle: {fileID: 1641398522}
 --- !u!114 &1044528118
 MonoBehaviour:
   m_ObjectHideFlags: 0

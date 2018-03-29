@@ -167,7 +167,7 @@ public class AddNewBillboards : MonoBehaviour
                 }
             }
             newBillboard.transform.position = new Vector3(newBillboard.transform.position.x, newBillboard.transform.position.y + 7, newBillboard.transform.position.z + zOffset);
-            newBillboard.transform.Rotate(0, 360, 0);
+            newBillboard.transform.Rotate(0, 180, 0);
             newBillboard.GetComponent<BillboardMonobehaviorFunctions>().boardNumber = billboardsList.Count;
             newBillboard.GetComponent<BillboardMonobehaviorFunctions>().table = nameOfTimeline;
 
