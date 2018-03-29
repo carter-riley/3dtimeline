@@ -14,7 +14,7 @@ public class CameraDirectionMovement : MonoBehaviour
     private float pitch = 0.0f;
 
     private bool isRotating; // Is the camera being rotated?
-    //private Vector3 mouseOrigin; // Position of cursor when mouse dragging starts
+    private Vector3 mouseOrigin; // Position of cursor when mouse dragging starts
     public float turnSpeed = 4.0f;      // Speed of camera turning when mouse moves in along an axis
     public float panSpeed = 4.0f;       // Speed of the camera when being panned
     public float zoomSpeed = 4.0f; // Speed of the camera going back and forth
@@ -36,16 +36,16 @@ public class CameraDirectionMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
-        yaw += speedH * Input.GetAxis("Mouse X");
-        if (!(pitch <= -35 && speedV * Input.GetAxis("Mouse Y") > 0 || pitch >= 20 && speedV * Input.GetAxis("Mouse Y") < 0))
-        {
-            pitch -= speedV * Input.GetAxis("Mouse Y");
-        }
+        
+        //yaw += speedH * Input.GetAxis("Mouse X");
+        //if (!(pitch <= -35 && speedV * Input.GetAxis("Mouse Y") > 0 || pitch >= 20 && speedV * Input.GetAxis("Mouse Y") < 0))
+        //{
+        //    pitch -= speedV * Input.GetAxis("Mouse Y");
+        //}
 
-        //Debug.Log(pitch);
+        ////Debug.Log(pitch);
 
-        transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);  */
+        //transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);  
 
         //if (Input.GetMouseButtonDown(1))
         //{
@@ -63,7 +63,8 @@ public class CameraDirectionMovement : MonoBehaviour
 
         //    bool inBottom = Camera.main.transform.eulerAngles.x <= 30 && Camera.main.transform.eulerAngles.x >= 0;
         //    bool inTop = Camera.main.transform.eulerAngles.x >= 315 && Camera.main.transform.eulerAngles.x <= 360;
-        //    if ((Camera.main.transform.eulerAngles.x > 325 && inTop || pos.y < 0 && inTop) || (Camera.main.transform.eulerAngles.x < 23 && inBottom || pos.y > 0 && inBottom)) { //top bound
+        //    if ((Camera.main.transform.eulerAngles.x > 325 && inTop || pos.y < 0 && inTop) || (Camera.main.transform.eulerAngles.x < 23 && inBottom || pos.y > 0 && inBottom))
+        //    { //top bound
 
         //        transform.RotateAround(transform.position, transform.right, -pos.y * turnSpeed);
         //        transform.RotateAround(transform.position, Vector3.up, pos.x * turnSpeed);
@@ -85,7 +86,7 @@ public class CameraDirectionMovement : MonoBehaviour
                 xAngle = xAngleTemp + (SecondPoint.x - FirstPoint.x) * 180 / Screen.width;
                 yAngle = yAngleTemp + (SecondPoint.y - FirstPoint.y) * -90 / Screen.height;
                 yAngle = Mathf.Clamp(yAngle, -20, 35);
-                xAngle = Mathf.Clamp(xAngle, -150, -30);
+                xAngle = Mathf.Clamp(xAngle, -90, 30);
                 this.transform.rotation = Quaternion.Euler(yAngle, xAngle, 0.0f);
             }
         }
