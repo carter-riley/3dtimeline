@@ -28,7 +28,7 @@ public class CameraDirectionMovement : MonoBehaviour
 
     void Start()
     {
-        xAngle = 0;
+        xAngle = -90;
         yAngle = 0;
         this.transform.rotation = Quaternion.Euler(yAngle, xAngle, 0);
     }
@@ -85,6 +85,7 @@ public class CameraDirectionMovement : MonoBehaviour
                 xAngle = xAngleTemp + (SecondPoint.x - FirstPoint.x) * 180 / Screen.width;
                 yAngle = yAngleTemp + (SecondPoint.y - FirstPoint.y) * -90 / Screen.height;
                 yAngle = Mathf.Clamp(yAngle, -20, 35);
+                xAngle = Mathf.Clamp(xAngle, -150, -30);
                 this.transform.rotation = Quaternion.Euler(yAngle, xAngle, 0.0f);
             }
         }
