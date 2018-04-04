@@ -2,20 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
-public class BillboardMonobehaviorFunctions : MonoBehaviour {
-
+public class BillboardMonobehaviorFunctions : MonoBehaviour
+{
+    bool enter = false;
+    public float initialTouch;
+    public static int guiDepth = 5;
     public string title;
     public string date;
     public string artifactURL;
     public string description;
     public string artifactType;
 
+    float clicked = 0;
+    float clicktime = 0;
+    float clickdelay = 0.5f;
 
     public int boardNumber;
     public string table;
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         // print("Table is: " + table + ", boardNumber is: " + boardNumber);
         title = FindObjectOfType<NarrativeManager>().titleList[0];
         date = FindObjectOfType<NarrativeManager>().dateList[0];
@@ -30,56 +38,104 @@ public class BillboardMonobehaviorFunctions : MonoBehaviour {
         FindObjectOfType<NarrativeManager>().urlList.RemoveAt(0);
         FindObjectOfType<NarrativeManager>().typeList.RemoveAt(0);
         FindObjectOfType<NarrativeManager>().descriptionList.RemoveAt(0);
-
-        // DontDestroyOnLoad(this.gameObject);
+    }
+    void OnGUI()
+    {
+        GUI.depth = guiDepth;
     }
 
     // Update is called once per frame
-    void Update () {
-		
-	}
+    void Update()
+    {
+
+    }
 
     private void OnMouseDown()
     {
+        enter = true;
+
+        clicked++;
+        if (clicked == 1) clicktime = Time.time;
+
+        if (clicked > 1 && Time.time - clicktime < clickdelay)
+        {
+            clicked = 0;
+            clicktime = 0;
+            Debug.Log("Double CLick: ");
+            try
+            {
+                EventViewData.Title = title;
+                EventViewData.Date = date;
+                EventViewData.Address = artifactURL;
+                EventViewData.Description = description;
+                EventViewData.Type = artifactType;
+
+
+                // PlayerPrefs.SetInt("boardNumber", boardNumber);
+                // PlayerPrefs.SetString("table", table);
+
+                PlayerPrefs.SetFloat("xPos", Camera.main.transform.position.x);
+                PlayerPrefs.SetFloat("zPos", Camera.main.transform.position.z);
+
+                // DontDestroyOnLoad(gameObject);
+
+                // DontDestroyOnLoad(this.gameObject);
+                SceneManager.LoadScene("EventView");
+            }
+            catch (System.Exception e)
+            {
+                print("Something went wrong for some reason, maybe this will help: " + e);
+            }
+
+        }
+        else if (clicked > 2 || Time.time - clicktime > 1) clicked = 0;
+
+
+
         // print("called????");
         //PlayerPrefs.SetInt("billboardNumber", this.gameObject.GetComponent<BillboardMonobehaviorFunctions>().boardNumber);
 
         // Application.LoadLevel("EventView");
+        //if (enter)
+        //{
+        //    if (!EventSystem.current.IsPointerOverGameObject())
+        //    {
+
+        //        try
+        //        {
+        //            EventViewData.Title = title;
+        //            EventViewData.Date = date;
+        //            EventViewData.Address = artifactURL;
+        //            EventViewData.Description = description;
+        //            EventViewData.Type = artifactType;
 
 
-        try
-        {
-            EventViewData.Title = title;
-            EventViewData.Date = date;
-            EventViewData.Address = artifactURL;
-            EventViewData.Description = description;
-            EventViewData.Type = artifactType;
+        //            // PlayerPrefs.SetInt("boardNumber", boardNumber);
+        //            // PlayerPrefs.SetString("table", table);
 
+        //            PlayerPrefs.SetFloat("xPos", Camera.main.transform.position.x);
+        //            PlayerPrefs.SetFloat("zPos", Camera.main.transform.position.z);
 
-            // PlayerPrefs.SetInt("boardNumber", boardNumber);
-            // PlayerPrefs.SetString("table", table);
+        //            // DontDestroyOnLoad(gameObject);
 
-            PlayerPrefs.SetFloat("xPos", Camera.main.transform.position.x);
-            PlayerPrefs.SetFloat("zPos", Camera.main.transform.position.z);
-
-            // DontDestroyOnLoad(gameObject);
-
-            // DontDestroyOnLoad(this.gameObject);
-            SceneManager.LoadScene("EventView");
-        }
-        catch (System.Exception e)
-        {
-            print("Something went wrong for some reason, maybe this will help: " + e);
-        }
-
+        //            // DontDestroyOnLoad(this.gameObject);
+        //            SceneManager.LoadScene("EventView");
+        //        }
+        //        catch (System.Exception e)
+        //        {
+        //            print("Something went wrong for some reason, maybe this will help: " + e);
+        //        }
+        //    }
+        //}
 
     }
 
-    public int getBoardNumber() {
+    public int getBoardNumber()
+    {
         return boardNumber;
     }
 
-    public string getTable ()
+    public string getTable()
     {
         return table;
     }
