@@ -61,7 +61,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1920
+    width: 1904
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -208,8 +208,8 @@ MonoBehaviour:
   - {fileID: 14}
   - {fileID: 12}
   - {fileID: 15}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -308,7 +308,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoom: 0
     m_UniformScale: 1
     m_UpDirection: 1
@@ -420,14 +420,14 @@ MonoBehaviour:
     height: 522
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 2151.83376562061
+  lastFramingTime: 2978.7596372189078
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 6986.878, y: -9.809059, z: -62.964256}
+    m_Target: {x: 534.5, y: 212.11746, z: 0}
     speed: 2
-    m_Value: {x: 6986.878, y: -9.809059, z: -62.964256}
+    m_Value: {x: 534.5, y: 212.11746, z: 0}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -451,13 +451,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.032416355, y: 0.7203827, z: -0.033746228, w: 0.69199646}
+    m_Target: {x: 0, y: 0, z: 0, w: 1}
     speed: 2
-    m_Value: {x: 0.032416355, y: 0.7203827, z: -0.033746228, w: 0.69199646}
+    m_Value: {x: 0, y: -0, z: 0, w: -0.99999994}
   m_Size:
-    m_Target: 1797.3606
+    m_Target: 939.63306
     speed: 2
-    m_Value: 1797.3606
+    m_Value: 939.63306
   m_Ortho:
     m_Target: 0
     speed: 2

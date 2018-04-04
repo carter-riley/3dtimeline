@@ -44,6 +44,29 @@ public class addPathways : MonoBehaviour {
     public GameObject planePhilanthropy;
     public GameObject planeComingOfAge;
 
+    public int xScaleFlowers;
+    public int yScaleFlowers;
+    public int zScaleFlowers;
+
+    public int xStartFlowers;
+    public float yStartFlowers;
+
+    public int zStartGonzagaLeftFlowers;
+    public int zStartGonzagaRightFlowers;
+    public int zStartPhilanthropyLeftFlowers;
+    public int zStartPhilanthropyRightFlowers;
+    public int zStartComingOfAgeLeftFlowers;
+    public int zStartComingOfAgeRightFlowers;
+    
+    public Material flowerMaterial;
+
+    public GameObject gonzagaLeftFlowers;
+    public GameObject gonzagaRightFlowers;
+    public GameObject philanthropyLeftFlowers;
+    public GameObject philanthropyRightFlowers;
+    public GameObject comingOfAgeLeftFlowers;
+    public GameObject comingOfAgeRightFlowers;
+
     // Use this for initialization
     void Start () {
         Vector3 gonzagaScale = new Vector3(xScaleGonzaga, yScaleGonzaga, zScaleGonzaga);
@@ -65,6 +88,35 @@ public class addPathways : MonoBehaviour {
         planeComingOfAge.GetComponent<Renderer>().material = comingOfAgeMaterial;
 
         //TODO: CREATE AND CALL FUNCTION TO ADD ROW OF FLOWERS NEXT TO SIDES OF PATHS
+        Vector3 flowerScale = new Vector3(xScaleFlowers, yScaleFlowers, zScaleFlowers);
+        gonzagaLeftFlowers = GameObject.CreatePrimitive(PrimitiveType.Plane);
+        gonzagaRightFlowers = GameObject.CreatePrimitive(PrimitiveType.Plane);
+        philanthropyLeftFlowers = GameObject.CreatePrimitive(PrimitiveType.Plane);
+        philanthropyRightFlowers = GameObject.CreatePrimitive(PrimitiveType.Plane);
+        comingOfAgeLeftFlowers = GameObject.CreatePrimitive(PrimitiveType.Plane);
+        comingOfAgeRightFlowers = GameObject.CreatePrimitive(PrimitiveType.Plane);
+
+        gonzagaLeftFlowers.transform.localScale = flowerScale;
+        gonzagaRightFlowers.transform.localScale = flowerScale;
+        philanthropyLeftFlowers.transform.localScale = flowerScale;
+        philanthropyRightFlowers.transform.localScale = flowerScale;
+        comingOfAgeLeftFlowers.transform.localScale = flowerScale;
+        comingOfAgeRightFlowers.transform.localScale = flowerScale;
+
+        gonzagaLeftFlowers.transform.position = new Vector3(xStartFlowers, yStartFlowers, zStartGonzagaLeftFlowers);
+        gonzagaRightFlowers.transform.position = new Vector3(xStartFlowers, yStartFlowers, zStartGonzagaRightFlowers);
+        philanthropyLeftFlowers.transform.position = new Vector3(xStartFlowers, yStartFlowers, zStartPhilanthropyLeftFlowers);
+        philanthropyRightFlowers.transform.position = new Vector3(xStartFlowers, yStartFlowers, zStartPhilanthropyRightFlowers);
+        comingOfAgeLeftFlowers.transform.position = new Vector3(xStartFlowers, yStartFlowers, zStartComingOfAgeLeftFlowers);
+        comingOfAgeRightFlowers.transform.position = new Vector3(xStartFlowers, yStartFlowers, zStartComingOfAgeRightFlowers);
+
+        gonzagaLeftFlowers.GetComponent<Renderer>().material = flowerMaterial;
+        gonzagaRightFlowers.GetComponent<Renderer>().material = flowerMaterial;
+        philanthropyLeftFlowers.GetComponent<Renderer>().material = flowerMaterial;
+        philanthropyRightFlowers.GetComponent<Renderer>().material = flowerMaterial;
+        comingOfAgeLeftFlowers.GetComponent<Renderer>().material = flowerMaterial;
+        comingOfAgeRightFlowers.GetComponent<Renderer>().material = flowerMaterial;
+
     }
 	
 	// Update is called once per frame
