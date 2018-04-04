@@ -30,6 +30,8 @@ public class BillboardMonobehaviorFunctions : MonoBehaviour {
         FindObjectOfType<NarrativeManager>().urlList.RemoveAt(0);
         FindObjectOfType<NarrativeManager>().typeList.RemoveAt(0);
         FindObjectOfType<NarrativeManager>().descriptionList.RemoveAt(0);
+
+        // DontDestroyOnLoad(this.gameObject);
     }
 
     // Update is called once per frame
