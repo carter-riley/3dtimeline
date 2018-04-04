@@ -239,6 +239,64 @@ public class buttonMovement : MonoBehaviour
         }
     }
 
+    public void moveCameraBackwardFast()
+    {
+        /*
+        Camera.main.transform.position = new Vector3(
+
+        0, Mathf.Clamp(Camera.main.transform.position.y, 0, 10), 20);
+        */
+
+        //Camera.main.transform.Translate(new Vector3(0, 0, 100));
+        Camera.main.transform.position += Camera.main.transform.forward * Time.deltaTime * -50000; //change the 500 to a public variable named movement speed
+        Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, Camera.main.transform.position.z);
+        //This code moves the player straight forward -- keep 4 ltr--- Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 100, Camera.main.transform.position.y, Camera.main.transform.position.z);
+
+        RaycastHit hit;
+        Ray downRay = new Ray(Camera.main.transform.position, Vector3.down);
+        if (Physics.Raycast(downRay, out hit, 20))
+        {
+            // print(hit.transform.gameObject);
+            // print(gonzagaPath);
+            if (hit.transform.gameObject == gonzagaPath)
+            {
+                gonzagaPathTitle.gameObject.SetActive(true);
+                philanthropyPathTitle.gameObject.SetActive(false);
+                comingOfAgePathTitle.gameObject.SetActive(false);
+
+            }
+            else if (hit.transform.gameObject == philanthropyPath)
+            {
+                philanthropyPathTitle.gameObject.SetActive(true);
+                gonzagaPathTitle.gameObject.SetActive(false);
+                comingOfAgePathTitle.gameObject.SetActive(false);
+
+            }
+            else if (hit.transform.gameObject == comingOfAgePath)
+            {
+                comingOfAgePathTitle.gameObject.SetActive(true);
+                gonzagaPathTitle.gameObject.SetActive(false);
+                philanthropyPathTitle.gameObject.SetActive(false);
+            }
+            else
+            {
+                if (gonzagaPathTitle.IsActive())
+                {
+                    Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, middleOfGonzagaPath); // 11 is a magic number which is the height the camera should be at
+                }
+                else if (philanthropyPathTitle.IsActive())
+                {
+                    Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, middleOfPhilanthropyPath);
+                }
+                else if (comingOfAgePathTitle.IsActive())
+                {
+                    Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, middleOfComingOfAgePath);
+                }
+            }
+            updateTime();
+        }
+    }
+
 
     public void moveLeft()
     {
@@ -273,7 +331,7 @@ public class buttonMovement : MonoBehaviour
     {
         Vector3 pos = transform.position;
         pos.x = Camera.main.transform.position.x;
-        yearDisplay = (pos.x / 100) + 1950;
+        yearDisplay = Mathf.Round((pos.x / 100) + 1950);
         yearText.text = yearDisplay.ToString();
         print(yearText.text);
     }
