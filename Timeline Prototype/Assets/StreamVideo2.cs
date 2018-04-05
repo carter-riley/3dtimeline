@@ -29,6 +29,17 @@ public class StreamVideo2 : MonoBehaviour
 
     private bool isPaused = false;
     private bool firstRun = true;
+    private bool isVideo;
+
+
+    /*void Start()
+    {
+
+        if (string video = "http://as-dh.gonzaga.edu/omeka/files/original/" + EventViewData.Address + ".mp4")
+                {
+                image.RawImage = video; //Video component is enabled
+                }
+    }*/
 
     IEnumerator playVideo()
     {

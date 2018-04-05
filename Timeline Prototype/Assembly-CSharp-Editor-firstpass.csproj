@@ -107,6 +107,7 @@
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
      <None Include="Assets\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
      <None Include="Assets\Resources\example.txt" />
+     <None Include="Assets\Ornamental Flower Set\Shaders\Transparent-BumpSpecNoCull.shader" />
      <None Include="Assets\Plugins\MySQL.Data.EntityFrameworkCore.Design.xml" />
      <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
      <None Include="Assets\Battlehub\RTHandles\Shaders\Resources\VertexColor.shader" />

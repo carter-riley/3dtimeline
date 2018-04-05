@@ -93,6 +93,8 @@
      <Compile Include="Assets\Battlehub\Utils\EditorStopwatch.cs" />
      <Compile Include="Assets\Battlehub\Utils\Run.cs" />
      <Compile Include="Assets\Clock\Scripts\Clock.cs" />
+     <Compile Include="Assets\initializeVariables.cs" />
+     <Compile Include="Assets\PlayerPrefReset.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
@@ -149,6 +151,7 @@
      <Compile Include="Assets\Scripts\TransitionToImageView.cs" />
      <Compile Include="Assets\Scripts\transitionToTimeline.cs" />
      <Compile Include="Assets\Scripts\VideoStreamButton.cs" />
+     <Compile Include="Assets\stopRotating.cs" />
      <Compile Include="Assets\StreamVideo2.cs" />
      <Compile Include="Assets\VideoController.cs" />
      <None Include="Assets\Plugins\MySql.Data.xml" />
@@ -201,6 +204,7 @@
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
      <None Include="Assets\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
      <None Include="Assets\Resources\example.txt" />
+     <None Include="Assets\Ornamental Flower Set\Shaders\Transparent-BumpSpecNoCull.shader" />
      <None Include="Assets\Plugins\MySQL.Data.EntityFrameworkCore.Design.xml" />
      <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
      <None Include="Assets\Battlehub\RTHandles\Shaders\Resources\VertexColor.shader" />
