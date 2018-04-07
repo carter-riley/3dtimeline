@@ -5,6 +5,8 @@ using UnityEngine;
 public class stopRotating : MonoBehaviour {
 
     public GameObject target;
+    public int CameraYPos;
+    public int CameraZPos;
 
 	// Use this for initialization
 	void Start () {
@@ -15,7 +17,7 @@ public class stopRotating : MonoBehaviour {
 	void Update () {
         float targetZ = target.transform.position.z;
         float targetX = target.transform.position.x;
-        Vector3 newLocation = new Vector3(targetX, transform.position.y, targetZ);
+        Vector3 newLocation = new Vector3(targetX, CameraYPos, CameraZPos);
         transform.position = newLocation;
 	}
 }

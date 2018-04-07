@@ -15,6 +15,10 @@ public class setCameraPosition : MonoBehaviour {
     public Text comingOfAgePathTitle;
     public Text gonzagaPathTitle;
 
+    public GameObject gonzagaBlueCircle;
+    public GameObject comingOfAgeCircle;
+    public GameObject philanthropyCircle;
+
     void Start () {
 
         
@@ -35,12 +39,24 @@ public class setCameraPosition : MonoBehaviour {
         if (cameraZPos == middleOfGonzagaPath || cameraZPos + 1 == middleOfGonzagaPath || cameraZPos - 1 == middleOfGonzagaPath)
         {
             gonzagaPathTitle.gameObject.SetActive(true);
+
+            gonzagaBlueCircle.gameObject.SetActive(true);
+            comingOfAgeCircle.gameObject.SetActive(false);
+            philanthropyCircle.gameObject.SetActive(false);
         }
         else if (cameraZPos == middleOfPhilanthropyPath || cameraZPos + 1 == middleOfPhilanthropyPath || cameraZPos - 1 == middleOfPhilanthropyPath) {
             philanthropyPathTitle.gameObject.SetActive(true);
+
+            gonzagaBlueCircle.gameObject.SetActive(false);
+            comingOfAgeCircle.gameObject.SetActive(false);
+            philanthropyCircle.gameObject.SetActive(true);
         } else if(cameraZPos == middleOfComingOfAgePath || cameraZPos + 1 == middleOfComingOfAgePath || cameraZPos - 1 == middleOfComingOfAgePath)
         {
             comingOfAgePathTitle.gameObject.SetActive(true);
+
+            gonzagaBlueCircle.gameObject.SetActive(false);
+            comingOfAgeCircle.gameObject.SetActive(true);
+            philanthropyCircle.gameObject.SetActive(false);
         }
     }
 	

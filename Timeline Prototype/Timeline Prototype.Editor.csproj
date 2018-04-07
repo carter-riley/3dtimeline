@@ -211,6 +211,7 @@
     <None Include="Assets\Battlehub\SplineEditor\Shaders\Resources\SSBillboard.shader" />
     <None Include="Assets\Battlehub\SplineEditor\Shaders\Resources\Spline.shader" />
     <None Include="Assets\Materials\ely_hills\ely_hills.shader" />
+    <None Include="Assets\Ornamental Flower Set\Shaders\Transparent-BumpSpecNoCull.shader" />
     <None Include="Assets\Plugins\MySQL.Data.EntityFrameworkCore.Design.xml" />
     <None Include="Assets\Plugins\MySQL.Data.EntityFrameworkCore.xml" />
     <None Include="Assets\Plugins\MySql.Data.Entity.EF6.xml" />

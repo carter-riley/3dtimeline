@@ -1,0 +1,58 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class addThreeDimensionalPlants : MonoBehaviour {
+
+    public int xLengthFlowers;
+
+    public int xStartFlowers;
+    public float yStartFlowers;
+
+    public int zStartGonzagaLeftFlowers;
+    public int zStartGonzagaRightFlowers;
+    public int zStartPhilanthropyLeftFlowers;
+    public int zStartPhilanthropyRightFlowers;
+    public int zStartComingOfAgeLeftFlowers;
+    public int zStartComingOfAgeRightFlowers;
+
+    public GameObject flowerPot;
+    // Use this for initialization
+    void Start() {
+
+        for (int i = 0; i < xLengthFlowers; i += 20) {
+            Vector3 gonzagaLeftPos = new Vector3(xStartFlowers + i, yStartFlowers, zStartGonzagaLeftFlowers);
+            GameObject newGonzagaLeftFlower = Instantiate(flowerPot, gonzagaLeftPos, Quaternion.identity);
+
+            Vector3 gonzagaRightPos = new Vector3(xStartFlowers + i, yStartFlowers, zStartGonzagaRightFlowers);
+            GameObject newGonzagaRightFlower = Instantiate(flowerPot, gonzagaRightPos, Quaternion.identity);
+
+            Vector3 philanthropyLeftPos = new Vector3(xStartFlowers + i, yStartFlowers, zStartPhilanthropyLeftFlowers);
+            GameObject newPhilanthropyLeftFlower = Instantiate(flowerPot, philanthropyLeftPos, Quaternion.identity);
+
+            Vector3 philanthropyRightPos = new Vector3(xStartFlowers + i, yStartFlowers, zStartPhilanthropyRightFlowers);
+            GameObject newPhilanthropyRightFlower = Instantiate(flowerPot, philanthropyRightPos, Quaternion.identity);
+
+            Vector3 comingOfAgeLeftPos = new Vector3(xStartFlowers + i, yStartFlowers, zStartComingOfAgeLeftFlowers);
+            GameObject newComingOfAgeLeftFlower = Instantiate(flowerPot, comingOfAgeLeftPos, Quaternion.identity);
+
+            Vector3 comingOfAgeRightPos = new Vector3(xStartFlowers + i, yStartFlowers, zStartComingOfAgeRightFlowers);
+            GameObject newComingOfAgeRightFlower = Instantiate(flowerPot, comingOfAgeRightPos, Quaternion.identity);
+
+
+            Vector3 flowerScale = new Vector3(15, 15, 15);
+
+            newGonzagaLeftFlower.transform.localScale = flowerScale;
+            newGonzagaRightFlower.transform.localScale = flowerScale;
+            newPhilanthropyLeftFlower.transform.localScale = flowerScale;
+            newPhilanthropyRightFlower.transform.localScale = flowerScale;
+            newComingOfAgeLeftFlower.transform.localScale = flowerScale;
+            newComingOfAgeRightFlower.transform.localScale = flowerScale;
+        }
+    }
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
+}

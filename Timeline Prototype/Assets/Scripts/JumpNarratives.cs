@@ -13,12 +13,21 @@ public class JumpNarratives : MonoBehaviour {
     public Text comingOfAgePathTitle;
     public Text gonzagaPathTitle;
 
+    public GameObject gonzagaBlueCircle;
+    public GameObject comingOfAgeCircle;
+    public GameObject philanthropyCircle;
+
+
     public void JumpToGonzaga()
     {
         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, gonzagaZLoc);
         gonzagaPathTitle.gameObject.SetActive(true);
         philanthropyPathTitle.gameObject.SetActive(false);
         comingOfAgePathTitle.gameObject.SetActive(false);
+
+        gonzagaBlueCircle.gameObject.SetActive(true);
+        comingOfAgeCircle.gameObject.SetActive(false);
+        philanthropyCircle.gameObject.SetActive(false);
     }
 
     public void JumpToPhilanthropy()
@@ -27,6 +36,10 @@ public class JumpNarratives : MonoBehaviour {
         philanthropyPathTitle.gameObject.SetActive(true);
         gonzagaPathTitle.gameObject.SetActive(false);
         comingOfAgePathTitle.gameObject.SetActive(false);
+
+        gonzagaBlueCircle.gameObject.SetActive(false);
+        comingOfAgeCircle.gameObject.SetActive(false);
+        philanthropyCircle.gameObject.SetActive(true);
     }
 
     public void JumpToComingOfAge() {
@@ -34,6 +47,10 @@ public class JumpNarratives : MonoBehaviour {
         comingOfAgePathTitle.gameObject.SetActive(true);
         gonzagaPathTitle.gameObject.SetActive(false);
         philanthropyPathTitle.gameObject.SetActive(false);
+
+        gonzagaBlueCircle.gameObject.SetActive(false);
+        comingOfAgeCircle.gameObject.SetActive(true);
+        philanthropyCircle.gameObject.SetActive(false);
     }
 
     
