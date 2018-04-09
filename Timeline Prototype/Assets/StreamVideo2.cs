@@ -32,14 +32,21 @@ public class StreamVideo2 : MonoBehaviour
     private bool isVideo;
 
 
-    /*void Start()
+    void Start()
     {
 
-        if (string video = "http://as-dh.gonzaga.edu/omeka/files/original/" + EventViewData.Address + ".mp4")
-                {
-                image.RawImage = video; //Video component is enabled
-                }
-    }*/
+        print("Address contains MP4: " + EventViewData.Address + " " + EventViewData.Address.Contains(".mp4"));
+
+        if (EventViewData.Address.Contains(".mp4"))
+        {
+
+            //image.RawImage = video; //Video component is enabled
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
 
     IEnumerator playVideo()
     {
@@ -62,7 +69,7 @@ public class StreamVideo2 : MonoBehaviour
 
         // Vide clip from Url
         videoPlayer.source = VideoSource.Url;
-        videoPlayer.url = "http://as-dh.gonzaga.edu/omeka/files/original/e6647e31afaaa530789fa209e03f865b.mp4";
+        videoPlayer.url = "http://as-dh.gonzaga.edu/omeka/files/original/" + EventViewData.Address;
 
         //Set Audio Output to AudioSource
         videoPlayer.audioOutputMode = VideoAudioOutputMode.AudioSource;
