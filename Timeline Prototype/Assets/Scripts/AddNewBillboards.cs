@@ -185,27 +185,7 @@ public class AddNewBillboards : MonoBehaviour
 
             // print("something;");
 
-            foreach(string elementOne in FindObjectOfType<NarrativeManager>().titleList)
-            {
-                // bool intersection = false;
-                int count = 0;
-
-                foreach(string elementTwo in FindObjectOfType<NarrativeManager>().titleList)
-                {
-                    if (elementOne == elementTwo)
-                    {
-                        // print("True");
-                        count++;
-                    }
-                }
-                if (count > 1)
-                {
-                    FindObjectOfType<NarrativeManager>().intersectionList.Add(true);
-                } else
-                {
-                    FindObjectOfType<NarrativeManager>().intersectionList.Add(false);
-                }
-            }
+           
 
         }
 

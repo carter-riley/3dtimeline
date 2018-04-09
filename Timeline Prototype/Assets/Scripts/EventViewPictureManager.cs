@@ -39,16 +39,6 @@ public class EventViewPictureManager : MonoBehaviour
         www.LoadImageIntoTexture(tex);
         GetComponent<Image>().material.mainTexture = tex;
 
-        webAddress = "http://placecorgi.com/260";
-
-
-        Texture2D tex2;
-        tex2 = new Texture2D(128, 128);
-        WWW www2 = new WWW(webAddress);
-        yield return www2;
-        www2.LoadImageIntoTexture(tex2);
-        GetComponent<Image>().material.mainTexture = tex2;
-
         // print("Texture: x = " + tex.width + ", y = " + tex.height);
         // print("Texture ratio is " + tex.width/tex.height);
 

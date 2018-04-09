@@ -15,6 +15,7 @@ public class BillboardMonobehaviorFunctions : MonoBehaviour
     public string artifactURL;
     public string description;
     public string artifactType;
+    public bool isIntersection;
 
     float clicked = 0;
     float clicktime = 0;
@@ -31,6 +32,7 @@ public class BillboardMonobehaviorFunctions : MonoBehaviour
         artifactURL = FindObjectOfType<NarrativeManager>().urlList[0];
         description = FindObjectOfType<NarrativeManager>().descriptionList[0];
         artifactType = FindObjectOfType<NarrativeManager>().typeList[0];
+        isIntersection = FindObjectOfType<NarrativeManager>().intersectionList[0];
 
         // print(date + " " + title);
 
@@ -39,6 +41,7 @@ public class BillboardMonobehaviorFunctions : MonoBehaviour
         FindObjectOfType<NarrativeManager>().urlList.RemoveAt(0);
         FindObjectOfType<NarrativeManager>().typeList.RemoveAt(0);
         FindObjectOfType<NarrativeManager>().descriptionList.RemoveAt(0);
+        FindObjectOfType<NarrativeManager>().intersectionList.RemoveAt(0);
     }
     void OnGUI()
     {
@@ -53,52 +56,52 @@ public class BillboardMonobehaviorFunctions : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (!EventSystem.current.IsPointerOverGameObject())
-        {
+        //if (!EventSystem.current.IsPointerOverGameObject())
+        //{
             enter = true;
 
-            //clicked++;
-            //if (clicked == 1) clicktime = Time.time;
+        clicked++;
+        if (clicked == 1) clicktime = Time.time;
 
-            //if (clicked > 1 && Time.time - clicktime < clickdelay)
-            //{
-            //    clicked = 0;
-            //    clicktime = 0;
-            //    Debug.Log("Double CLick: ");
-            //    try
-            //    {
-            //        EventViewData.Title = title;
-            //        EventViewData.Date = date;
-            //        EventViewData.Address = artifactURL;
-            //        EventViewData.Description = description;
-            //        EventViewData.Type = artifactType;
-
-
-            //        // PlayerPrefs.SetInt("boardNumber", boardNumber);
-            //        // PlayerPrefs.SetString("table", table);
-
-            //        PlayerPrefs.SetFloat("xPos", Camera.main.transform.position.x);
-            //        PlayerPrefs.SetFloat("zPos", Camera.main.transform.position.z);
-
-            //        // DontDestroyOnLoad(gameObject);
-
-            //        // DontDestroyOnLoad(this.gameObject);
-            //        SceneManager.LoadScene("EventView");
-            //    }
-            //    catch (System.Exception e)
-            //    {
-            //        print("Something went wrong for some reason, maybe this will help: " + e);
-            //    }
-
-            //}
-            //else if (clicked > 2 || Time.time - clicktime > 1) clicked = 0;
+        if (clicked > 1 && Time.time - clicktime < clickdelay)
+        {
+            clicked = 0;
+            clicktime = 0;
+            Debug.Log("double click: ");
+            try
+            {
+                EventViewData.Title = title;
+                EventViewData.Date = date;
+                EventViewData.Address = artifactURL;
+                EventViewData.Description = description;
+                EventViewData.Type = artifactType;
 
 
+                // playerprefs.setint("boardnumber", boardnumber);
+                // playerprefs.setstring("table", table);
 
-            // print("called????");
-            PlayerPrefs.SetInt("billboardnumber", this.gameObject.GetComponent<BillboardMonobehaviorFunctions>().boardNumber);
+                PlayerPrefs.SetFloat("xpos", Camera.main.transform.position.x);
+                PlayerPrefs.SetFloat("zpos", Camera.main.transform.position.z);
 
-            Application.LoadLevel("eventview");
+                // dontdestroyonload(gameobject);
+
+                // dontdestroyonload(this.gameobject);
+                SceneManager.LoadScene("eventview");
+            }
+            catch (System.Exception e)
+            {
+                print("something went wrong for some reason, maybe this will help: " + e);
+            }
+
+        }
+        else if (clicked > 2 || Time.time - clicktime > 1) clicked = 0;
+
+
+
+        // print("called????");
+        PlayerPrefs.SetInt("billboardnumber", this.gameObject.GetComponent<BillboardMonobehaviorFunctions>().boardNumber);
+
+     /*       Application.LoadLevel("eventview");
             if (enter)
             {
                 if (!EventSystem.current.IsPointerOverGameObject())
@@ -129,8 +132,8 @@ public class BillboardMonobehaviorFunctions : MonoBehaviour
                         print("something went wrong for some reason, maybe this will help: " + e);
                     }
                 }
-            }
-        }
+            }*/
+       // }
     }
 
     public int getBoardNumber()
