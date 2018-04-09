@@ -21,16 +21,15 @@ public class EventViewPictureManager : MonoBehaviour
         // print(webAddress);
 
 
-        //if(address == "Null")
-        //{
-        //    webAddress = "http://placecorgi.com/260";
-        //} else
-        //{
-        //    webAddress = "http://as-dh.gonzaga.edu/omeka/files/original/" + address;
+        if(address == "Null")
+        {
+            webAddress = "http://placecorgi.com/260";
+        } else
+        {
+            webAddress = "http://as-dh.gonzaga.edu/omeka/files/original/" + address;
 
-        //}
+        }
 
-        webAddress = "http://placecorgi.com/260";
 
 
         Texture2D tex;
