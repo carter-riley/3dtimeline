@@ -190,7 +190,7 @@ public class buttonMovement : MonoBehaviour
         */
 
         //Camera.main.transform.Translate(new Vector3(0, 0, 100));
-        Camera.main.transform.position += Camera.main.transform.forward * Time.deltaTime * 50000; //change the 500 to a public variable named movement speed
+        Camera.main.transform.position += Camera.main.transform.forward * Time.deltaTime * 18000; //change the 500 to a public variable named movement speed
         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, Camera.main.transform.position.z);
         //This code moves the player straight forward -- keep 4 ltr--- Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 100, Camera.main.transform.position.y, Camera.main.transform.position.z);
 
@@ -248,7 +248,7 @@ public class buttonMovement : MonoBehaviour
         */
 
         //Camera.main.transform.Translate(new Vector3(0, 0, 100));
-        Camera.main.transform.position += Camera.main.transform.forward * Time.deltaTime * -50000; //change the 500 to a public variable named movement speed
+        Camera.main.transform.position += Camera.main.transform.forward * Time.deltaTime * -18000; //change the 500 to a public variable named movement speed
         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, Camera.main.transform.position.z);
         //This code moves the player straight forward -- keep 4 ltr--- Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 100, Camera.main.transform.position.y, Camera.main.transform.position.z);
 
