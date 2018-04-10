@@ -16,6 +16,8 @@ public class BillboardMonobehaviorFunctions : MonoBehaviour
     public string description;
     public string artifactType;
     public bool isIntersection;
+    public string webAddress;
+
 
     float clicked = 0;
     float clicktime = 0;
@@ -54,7 +56,7 @@ public class BillboardMonobehaviorFunctions : MonoBehaviour
 
     }
 
-    private void OnMouseDown()
+    private IEnumerator OnMouseDown()
     {
         //if (!EventSystem.current.IsPointerOverGameObject())
         //{
@@ -68,8 +70,16 @@ public class BillboardMonobehaviorFunctions : MonoBehaviour
             clicked = 0;
             clicktime = 0;
             Debug.Log("double click: ");
-            try
-            {
+            //try
+            //{
+                Texture2D tex;
+                tex = new Texture2D(4, 4, TextureFormat.DXT1, false);
+                WWW www = new WWW("http://as-dh.gonzaga.edu/omeka/files/original/" + artifactURL);
+                yield return www;
+                www.LoadImageIntoTexture(tex);
+
+                EventViewData.Picture = tex;
+                
                 EventViewData.Title = title;
                 EventViewData.Date = date;
                 EventViewData.Address = artifactURL;
@@ -87,11 +97,11 @@ public class BillboardMonobehaviorFunctions : MonoBehaviour
 
                 // dontdestroyonload(this.gameobject);
                 SceneManager.LoadScene("eventview");
-            }
-            catch (System.Exception e)
-            {
-                print("something went wrong for some reason, maybe this will help: " + e);
-            }
+            //}
+            //catch (System.Exception e)
+            //{
+            //    print("something went wrong for some reason, maybe this will help: " + e);
+            //}
 
         }
         else if (clicked > 2 || Time.time - clicktime > 1) clicked = 0;

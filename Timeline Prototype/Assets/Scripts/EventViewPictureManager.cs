@@ -13,30 +13,19 @@ public class EventViewPictureManager : MonoBehaviour
 
     public string webAddress;
 
-    IEnumerator Start()
+    void Start()
     {
 
-        string address = EventViewData.Address;
-
-        // print(webAddress);
 
 
-        if(address == "Null")
-        {
-            webAddress = "http://placecorgi.com/260";
-        } else
-        {
-            webAddress = "http://as-dh.gonzaga.edu/omeka/files/original/" + address;
+        //Texture2D tex;
+        //tex = new Texture2D(128, 128);
+        //WWW www = new WWW(webAddress);
+        //yield return www;
+        //www.LoadImageIntoTexture(tex);
 
-        }
+        Texture2D tex = EventViewData.Picture;
 
-
-
-        Texture2D tex;
-        tex = new Texture2D(128, 128);
-        WWW www = new WWW(webAddress);
-        yield return www;
-        www.LoadImageIntoTexture(tex);
         GetComponent<Image>().material.mainTexture = tex;
 
         // print("Texture: x = " + tex.width + ", y = " + tex.height);

@@ -12,19 +12,10 @@ public class ImageViewPictureManager : MonoBehaviour {
     public string webAddress;
 
     // Use this for initialization
-    IEnumerator Start () {
-        string address = EventViewData.Address;
+    void Start () {
 
-        // string URL = "http://as-dh.gonzaga.edu/omeka/files/original/" + address;
+        Texture2D tex = EventViewData.Picture;
 
-        string URL = "http://placecorgi.com/260";
-
-
-        Texture2D tex;
-        tex = new Texture2D(128, 128);
-        WWW www = new WWW(URL);
-        yield return www;
-        www.LoadImageIntoTexture(tex);
         GetComponent<Image>().material.mainTexture = tex;
     }
 

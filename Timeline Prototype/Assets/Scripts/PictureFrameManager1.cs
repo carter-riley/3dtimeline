@@ -62,6 +62,8 @@ public class PictureFrameManager1 : MonoBehaviour
         www.LoadImageIntoTexture(tex);
         GetComponent<Renderer>().material.mainTexture = tex;
 
+        EventViewData.Picture = tex;
+
 
         // FindObjectOfType<NarrativeManager>().pictureCount++;
     }
