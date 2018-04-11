@@ -34,4 +34,10 @@ public class transitionScene : MonoBehaviour {
         Application.LoadLevel("TestMode");
         
     }
+
+    public void changeSceneToStartScreen()
+    {
+        Application.LoadLevel("startScreen");
+
+    }
 }
