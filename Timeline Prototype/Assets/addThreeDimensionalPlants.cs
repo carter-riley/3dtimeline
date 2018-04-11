@@ -17,6 +17,8 @@ public class addThreeDimensionalPlants : MonoBehaviour {
     public int zStartComingOfAgeRightFlowers;
 
     public GameObject flowerPot;
+    public GameObject bluePlants;
+    public GameObject yellowPlants;
     // Use this for initialization
     void Start() {
 
@@ -28,16 +30,16 @@ public class addThreeDimensionalPlants : MonoBehaviour {
             GameObject newGonzagaRightFlower = Instantiate(flowerPot, gonzagaRightPos, Quaternion.identity);
 
             Vector3 philanthropyLeftPos = new Vector3(xStartFlowers + i, yStartFlowers, zStartPhilanthropyLeftFlowers);
-            GameObject newPhilanthropyLeftFlower = Instantiate(flowerPot, philanthropyLeftPos, Quaternion.identity);
+            GameObject newPhilanthropyLeftFlower = Instantiate(bluePlants, philanthropyLeftPos, Quaternion.identity);
 
             Vector3 philanthropyRightPos = new Vector3(xStartFlowers + i, yStartFlowers, zStartPhilanthropyRightFlowers);
-            GameObject newPhilanthropyRightFlower = Instantiate(flowerPot, philanthropyRightPos, Quaternion.identity);
+            GameObject newPhilanthropyRightFlower = Instantiate(bluePlants, philanthropyRightPos, Quaternion.identity);
 
             Vector3 comingOfAgeLeftPos = new Vector3(xStartFlowers + i, yStartFlowers, zStartComingOfAgeLeftFlowers);
-            GameObject newComingOfAgeLeftFlower = Instantiate(flowerPot, comingOfAgeLeftPos, Quaternion.identity);
+            GameObject newComingOfAgeLeftFlower = Instantiate(yellowPlants, comingOfAgeLeftPos, Quaternion.identity);
 
             Vector3 comingOfAgeRightPos = new Vector3(xStartFlowers + i, yStartFlowers, zStartComingOfAgeRightFlowers);
-            GameObject newComingOfAgeRightFlower = Instantiate(flowerPot, comingOfAgeRightPos, Quaternion.identity);
+            GameObject newComingOfAgeRightFlower = Instantiate(yellowPlants, comingOfAgeRightPos, Quaternion.identity);
 
 
             Vector3 flowerScale = new Vector3(15, 15, 15);
