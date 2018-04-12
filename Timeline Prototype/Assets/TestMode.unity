@@ -17559,7 +17559,7 @@ MonoBehaviour:
   turnSpeed: 4
   panSpeed: 4
   zoomSpeed: 4
-  xForwardLimit: 6885
+  xForwardLimit: 68850
   xBackwardsLimit: -250
   pathGameObject1: {fileID: 0}
 --- !u!114 &1044528119
