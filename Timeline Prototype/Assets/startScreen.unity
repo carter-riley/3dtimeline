@@ -1310,8 +1310,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8.3, y: 107}
-  m_SizeDelta: {x: 813.1, y: 96.3}
+  m_AnchoredPosition: {x: 8.299999, y: 105.08}
+  m_SizeDelta: {x: 813.1, y: 115.85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1911348785
 MonoBehaviour:
@@ -1345,13 +1345,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'This 3D Timeline application is dedicated to Myrtle Woldson. This timeline
-    contains three paths corresponding to highlight different story-lines. Users can
-    navigate through time by clicking the buttons on the bottom of the screen and
-    and view the media associated with each themed story line. You may also double-click
-    on an artifact to learn more about it, play videos and view pictures.
-
-    The fast-forward button moves 8 years ahead.'
+  m_Text: "This timeline contains three paths corresponding to highlight different
+    story-lines. \n\nYou May:\n-Navigate by clicking arrows at the bottom of the screen\n-Double-click
+    on an artifact to learn more about it, play videos and view pictures\n*The fast-forward
+    button moves 5 years ahead."
 --- !u!222 &1911348786
 CanvasRenderer:
   m_ObjectHideFlags: 0
