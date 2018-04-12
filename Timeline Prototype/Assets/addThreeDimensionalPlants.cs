@@ -19,6 +19,7 @@ public class addThreeDimensionalPlants : MonoBehaviour {
     public GameObject flowerPot;
     public GameObject bluePlants;
     public GameObject yellowPlants;
+
     // Use this for initialization
     void Start() {
 
@@ -35,12 +36,11 @@ public class addThreeDimensionalPlants : MonoBehaviour {
             Vector3 philanthropyRightPos = new Vector3(xStartFlowers + i, yStartFlowers, zStartPhilanthropyRightFlowers);
             GameObject newPhilanthropyRightFlower = Instantiate(bluePlants, philanthropyRightPos, Quaternion.identity);
 
-            Vector3 comingOfAgeLeftPos = new Vector3(xStartFlowers + i, yStartFlowers, zStartComingOfAgeLeftFlowers);
+            Vector3 comingOfAgeLeftPos = new Vector3(xStartFlowers + (i - ((i/20) * 5)), yStartFlowers, zStartComingOfAgeLeftFlowers);
             GameObject newComingOfAgeLeftFlower = Instantiate(yellowPlants, comingOfAgeLeftPos, Quaternion.identity);
 
-            Vector3 comingOfAgeRightPos = new Vector3(xStartFlowers + i, yStartFlowers, zStartComingOfAgeRightFlowers);
+            Vector3 comingOfAgeRightPos = new Vector3(xStartFlowers + (i - ((i/20)*5)), yStartFlowers, zStartComingOfAgeRightFlowers);
             GameObject newComingOfAgeRightFlower = Instantiate(yellowPlants, comingOfAgeRightPos, Quaternion.identity);
-
 
             Vector3 flowerScale = new Vector3(15, 15, 15);
 
