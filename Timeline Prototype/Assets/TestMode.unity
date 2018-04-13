@@ -17735,7 +17735,7 @@ MonoBehaviour:
   turnSpeed: 4
   panSpeed: 4
   zoomSpeed: 4
-  xForwardLimit: 68850
+  xForwardLimit: 40395
   xBackwardsLimit: -250
   pathGameObject1: {fileID: 0}
 --- !u!114 &1044528119
@@ -17874,7 +17874,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 747100ae1110a884381349d9efe20050, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xLengthFlowers: 10000
+  xLengthFlowers: 100000
   xStartFlowers: -200
   yStartFlowers: 1
   zStartGonzagaLeftFlowers: -242

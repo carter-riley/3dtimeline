@@ -145,8 +145,8 @@ public class buttonMovement : MonoBehaviour
             }
         }
         else { //reverting location because boundary crossed
-            Camera.main.transform.position -= Camera.main.transform.forward * Time.deltaTime * 3000;
-            Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, Camera.main.transform.position.z);
+            //Camera.main.transform.position -= Camera.main.transform.forward * Time.deltaTime * 3000;
+            Camera.main.transform.position = new Vector3(xForwardLimit, 11, Camera.main.transform.position.z);
         }
         updateTime();
     }
@@ -201,8 +201,8 @@ public class buttonMovement : MonoBehaviour
                 }
             }
         } else {
-            Camera.main.transform.position += Camera.main.transform.forward * Time.deltaTime * 3000;
-            Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, Camera.main.transform.position.z);
+            //Camera.main.transform.position += Camera.main.transform.forward * Time.deltaTime * 3000;
+            Camera.main.transform.position = new Vector3(xBackwardsLimit, 11, Camera.main.transform.position.z);
         }
         updateTime();
     }
@@ -266,8 +266,8 @@ public class buttonMovement : MonoBehaviour
                 
             }
         } else { //reverting location because boundary crossed
-            Camera.main.transform.position -= Camera.main.transform.forward * Time.deltaTime * 150000;
-            Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, Camera.main.transform.position.z);
+            //Camera.main.transform.position -= Camera.main.transform.forward * Time.deltaTime * 150000;
+            Camera.main.transform.position = new Vector3(xForwardLimit, 11, Camera.main.transform.position.z);
         }
         updateTime();
     }
@@ -281,7 +281,7 @@ public class buttonMovement : MonoBehaviour
         */
 
         //Camera.main.transform.Translate(new Vector3(0, 0, 100));
-        Camera.main.transform.position += Camera.main.transform.forward * Time.deltaTime * -1500000; //change the 500 to a public variable named movement speed
+        Camera.main.transform.position -= Camera.main.transform.forward * Time.deltaTime * 1500000; //change the 500 to a public variable named movement speed
         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, Camera.main.transform.position.z);
         //This code moves the player straight forward -- keep 4 ltr--- Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 100, Camera.main.transform.position.y, Camera.main.transform.position.z);
 
@@ -328,13 +328,13 @@ public class buttonMovement : MonoBehaviour
                         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, middleOfComingOfAgePath);
                     }
                 }
-                updateTime();
             }
         }
         else {
-            Camera.main.transform.position += Camera.main.transform.forward * Time.deltaTime * 150000;
-            Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, Camera.main.transform.position.z);
+            //Camera.main.transform.position += Camera.main.transform.forward * Time.deltaTime * 150000;
+            Camera.main.transform.position = new Vector3(xBackwardsLimit, 11, Camera.main.transform.position.z);
         }
+        updateTime();
     }
 
 
