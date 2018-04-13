@@ -103,7 +103,7 @@ public class buttonMovement : MonoBehaviour
         Ray downRay = new Ray(Camera.main.transform.position, Vector3.down);
         if (!(Camera.main.transform.position.x > xForwardLimit)) //checks forwards limit
         {
-            if (Physics.Raycast(downRay, out hit, 20))
+            if (Physics.Raycast(downRay, out hit, 200))
             {
                 //print(hit.transform.gameObject);
                 //print(gonzagaPath);
@@ -160,7 +160,7 @@ public class buttonMovement : MonoBehaviour
 
         if (!(Camera.main.transform.position.x < xBackwardsLimit))
         {
-            if (Physics.Raycast(downRay, out hit, 20))
+            if (Physics.Raycast(downRay, out hit, 200))
             {
                 //print(hit.transform.gameObject);
                 //print(gonzagaPath);
@@ -201,7 +201,6 @@ public class buttonMovement : MonoBehaviour
                 }
             }
         } else {
-            //Camera.main.transform.position += Camera.main.transform.forward * Time.deltaTime * 3000;
             Camera.main.transform.position = new Vector3(xBackwardsLimit, 11, Camera.main.transform.position.z);
         }
         updateTime();
@@ -216,7 +215,7 @@ public class buttonMovement : MonoBehaviour
         */
 
         //Camera.main.transform.Translate(new Vector3(0, 0, 100));
-        Camera.main.transform.position += Camera.main.transform.forward * Time.deltaTime * 150000; //change the 500 to a public variable named movement speed
+        Camera.main.transform.position += Camera.main.transform.forward * Time.deltaTime * 37500; //change the 500 to a public variable named movement speed
         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, Camera.main.transform.position.z);
         //This code moves the player straight forward -- keep 4 ltr--- Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 100, Camera.main.transform.position.y, Camera.main.transform.position.z);
 
@@ -224,7 +223,7 @@ public class buttonMovement : MonoBehaviour
         Ray downRay = new Ray(Camera.main.transform.position, Vector3.down);
         if (!(Camera.main.transform.position.x > xForwardLimit))
         {
-            if (Physics.Raycast(downRay, out hit, 20))
+            if (Physics.Raycast(downRay, out hit, 200))
             {
                 // print(hit.transform.gameObject);
                 // print(gonzagaPath);
@@ -281,7 +280,7 @@ public class buttonMovement : MonoBehaviour
         */
 
         //Camera.main.transform.Translate(new Vector3(0, 0, 100));
-        Camera.main.transform.position -= Camera.main.transform.forward * Time.deltaTime * 1500000; //change the 500 to a public variable named movement speed
+        Camera.main.transform.position -= Camera.main.transform.forward * Time.deltaTime * 37500; //change the 500 to a public variable named movement speed
         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, Camera.main.transform.position.z);
         //This code moves the player straight forward -- keep 4 ltr--- Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 100, Camera.main.transform.position.y, Camera.main.transform.position.z);
 
@@ -289,7 +288,7 @@ public class buttonMovement : MonoBehaviour
         Ray downRay = new Ray(Camera.main.transform.position, Vector3.down);
         if (!(Camera.main.transform.position.x < xBackwardsLimit))
         {
-            if (Physics.Raycast(downRay, out hit, 20))
+            if (Physics.Raycast(downRay, out hit, 200))
             {
                 // print(hit.transform.gameObject);
                 // print(gonzagaPath);
