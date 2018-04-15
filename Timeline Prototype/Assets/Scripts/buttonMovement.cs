@@ -28,6 +28,8 @@ public class buttonMovement : MonoBehaviour
     public int xForwardLimit;
     public int xBackwardsLimit;
 
+    public Slider slider;
+
     public GameObject pathGameObject1;
     /*
         yaw += speedH* Input.GetAxis("Mouse X");
@@ -149,6 +151,7 @@ public class buttonMovement : MonoBehaviour
             Camera.main.transform.position = new Vector3(xForwardLimit, 11, Camera.main.transform.position.z);
         }
         updateTime();
+        updateSliderPosition();
     }
     public void moveBackwards()
     {
@@ -204,6 +207,7 @@ public class buttonMovement : MonoBehaviour
             Camera.main.transform.position = new Vector3(xBackwardsLimit, 11, Camera.main.transform.position.z);
         }
         updateTime();
+        updateSliderPosition();
     }
 
     public void moveCameraForwardFast()
@@ -269,6 +273,7 @@ public class buttonMovement : MonoBehaviour
             Camera.main.transform.position = new Vector3(xForwardLimit, 11, Camera.main.transform.position.z);
         }
         updateTime();
+        updateSliderPosition();
     }
 
     public void moveCameraBackwardFast()
@@ -334,6 +339,7 @@ public class buttonMovement : MonoBehaviour
             Camera.main.transform.position = new Vector3(xBackwardsLimit, 11, Camera.main.transform.position.z);
         }
         updateTime();
+        updateSliderPosition();
     }
 
 
@@ -372,6 +378,12 @@ public class buttonMovement : MonoBehaviour
         pos.x = Camera.main.transform.position.x;
         yearDisplay = Mathf.Round((pos.x / 600) + 1950);
         yearText.text = yearDisplay.ToString();
-        print(yearText.text);
+        //print(yearText.text);
+    }
+
+    public void updateSliderPosition() {
+        Vector3 pos = transform.position;
+        pos.x = Camera.main.transform.position.x;
+        slider.value = Mathf.Round((pos.x / 600) + 1950);
     }
 }
