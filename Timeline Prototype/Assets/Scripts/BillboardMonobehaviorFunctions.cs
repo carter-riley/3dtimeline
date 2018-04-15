@@ -87,8 +87,8 @@ public class BillboardMonobehaviorFunctions : MonoBehaviour
                 EventViewData.Type = artifactType;
 
 
-                // playerprefs.setint("boardnumber", boardnumber);
-                // playerprefs.setstring("table", table);
+                //playerPrefs.setint("boardnumber", boardnumber);
+                //playerPrefs.setstring("table", table);
 
                 PlayerPrefs.SetFloat("xpos", Camera.main.transform.position.x);
                 PlayerPrefs.SetFloat("zpos", Camera.main.transform.position.z);

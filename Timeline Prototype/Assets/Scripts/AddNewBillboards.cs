@@ -9,12 +9,12 @@ using UnityEngine.UI;
 public class AddNewBillboards : MonoBehaviour
 {
 
-    
+
     public GameObject prefab;
     public int zPosition = 19;
     public string nameOfTimeline;
     public int howClose;
-    
+
     //public float radius = 5f;
 
     public List<GameObject> billboardsList = new List<GameObject>();
@@ -145,36 +145,39 @@ public class AddNewBillboards : MonoBehaviour
                 {
                     date = 1950;
                 }
-                int stag = 0;
+                int stag = 1;
                 for (int j = 0; j < i; j++)
                 {
                     if (FindObjectOfType<NarrativeManager>().dateList[i] == FindObjectOfType<NarrativeManager>().dateList[j])
                     {
-                        date = date + 0.6;
+                        date = date + .1;
                         stag++;
                     }
                 }
                 float date1 = (float)date;
                 // print(FindObjectOfType<NarrativeManager>().titleList[i]);
                 // print(i + "," + date + "x: " + (date - 1950) * 100);
-                Vector3 pos = new Vector3((date1 - 1950) * 100, 0, xPosition);
+                Vector3 pos = new Vector3((date1 - 1950) * 600, 0, xPosition);
 
                 GameObject newBillboard = Instantiate(prefab, pos, Quaternion.identity);
                 //newBillboard.transform.localScale = new Vector3(0.1F, 0.1F, 0.1F);
                 int zOffset = 0;
+                int rotation = 0;
                 if (stag > 0)
                 {
                     if (stag % 2 == 0)
                     {
-                        zOffset = -20;
+                        rotation = -20;
+                        zOffset = 20;
                     }
                     else
                     {
-                        zOffset = 20;
+                        zOffset = -20;
+                        rotation = 20;
                     }
                 }
                 newBillboard.transform.position = new Vector3(newBillboard.transform.position.x, newBillboard.transform.position.y + 7, newBillboard.transform.position.z + zOffset);
-                newBillboard.transform.Rotate(0, 180, 0);
+                newBillboard.transform.Rotate(0, 180 + rotation, 0);
                 newBillboard.GetComponent<BillboardMonobehaviorFunctions>().boardNumber = billboardsList.Count;
                 newBillboard.GetComponent<BillboardMonobehaviorFunctions>().table = nameOfTimeline;
 
@@ -185,7 +188,7 @@ public class AddNewBillboards : MonoBehaviour
 
             // print("something;");
 
-           
+
 
         }
 
@@ -194,6 +197,6 @@ public class AddNewBillboards : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
