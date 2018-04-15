@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using MySql.Data.MySqlClient;
 using System.Data;
+using Patagames;
 
 public class PictureFrameManager1 : MonoBehaviour
 {
@@ -55,14 +56,37 @@ public class PictureFrameManager1 : MonoBehaviour
         }
         */
 
-        Texture2D tex;
-        tex = new Texture2D(4, 4, TextureFormat.DXT1, false);
-        WWW www = new WWW(webAddress);
-        yield return www;
-        www.LoadImageIntoTexture(tex);
-        GetComponent<Renderer>().material.mainTexture = tex;
 
-        EventViewData.Picture = tex;
+        //if (type == "PDF")
+        //{
+    
+
+        //    WWW theWebAddress = new WWW(webAddress);
+        //    Patagames.Pdf.Net.PdfCommon.Initialize();
+        //    var pdf = Patagames.Pdf.Net.PdfDocument.Load(webAddress);
+        //    var img = Patagames.Pdf.Net.PdfImageObject.Create(pdf);
+
+
+        //    byte[] bytes = new byte[img.Bitmap.Width * img.Bitmap.Height * 4];
+        //    byte[] copyToBytes = new byte[img.Bitmap.Width * img.Bitmap.Height * 4];
+        //    img.Bitmap.FlipXY
+
+        //    // img.Bitmap.Image();
+
+        //    // GetComponent<Renderer>().material.mainTexture = img.Bitmap.Image;
+        //    // img.GetBitmap();
+        //}
+        //else
+        //{
+            Texture2D tex;
+            tex = new Texture2D(4, 4, TextureFormat.DXT1, false);
+            WWW www = new WWW(webAddress);
+            yield return www;
+            www.LoadImageIntoTexture(tex);
+            GetComponent<Renderer>().material.mainTexture = tex;
+        // }
+
+        // EventViewData.Picture = tex;
 
 
         // FindObjectOfType<NarrativeManager>().pictureCount++;

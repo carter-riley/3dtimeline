@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class NarrativeManager : MonoBehaviour {
 
+    public List<Artifact> artifactList = new List<Artifact>();
+
     public List<String> titleList = new List<String>();
     public List<String> descriptionList = new List<String>();
     public List<String> dateList = new List<String>();
@@ -39,6 +41,7 @@ public class NarrativeManager : MonoBehaviour {
             print("The main loop has gone through: " + x + "times and count is: " + count);
             if (count > 1)
             {
+                // artifactList.Add(new Artifact())
                 intersectionList.Add(true);
                 print("There is an intersection.");
             }
