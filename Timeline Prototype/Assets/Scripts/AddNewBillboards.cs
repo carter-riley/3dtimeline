@@ -167,13 +167,13 @@ public class AddNewBillboards : MonoBehaviour
                 {
                     if (stag % 2 == 0)
                     {
-                        rotation = -20;
+                        //rotation = -20;
                         zOffset = 20;
                     }
                     else
                     {
                         zOffset = -20;
-                        rotation = 20;
+                        //rotation = 20;
                     }
                 }
                 newBillboard.transform.position = new Vector3(newBillboard.transform.position.x, newBillboard.transform.position.y + 7, newBillboard.transform.position.z + zOffset);
