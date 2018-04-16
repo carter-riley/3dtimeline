@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 23191363006664224}
   - component: {fileID: 114183110400832652}
   - component: {fileID: 114214762837331404}
+  - component: {fileID: 114270097474605042}
   m_Layer: 0
   m_Name: PicFrame
   m_TagString: Untagged
@@ -457,6 +458,23 @@ MonoBehaviour:
   image: {fileID: 0}
   videoToPlay: {fileID: 0}
   videoURL: 
+--- !u!114 &114270097474605042
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1599359453973282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa9014e5e286e448aed98f05153df0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contentPdfScrollView: {fileID: 0}
+  livefeedItemPrefab: {fileID: 1000013768522248, guid: d040b1e88b0348045845e68ec61d813f,
+    type: 2}
+  livefeedItemHeight: 0
+  photos: []
+  pictureFrame: {fileID: 0}
 --- !u!114 &114450248867605832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -517,6 +535,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aa6a073ca188ae4684bcd1fe416dc0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialTouch: 0
+  title: 
+  date: 
+  artifactURL: 
+  description: 
+  artifactType: 
+  isIntersection: 0
+  webAddress: 
   boardNumber: 0
   table: 
 --- !u!114 &114822469658564116

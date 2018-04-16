@@ -35,74 +35,9 @@ public class StreamVideo : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        isVideo = false;
-        try
-        {
-            MySqlConnection connect;
-            //Connection string for Connector/ODBC 3.51
-            // Driver={MariaDB ODBC 3.0 Driver};
-            string MyConString = "Server=147.222.163.1;UID=sdg7;Database=sdg7_DB;PWD=3dTimeline;Port=3306";
+        videoURL = "http://as-dh.gonzaga.edu/omeka/files/original/" + GetComponentInParent<BillboardMonobehaviorFunctions>().artifactURL;
 
-            connect = new MySql.Data.MySqlClient.MySqlConnection();
-
-            connect.ConnectionString = MyConString;
-
-            connect.Open();
-
-            if (connect.State == ConnectionState.Open)
-            {
-
-            }
-
-            GameObject parentObject = base.gameObject;
-
-            BillboardMonobehaviorFunctions monobehaviorFunctionsScript = this.GetComponentInParent<BillboardMonobehaviorFunctions>();
-            int newBoardNumber = monobehaviorFunctionsScript.boardNumber + 1;
-
-
-            string currentNarrative = monobehaviorFunctionsScript.table;
-
-            string query = "SELECT * FROM " + currentNarrative + " WHERE Number = " + newBoardNumber;
-
-            //Create a list to store the result
-            List<string>[] list = new List<string>[3];
-            list[0] = new List<string>();
-            list[1] = new List<string>();
-            list[2] = new List<string>();
-
-            //Open connection
-
-            //Create Command
-            MySqlCommand cmd = new MySqlCommand(query, connect);
-            //Create a data reader and Execute the command
-            MySqlDataReader dataReader = cmd.ExecuteReader();
-
-            //Read the data and store them in the list
-            while (dataReader.Read())
-            {
-                if (dataReader.GetString(4) == "Video")
-                {
-                    // videoURL = dataReader.GetString(7);
-                    videoURL = "http://as-dh.gonzaga.edu/omeka/files/original/" + dataReader.GetString(7);
-
-                    isVideo = true;
-                    // StreamVideo.playVideo(dataReader.GetString(7));
-                }
-            }
-
-            //close Data Reader                
-            dataReader.Close();
-            connect.Close();
-
-            // Console.ReadKey();
-
-        }
-        catch (MySql.Data.MySqlClient.MySqlException ex)
-        {
-
-        }
-
-        if (isVideo) {
+        if (videoURL.Contains(".mp4")) {
             Application.runInBackground = true;
             StartCoroutine(playVideo(videoURL));
         }
