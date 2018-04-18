@@ -24,9 +24,11 @@ public class EventViewPictureManager : MonoBehaviour
         //yield return www;
         //www.LoadImageIntoTexture(tex);
 
-        Texture2D tex = EventViewData.Picture;
+        Texture2D tex = EventViewData.TheArtifact.Image;
 
         GetComponent<Image>().material.mainTexture = tex;
+
+        tex = null;
 
         // print("Texture: x = " + tex.width + ", y = " + tex.height);
         // print("Texture ratio is " + tex.width/tex.height);

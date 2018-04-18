@@ -14,9 +14,11 @@ public class ImageViewPictureManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-        Texture2D tex = EventViewData.Picture;
+        Texture2D tex = EventViewData.TheArtifact.Image;
 
         GetComponent<Image>().material.mainTexture = tex;
+
+        tex = null;
     }
 
     // Update is called once per frame

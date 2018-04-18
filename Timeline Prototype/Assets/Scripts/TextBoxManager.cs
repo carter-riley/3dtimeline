@@ -24,8 +24,8 @@ public class TextBoxManager : MonoBehaviour
 
         // print("Text box manager, current title is: " + FindObjectOfType<NarrativeManager>().titleList[0] + ", url is " + FindObjectOfType<NarrativeManager>().urlList[0]);
 
-        string currentDate = GetComponentInParent<BillboardMonobehaviorFunctions>().date;
-        string currentTitle = GetComponentInParent<BillboardMonobehaviorFunctions>().title;
+        string currentDate = GetComponentInParent<BillboardMonobehaviorFunctions>().thisArtifact.Date;
+        string currentTitle = GetComponentInParent<BillboardMonobehaviorFunctions>().thisArtifact.Title;
 
         // int count = FindObjectOfType<NarrativeManager>().textCount;
 

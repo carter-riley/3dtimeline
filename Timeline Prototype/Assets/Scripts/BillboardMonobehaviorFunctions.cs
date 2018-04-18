@@ -3,21 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
-using UnityEngine.EventSystems;
 
 public class BillboardMonobehaviorFunctions : MonoBehaviour
 {
     bool enter = false;
     public float initialTouch;
     public static int guiDepth = 5;
-    public string title;
-    public string date;
-    public string artifactURL;
-    public string description;
-    public string artifactType;
-    public bool isIntersection;
-    public string webAddress;
-
+    //public string title;
+    //public string date;
+    //public string artifactURL;
+    //public string description;
+    //public string artifactType;
+    //public bool isIntersection;
+    //public string webAddress;
+    public Artifact thisArtifact;
 
     float clicked = 0;
     float clicktime = 0;
@@ -26,24 +25,37 @@ public class BillboardMonobehaviorFunctions : MonoBehaviour
     public int boardNumber;
     public string table;
     // Use this for initialization
-    void Start()
+    IEnumerator Start()
     {
-        // print("Table is: " + table + ", boardNumber is: " + boardNumber);
-        title = FindObjectOfType<NarrativeManager>().titleList[0];
-        date = FindObjectOfType<NarrativeManager>().dateList[0];
-        artifactURL = FindObjectOfType<NarrativeManager>().urlList[0];
-        description = FindObjectOfType<NarrativeManager>().descriptionList[0];
-        artifactType = FindObjectOfType<NarrativeManager>().typeList[0];
-        isIntersection = FindObjectOfType<NarrativeManager>().intersectionList[0];
+        thisArtifact = FindObjectOfType<NarrativeManager>().artifactList[0];
+        FindObjectOfType<NarrativeManager>().artifactList.RemoveAt(0);
 
-        // print(date + " " + title);
 
-        FindObjectOfType<NarrativeManager>().titleList.RemoveAt(0);
-        FindObjectOfType<NarrativeManager>().dateList.RemoveAt(0);
-        FindObjectOfType<NarrativeManager>().urlList.RemoveAt(0);
-        FindObjectOfType<NarrativeManager>().typeList.RemoveAt(0);
-        FindObjectOfType<NarrativeManager>().descriptionList.RemoveAt(0);
-        FindObjectOfType<NarrativeManager>().intersectionList.RemoveAt(0);
+        if(thisArtifact.URL == null) {
+
+        } else if (thisArtifact.URL.Contains(".mp4"))
+        {
+            Texture2D tex = null;
+            thisArtifact.Image = tex;
+        } else if(thisArtifact.URL.Contains(".png") || thisArtifact.URL.Contains(".jpg"))
+        {
+            Texture2D tex = new Texture2D(4, 4, TextureFormat.DXT1, false);
+            WWW www = new WWW("http://as-dh.gonzaga.edu/omeka/files/original/" + thisArtifact.URL);
+            yield return www;
+            www.LoadImageIntoTexture(tex);
+
+            thisArtifact.Image = tex;
+        } else if(thisArtifact.URL.Contains(".pdf"))
+        {
+
+
+        }
+
+
+
+
+
+        // Texture2D tex = CreateTexture.PictureTexture(artifactURL);
     }
     void OnGUI()
     {
@@ -56,7 +68,7 @@ public class BillboardMonobehaviorFunctions : MonoBehaviour
 
     }
 
-    private IEnumerator OnMouseDown()
+    private void OnMouseDown()
     {
         //if (!EventSystem.current.IsPointerOverGameObject())
         //{
@@ -70,38 +82,21 @@ public class BillboardMonobehaviorFunctions : MonoBehaviour
             clicked = 0;
             clicktime = 0;
             Debug.Log("double click: ");
-            //try
-            //{
-                Texture2D tex;
-                tex = new Texture2D(4, 4, TextureFormat.DXT1, false);
-                WWW www = new WWW("http://as-dh.gonzaga.edu/omeka/files/original/" + artifactURL);
-                yield return www;
-                www.LoadImageIntoTexture(tex);
-
-                EventViewData.Picture = tex;
-                
-                EventViewData.Title = title;
-                EventViewData.Date = date;
-                EventViewData.Address = artifactURL;
-                EventViewData.Description = description;
-                EventViewData.Type = artifactType;
 
 
-                //playerPrefs.setint("boardnumber", boardnumber);
-                //playerPrefs.setstring("table", table);
+            EventViewData.TheArtifact = thisArtifact;
 
-                PlayerPrefs.SetFloat("xpos", Camera.main.transform.position.x);
-                PlayerPrefs.SetFloat("zpos", Camera.main.transform.position.z);
 
-                // dontdestroyonload(gameobject);
+            //playerPrefs.setint("boardnumber", boardnumber);
+            //playerPrefs.setstring("table", table);
 
-                // dontdestroyonload(this.gameobject);
-                SceneManager.LoadScene("eventview");
-            //}
-            //catch (System.Exception e)
-            //{
-            //    print("something went wrong for some reason, maybe this will help: " + e);
-            //}
+            PlayerPrefs.SetFloat("xpos", Camera.main.transform.position.x);
+            PlayerPrefs.SetFloat("zpos", Camera.main.transform.position.z);
+
+            // dontdestroyonload(gameobject);
+
+            // dontdestroyonload(this.gameobject);
+            SceneManager.LoadScene("eventview");
 
         }
         else if (clicked > 2 || Time.time - clicktime > 1) clicked = 0;

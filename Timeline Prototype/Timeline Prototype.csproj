@@ -391,8 +391,10 @@
     <Compile Include="Assets\Battlehub\UIControls\ListBoxItem.cs" />
     <Compile Include="Assets\Battlehub\Utils\EditorStopwatch.cs" />
     <Compile Include="Assets\Battlehub\Utils\Run.cs" />
+    <Compile Include="Assets\CanvasManager.cs" />
     <Compile Include="Assets\Clock\Scripts\Clock.cs" />
     <Compile Include="Assets\initializeVariables.cs" />
+    <Compile Include="Assets\IntersectionTextManager.cs" />
     <Compile Include="Assets\openPDF.cs" />
     <Compile Include="Assets\PlayerPrefReset.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />

@@ -1,4 +1,4 @@
-﻿ using System.Collections;
+﻿     using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,14 +24,10 @@ public class PictureFrameManager1 : MonoBehaviour
 
         // print(FindObjectOfType<NarrativeManager>().urlList[0]);
 
-        string address = GetComponentInParent<BillboardMonobehaviorFunctions>().artifactURL;
-        string type = GetComponentInParent<BillboardMonobehaviorFunctions>().artifactType;
-
         // print(address);
 
         //if (address != "Null" || address.Contains(".pdf"))
         //{
-        webAddress = "http://as-dh.gonzaga.edu/omeka/files/original/" + address;
         //}
 
 
@@ -78,12 +74,17 @@ public class PictureFrameManager1 : MonoBehaviour
         //}
         //else
         //{
-            Texture2D tex;
-            tex = new Texture2D(4, 4, TextureFormat.DXT1, false);
-            WWW www = new WWW(webAddress);
-            yield return www;
-            www.LoadImageIntoTexture(tex);
-            GetComponent<Renderer>().material.mainTexture = tex;
+
+        string webAddress = "http://as-dh.gonzaga.edu/omeka/files/original/" + GetComponentInParent<BillboardMonobehaviorFunctions>().thisArtifact.URL;
+
+
+        Texture2D tex;
+        tex = new Texture2D(4, 4, TextureFormat.DXT1, false);
+        WWW www = new WWW(webAddress);
+        yield return www;
+        www.LoadImageIntoTexture(tex);
+
+        GetComponent<Renderer>().material.mainTexture = tex;
         // }
 
         // EventViewData.Picture = tex;

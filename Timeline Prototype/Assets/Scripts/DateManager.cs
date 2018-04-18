@@ -17,7 +17,7 @@ public class DateManager : MonoBehaviour
     void Start()
     {
 
-        string date = EventViewData.Date;
+        string date = EventViewData.TheArtifact.Date;
         // string date = "1842";
 
         theText.text = date;

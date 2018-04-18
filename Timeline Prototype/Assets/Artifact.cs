@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Artifact : MonoBehaviour {
-    public int ID { get; set; }
+public class Artifact {
     public string Title { get; set; }
     public string Date { get; set; }
     public string Description { get; set; }
@@ -12,10 +11,10 @@ public class Artifact : MonoBehaviour {
     public bool IsIntersection { get; set; }
     public string IntersectWith { get; set; }
     public Texture2D Image { get; set; }
+    public string Table { get; set; }
 
-    public Artifact(int iD, string title, string date, string description, string type, string uRL, bool isIntersection, string intersectWith, Texture2D image)
+    public Artifact(string title, string date, string description, string type, string uRL, bool isIntersection, string intersectWith, Texture2D image, string table)
     {
-        ID = iD;
         Title = title;
         Date = date;
         Description = description;
@@ -24,11 +23,21 @@ public class Artifact : MonoBehaviour {
         IsIntersection = isIntersection;
         IntersectWith = intersectWith;
         Image = image;
+        Table = table;
+    }
+
+    public Artifact(string title, string date, string description, string type, string uRL, string table)
+    {
+        Title = title;
+        Date = date;
+        Description = description;
+        Type = type;
+        URL = uRL;
+        Table = table;
     }
 
     public Artifact()
     {
-        ID = 0;
         Title = "Blank";
         Date = "0 AD";
         Description = "Something happened";
@@ -36,10 +45,12 @@ public class Artifact : MonoBehaviour {
         URL = "www.google.com";
         IsIntersection = false;
         IntersectWith = "Nothing";
+        Image = null;
+        Table = "Null";
     }
 
     public override string ToString()
     {
-        return this.ID + " " + this.Title + " " + this.Date + " " + this.Description + " " + this.Type + " " + this.URL + " " + this.IsIntersection + " " + this.Image.ToString();
+        return this.Title + " " + this.Date + " " + this.Description + " " + this.Type + " " + this.URL + " " + this.IsIntersection + " " + this.Image.ToString() + " " + this.Table;
     }
 }

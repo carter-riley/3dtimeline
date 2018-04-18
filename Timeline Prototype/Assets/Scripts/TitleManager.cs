@@ -15,7 +15,7 @@ public class TitleManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-        string title = EventViewData.Title;
+        string title = EventViewData.TheArtifact.Title;
 
         theText.text = title;
 

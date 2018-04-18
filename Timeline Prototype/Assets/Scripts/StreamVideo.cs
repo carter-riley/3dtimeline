@@ -35,7 +35,10 @@ public class StreamVideo : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        videoURL = "http://as-dh.gonzaga.edu/omeka/files/original/" + GetComponentInParent<BillboardMonobehaviorFunctions>().artifactURL;
+
+        string address = GetComponentInParent<BillboardMonobehaviorFunctions>().thisArtifact.URL;
+
+        videoURL = "http://as-dh.gonzaga.edu/omeka/files/original/" + address;
 
         if (videoURL.Contains(".mp4")) {
             Application.runInBackground = true;

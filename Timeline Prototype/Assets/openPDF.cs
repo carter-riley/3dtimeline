@@ -36,21 +36,25 @@ public class openPDF : MonoBehaviour
     // Use this for initialization
     IEnumerator Start()
     {
-        if (GetComponentInParent<BillboardMonobehaviorFunctions>().artifactURL.Contains(".pdf"))
+        if (GetComponentInParent<BillboardMonobehaviorFunctions>().thisArtifact.URL.Contains(".pdf"))
         {
+
+            string address = GetComponentInParent<BillboardMonobehaviorFunctions>().thisArtifact.URL;
 
             //readPdfStream();
 
-            string webAddress = "http://as-dh.gonzaga.edu/omeka/files/original/" + GetComponentInParent<BillboardMonobehaviorFunctions>().artifactURL;
+            string webAddress = "http://as-dh.gonzaga.edu/omeka/files/original/" + address;
 
 
             WWW www = new WWW(webAddress);
             yield return www;
-            System.IO.File.WriteAllBytes(@"C:\\Users\\Carte\\Documents\\Thepdf.pdf", www.bytes);
+            System.IO.File.WriteAllBytes(@"C:\\Users\\Carte\\Documents\\" + address, www.bytes);
 
             PDFConvert converter = new PDFConvert();
 
-            converter.Convert(@"C:\\Users\\Carte\\Documents\\Thepdf.pdf",
+            
+
+            converter.Convert(@"C:\\Users\\Carte\\Documents\\" + address,
                              @"C:\\Users\\Carte\\Documents\\PdfImages\\%01d.jpg",
                              1,
                              3,
@@ -97,7 +101,7 @@ public class openPDF : MonoBehaviour
             RawImage tmpItem = pdfItem.GetComponent<RawImage>() as RawImage;
             tmpItem.texture = tmpTexture;
 
-            pdfItem.GetComponent<Renderer>().material.mainTexture = tmpTexture;  
+            GetComponent<Renderer>().material.mainTexture = tmpTexture;  
 
             pdfItems.Add(pdfItem);
 

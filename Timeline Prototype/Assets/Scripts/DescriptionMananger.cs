@@ -16,7 +16,7 @@ public class DescriptionMananger : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        string description = EventViewData.Description;
+        string description = EventViewData.TheArtifact.Description;
         // string description = "sailed the ocean blue";
 
         theText.text = description;

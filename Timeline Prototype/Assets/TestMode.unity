@@ -17912,6 +17912,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1300219492213116, guid: 859d9c679ead1074b882e3bb5b0e29e9, type: 2}
+  prefabIntersection: {fileID: 1965217742385426, guid: 4d81eccfab361af4ab52e1d32a5a9317,
+    type: 2}
+  prefabNoImage: {fileID: 1204753040269878, guid: f5824bbf8b430fd43b6ccf4abeae80a1,
+    type: 2}
+  prefabIntersectionNoImage: {fileID: 1654105933135908, guid: 7ddac9ad7af442340bedeaf75156e79b,
+    type: 2}
   zPosition: 0
   nameOfTimeline: philanthropyTable
   howClose: -800
@@ -17974,6 +17980,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1300219492213116, guid: 859d9c679ead1074b882e3bb5b0e29e9, type: 2}
+  prefabIntersection: {fileID: 1965217742385426, guid: 4d81eccfab361af4ab52e1d32a5a9317,
+    type: 2}
+  prefabNoImage: {fileID: 1204753040269878, guid: f5824bbf8b430fd43b6ccf4abeae80a1,
+    type: 2}
+  prefabIntersectionNoImage: {fileID: 1654105933135908, guid: 7ddac9ad7af442340bedeaf75156e79b,
+    type: 2}
   zPosition: -300
   nameOfTimeline: gonzagatable
   howClose: -800
@@ -17990,6 +18002,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1300219492213116, guid: 859d9c679ead1074b882e3bb5b0e29e9, type: 2}
+  prefabIntersection: {fileID: 1965217742385426, guid: 4d81eccfab361af4ab52e1d32a5a9317,
+    type: 2}
+  prefabNoImage: {fileID: 1204753040269878, guid: f5824bbf8b430fd43b6ccf4abeae80a1,
+    type: 2}
+  prefabIntersectionNoImage: {fileID: 1654105933135908, guid: 7ddac9ad7af442340bedeaf75156e79b,
+    type: 2}
   zPosition: 300
   nameOfTimeline: ComingofAgeTable
   howClose: -800
@@ -18005,13 +18023,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5246a078c6cd3b4cb6a40be827e7340, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  artifactList: []
-  titleList: []
-  descriptionList: []
-  dateList: []
-  typeList: []
-  urlList: []
-  intersectionList: 
   currentNumber: 0
   created: 0
 --- !u!114 &1044528122

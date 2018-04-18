@@ -35,9 +35,9 @@ public class StreamVideo2 : MonoBehaviour
     void Start()
     {
 
-        print("Address contains MP4: " + EventViewData.Address + " " + EventViewData.Address.Contains(".mp4"));
+        // print("Address contains MP4: " + EventViewData.Address + " " + EventViewData.Address.Contains(".mp4"));
 
-        if (EventViewData.Address.Contains(".mp4"))
+        if (EventViewData.TheArtifact.URL.Contains(".mp4"))
         {
 
             //image.RawImage = video; //Video component is enabled
@@ -69,7 +69,7 @@ public class StreamVideo2 : MonoBehaviour
 
         // Vide clip from Url
         videoPlayer.source = VideoSource.Url;
-        videoPlayer.url = "http://as-dh.gonzaga.edu/omeka/files/original/" + EventViewData.Address;
+        videoPlayer.url = "http://as-dh.gonzaga.edu/omeka/files/original/" + EventViewData.TheArtifact.URL;
 
         //Set Audio Output to AudioSource
         videoPlayer.audioOutputMode = VideoAudioOutputMode.AudioSource;

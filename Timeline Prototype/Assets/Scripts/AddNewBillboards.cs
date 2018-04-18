@@ -9,8 +9,11 @@ using UnityEngine.UI;
 public class AddNewBillboards : MonoBehaviour
 {
 
-
     public GameObject prefab;
+    public GameObject prefabIntersection;
+    public GameObject prefabNoImage;
+    public GameObject prefabIntersectionNoImage;
+
     public int zPosition = 19;
     public string nameOfTimeline;
     public int howClose;
@@ -81,36 +84,44 @@ public class AddNewBillboards : MonoBehaviour
                     //{
                     //    print(newReader.GetString(1) + " Null");
                     //}
+                    string title;
+                    string date;
+                    string source;
+                    string typeOf;
+                    string format_type;
+                    string description;
+                    string webAddress;
 
 
-                    FindObjectOfType<NarrativeManager>().titleList.Add(newReader.GetString(1));
-                    // print(newReader.GetString(1));
-                    // print(titleList[0]);
-                    FindObjectOfType<NarrativeManager>().descriptionList.Add(newReader.GetString(6));
+                    title = newReader.GetString(1);
+                    description = newReader.GetString(6);
                     try
                     {
-                        FindObjectOfType<NarrativeManager>().dateList.Add(newReader.GetString(2));
+                        date = newReader.GetString(2);
                     }
                     catch
                     {
-                        FindObjectOfType<NarrativeManager>().dateList.Add("Null");
+                        date = "Null";
                     }
                     try
                     {
-                        FindObjectOfType<NarrativeManager>().typeList.Add(newReader.GetString(5));
+                        typeOf = newReader.GetString(5);
                     }
                     catch
                     {
-                        FindObjectOfType<NarrativeManager>().typeList.Add("Null");
+                        typeOf = "Null";
                     }
                     try
                     {
-                        FindObjectOfType<NarrativeManager>().urlList.Add(newReader.GetString(7));
+                        webAddress = newReader.GetString(7);
                     }
                     catch
                     {
-                        FindObjectOfType<NarrativeManager>().urlList.Add("Null");
+                        webAddress = null;
                     }
+
+                    FindObjectOfType<NarrativeManager>().artifactList.Add(new Artifact(title, date, description, typeOf, webAddress, nameOfTimeline));
+
                 }
 
                 newReader.Close();
@@ -121,8 +132,59 @@ public class AddNewBillboards : MonoBehaviour
                 print("File: AddNewBillboards.cs. Exception: + " + ex);
             }
             // print("objects: " + numberOfObjects);
+
+            int x = 0;
+
+            foreach (Artifact elementOne in FindObjectOfType<NarrativeManager>().artifactList)
+            {
+                // bool intersection = false;
+                int count = 0;
+
+                foreach (Artifact elementTwo in FindObjectOfType<NarrativeManager>().artifactList)
+                {
+                    if (elementOne.Title.Equals(elementTwo.Title))
+                    {
+                        // print("True");
+                        count++;
+                    }
+                }
+                // print("The main loop has gone through: " + x + "times and count is: " + count);
+                if (count > 1)
+                {
+                    FindObjectOfType<NarrativeManager>().artifactList[x].IsIntersection = true;
+                    FindObjectOfType<NarrativeManager>().artifactList[x].IntersectWith = FindObjectOfType<NarrativeManager>().artifactList[count].Table;
+                    // intersectionList.Add(true);
+                    // print("There is an intersection.");
+                }
+                else
+                {
+                    FindObjectOfType<NarrativeManager>().artifactList[x].IsIntersection = false;
+                    FindObjectOfType<NarrativeManager>().artifactList[x].IntersectWith = null;
+
+                    // intersectionList.Add(false);
+                    // print("There is not an intersection.");
+
+                }
+                x++;
+            }
             for (int i = FindObjectOfType<NarrativeManager>().currentNumber; i < numberOfObjects + FindObjectOfType<NarrativeManager>().currentNumber; i++)
             {
+                bool isIntersection = false;
+
+                try
+                {
+                    // isIntersection = intersectionList[FindObjectOfType<NarrativeManager>().intersectionNumber];
+                    isIntersection = FindObjectOfType<NarrativeManager>().artifactList[i].IsIntersection;
+                    print("isInteresction " + isIntersection);
+                    // intersectionList.RemoveAt(0);
+                    // FindObjectOfType<NarrativeManager>().intersectionNumber++;
+                    print("isInteresction2 " + isIntersection);
+                }
+                catch (Exception e)
+                {
+                    print("This is the error: " + e);
+                }
+
                 if (left)
                 {
                     xPosition = -25f + zPosition;
@@ -135,49 +197,83 @@ public class AddNewBillboards : MonoBehaviour
                 }
 
                 double date;
-                if (double.TryParse(FindObjectOfType<NarrativeManager>().dateList[i], out date))
+                if (double.TryParse(FindObjectOfType<NarrativeManager>().artifactList[i].Date, out date))
+                {
                     Console.WriteLine(date);
 
-
+                }
                 else
+                {
                     Console.WriteLine("String could not be parsed.");
+                }
                 if (date == 0)
                 {
                     date = 1950;
                 }
-                int stag = 1;
+                int stag = 0;
                 for (int j = 0; j < i; j++)
                 {
-                    if (FindObjectOfType<NarrativeManager>().dateList[i] == FindObjectOfType<NarrativeManager>().dateList[j])
+                    if (FindObjectOfType<NarrativeManager>().artifactList[i].Date == FindObjectOfType<NarrativeManager>().artifactList[j].Date)
                     {
-                        date = date + .1;
+                        date = date + 0.6;
                         stag++;
                     }
                 }
                 float date1 = (float)date;
                 // print(FindObjectOfType<NarrativeManager>().titleList[i]);
                 // print(i + "," + date + "x: " + (date - 1950) * 100);
-                Vector3 pos = new Vector3((date1 - 1950) * 600, 0, xPosition);
+                Vector3 pos = new Vector3((date1 - 1950) * 100, 0, xPosition);
 
-                GameObject newBillboard = Instantiate(prefab, pos, Quaternion.identity);
+
+                GameObject prefabName;
+
+                print("script is running");
+                if (FindObjectOfType<NarrativeManager>().artifactList[i].IsIntersection && FindObjectOfType<NarrativeManager>().artifactList[i].URL != null)
+                {
+                    print(FindObjectOfType<NarrativeManager>().artifactList[i].Title + " Has intersection and URL is not null");
+                    // newBillboard = Instantiate(prefabIntersection, pos, Quaternion.identity);
+                    prefabName = prefabIntersection;
+                }
+                else if (!FindObjectOfType<NarrativeManager>().artifactList[i].IsIntersection && FindObjectOfType<NarrativeManager>().artifactList[i].URL != null)
+                {
+                    print(FindObjectOfType<NarrativeManager>().artifactList[i].Title + " Does not have intersection and URL is not null");
+                    // newBillboard = Instantiate(prefab, pos, Quaternion.identity);
+                    prefabName = prefab;
+                }
+                else if (FindObjectOfType<NarrativeManager>().artifactList[i].IsIntersection && FindObjectOfType<NarrativeManager>().artifactList[i].URL == null)
+                {
+                    print(FindObjectOfType<NarrativeManager>().artifactList[i].Title + " Has intersection and URL is null");
+                    // newBillboard = Instantiate(prefabIntersectionNoImage, pos, Quaternion.identity);
+                    prefabName = prefabIntersectionNoImage;
+                }
+                else if (!FindObjectOfType<NarrativeManager>().artifactList[i].IsIntersection && FindObjectOfType<NarrativeManager>().artifactList[i].URL == null)
+                {
+                    print(FindObjectOfType<NarrativeManager>().artifactList[i].Title + " Does not have intersection and URL is null");
+                    prefabName = prefabNoImage;
+                } else
+                {
+                    print(FindObjectOfType<NarrativeManager>().artifactList[i].Title + " This is literally impossible");
+                    prefabName = prefab;
+                }
+
+                GameObject newBillboard = Instantiate(prefabName, pos, Quaternion.identity);
+
                 //newBillboard.transform.localScale = new Vector3(0.1F, 0.1F, 0.1F);
                 int zOffset = 0;
-                int rotation = 0;
                 if (stag > 0)
                 {
                     if (stag % 2 == 0)
                     {
-                        rotation = -20;
-                        zOffset = 20;
+                        zOffset = -20;
                     }
                     else
                     {
-                        zOffset = -20;
-                        rotation = 20;
+                        zOffset = 20;
                     }
                 }
+
                 newBillboard.transform.position = new Vector3(newBillboard.transform.position.x, newBillboard.transform.position.y + 7, newBillboard.transform.position.z + zOffset);
-                newBillboard.transform.Rotate(0, 180 + rotation, 0);
+                newBillboard.transform.Rotate(0, 180, 0);
                 newBillboard.GetComponent<BillboardMonobehaviorFunctions>().boardNumber = billboardsList.Count;
                 newBillboard.GetComponent<BillboardMonobehaviorFunctions>().table = nameOfTimeline;
 
