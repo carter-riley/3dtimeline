@@ -376,7 +376,7 @@ public class buttonMovement : MonoBehaviour
     {
         Vector3 pos = transform.position;
         pos.x = Camera.main.transform.position.x;
-        yearDisplay = Mathf.Round((pos.x / 600) + 1950);
+        yearDisplay = Mathf.Round((pos.x / 600) + 1900);
         yearText.text = yearDisplay.ToString();
         //print(yearText.text);
     }
@@ -384,6 +384,6 @@ public class buttonMovement : MonoBehaviour
     public void updateSliderPosition() {
         Vector3 pos = transform.position;
         pos.x = Camera.main.transform.position.x;
-        slider.value = Mathf.Round((pos.x / 600) + 1950);
+        slider.value = Mathf.Round((pos.x / 600) + 1900);
     }
 }

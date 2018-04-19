@@ -169,12 +169,13 @@ public class AddNewBillboards : MonoBehaviour
             }
             for (int i = FindObjectOfType<NarrativeManager>().currentNumber; i < numberOfObjects + FindObjectOfType<NarrativeManager>().currentNumber; i++)
             {
+
                 bool isIntersection = false;
 
                 try
                 {
                     // isIntersection = intersectionList[FindObjectOfType<NarrativeManager>().intersectionNumber];
-                    isIntersection = FindObjectOfType<NarrativeManager>().artifactList[i].IsIntersection;
+                    isIntersection = FindObjectOfType<NarrativeManager>().artifactList[created].IsIntersection;
                     print("isInteresction " + isIntersection);
                     // intersectionList.RemoveAt(0);
                     // FindObjectOfType<NarrativeManager>().intersectionNumber++;
@@ -197,7 +198,7 @@ public class AddNewBillboards : MonoBehaviour
                 }
 
                 double date;
-                if (double.TryParse(FindObjectOfType<NarrativeManager>().artifactList[i].Date, out date))
+                if (double.TryParse(FindObjectOfType<NarrativeManager>().artifactList[created].Date, out date))
                 {
                     Console.WriteLine(date);
 
@@ -213,46 +214,46 @@ public class AddNewBillboards : MonoBehaviour
                 int stag = 0;
                 for (int j = 0; j < i; j++)
                 {
-                    if (FindObjectOfType<NarrativeManager>().artifactList[i].Date == FindObjectOfType<NarrativeManager>().artifactList[j].Date)
+                    if (FindObjectOfType<NarrativeManager>().artifactList[created].Date == FindObjectOfType<NarrativeManager>().artifactList[j].Date)
                     {
-                        date = date + 0.6;
+                        date = date + 0.1;
                         stag++;
                     }
                 }
                 float date1 = (float)date;
                 // print(FindObjectOfType<NarrativeManager>().titleList[i]);
                 // print(i + "," + date + "x: " + (date - 1950) * 100);
-                Vector3 pos = new Vector3((date1 - 1950) * 100, 0, xPosition);
+                Vector3 pos = new Vector3((date1 - 1900) * 600, 0, xPosition);
 
 
                 GameObject prefabName;
 
                 print("script is running");
-                if (FindObjectOfType<NarrativeManager>().artifactList[i].IsIntersection && FindObjectOfType<NarrativeManager>().artifactList[i].URL != null)
+                if (FindObjectOfType<NarrativeManager>().artifactList[created].IsIntersection && FindObjectOfType<NarrativeManager>().artifactList[created].URL != null)
                 {
-                    print(FindObjectOfType<NarrativeManager>().artifactList[i].Title + " Has intersection and URL is not null");
+                    print(FindObjectOfType<NarrativeManager>().artifactList[created].Title + " Has intersection and URL is not null");
                     // newBillboard = Instantiate(prefabIntersection, pos, Quaternion.identity);
                     prefabName = prefabIntersection;
                 }
-                else if (!FindObjectOfType<NarrativeManager>().artifactList[i].IsIntersection && FindObjectOfType<NarrativeManager>().artifactList[i].URL != null)
+                else if (!FindObjectOfType<NarrativeManager>().artifactList[created].IsIntersection && FindObjectOfType<NarrativeManager>().artifactList[created].URL != null)
                 {
-                    print(FindObjectOfType<NarrativeManager>().artifactList[i].Title + " Does not have intersection and URL is not null");
+                    print(FindObjectOfType<NarrativeManager>().artifactList[created].Title + " Does not have intersection and URL is not null");
                     // newBillboard = Instantiate(prefab, pos, Quaternion.identity);
                     prefabName = prefab;
                 }
-                else if (FindObjectOfType<NarrativeManager>().artifactList[i].IsIntersection && FindObjectOfType<NarrativeManager>().artifactList[i].URL == null)
+                else if (FindObjectOfType<NarrativeManager>().artifactList[created].IsIntersection && FindObjectOfType<NarrativeManager>().artifactList[created].URL == null)
                 {
-                    print(FindObjectOfType<NarrativeManager>().artifactList[i].Title + " Has intersection and URL is null");
+                    print(FindObjectOfType<NarrativeManager>().artifactList[created].Title + " Has intersection and URL is null");
                     // newBillboard = Instantiate(prefabIntersectionNoImage, pos, Quaternion.identity);
                     prefabName = prefabIntersectionNoImage;
                 }
-                else if (!FindObjectOfType<NarrativeManager>().artifactList[i].IsIntersection && FindObjectOfType<NarrativeManager>().artifactList[i].URL == null)
+                else if (!FindObjectOfType<NarrativeManager>().artifactList[created].IsIntersection && FindObjectOfType<NarrativeManager>().artifactList[created].URL == null)
                 {
-                    print(FindObjectOfType<NarrativeManager>().artifactList[i].Title + " Does not have intersection and URL is null");
+                    print(FindObjectOfType<NarrativeManager>().artifactList[created].Title + " Does not have intersection and URL is null");
                     prefabName = prefabNoImage;
                 } else
                 {
-                    print(FindObjectOfType<NarrativeManager>().artifactList[i].Title + " This is literally impossible");
+                    print(FindObjectOfType<NarrativeManager>().artifactList[created].Title + " This is literally impossible");
                     prefabName = prefab;
                 }
 
@@ -279,6 +280,7 @@ public class AddNewBillboards : MonoBehaviour
 
                 billboardsList.Add(newBillboard);
                 DontDestroyOnLoad(newBillboard);
+                created++;
             }
             // FindObjectOfType<NarrativeManager>().currentNumber += numberOfObjects;
 
@@ -288,6 +290,8 @@ public class AddNewBillboards : MonoBehaviour
 
         }
 
+
+        PlayerPrefs.SetInt("created",created);
     }
 
     // Update is called once per frame

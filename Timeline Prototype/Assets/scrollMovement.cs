@@ -21,7 +21,7 @@ public class scrollMovement : MonoBehaviour {
 
     public void onValueHasChanged() {
         float sliderCurrentVal = slider.value;
-        float newXPos = (sliderCurrentVal - 1950) * 600;
+        float newXPos = (sliderCurrentVal - 1900) * 600;
         //print("newXPos ==" + newXPos);
         mainCamera.transform.position = new Vector3(newXPos, mainCamera.transform.position.y, mainCamera.transform.position.z);
         updateTime();
