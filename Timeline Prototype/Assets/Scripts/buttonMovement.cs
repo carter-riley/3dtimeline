@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class buttonMovement : MonoBehaviour
 {
+    public float reset = 300;
     public Text yearText;
     public float yearDisplay;
     public Button left;
@@ -13,8 +14,8 @@ public class buttonMovement : MonoBehaviour
     public Text philanthropyPathTitle;
     public Text comingOfAgePathTitle;
     public Text gonzagaPathTitle;
-    public float speedH = 2.0f;
-    public float speedV = 2.0f;
+    //public float speedH = 2.0f;
+    //public float speedV = 2.0f;
 
     private float yaw = -90.0f;
     private float pitch = 0.0f;
@@ -27,6 +28,9 @@ public class buttonMovement : MonoBehaviour
 
     public int xForwardLimit;
     public int xBackwardsLimit;
+
+    public int movementSpeed;
+    public int fastMovementSpeed;
 
     public Slider slider;
 
@@ -63,6 +67,8 @@ public class buttonMovement : MonoBehaviour
     void Start()
     {
 
+        
+
         yearDisplay = 0;
         yearText.text = "Year:  " + yearDisplay.ToString();
         gonzagaPath = this.gameObject.GetComponent<addPathways>().planeGonzaga;
@@ -78,7 +84,16 @@ public class buttonMovement : MonoBehaviour
         //print(gonzagaPath);
     }
 
-    
+
+    //void Update() {
+        //reset -= Time.deltaTime;
+        //if(reset < 1)
+        //{
+        //    //Application.LoadLevel("startScreen");
+        //}
+
+    //}
+
 
     //GameObject gonzagaPath = referenceToManager.GetComponent<addPathways>().gonzagaPath;
 
@@ -97,7 +112,7 @@ public class buttonMovement : MonoBehaviour
         */
 
         //Camera.main.transform.Translate(new Vector3(0, 0, 100));
-        Camera.main.transform.position += Camera.main.transform.forward * Time.deltaTime * 650; //change the 500 to a public variable named movement speed
+        Camera.main.transform.position += Camera.main.transform.forward * movementSpeed;
         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, Camera.main.transform.position.z);
         //This code moves the player straight forward -- keep 4 ltr--- Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 100, Camera.main.transform.position.y, Camera.main.transform.position.z);
 
@@ -155,7 +170,7 @@ public class buttonMovement : MonoBehaviour
     }
     public void moveBackwards()
     {
-        Camera.main.transform.position += Camera.main.transform.forward * Time.deltaTime * -650; //change the 500 to a public variable named movement speed
+        Camera.main.transform.position += Camera.main.transform.forward * -movementSpeed;
         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, Camera.main.transform.position.z);
 
         RaycastHit hit;
@@ -219,7 +234,7 @@ public class buttonMovement : MonoBehaviour
         */
 
         //Camera.main.transform.Translate(new Vector3(0, 0, 100));
-        Camera.main.transform.position += Camera.main.transform.forward * Time.deltaTime * 19000; //change the 500 to a public variable named movement speed
+        Camera.main.transform.position += Camera.main.transform.forward * fastMovementSpeed;
         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, Camera.main.transform.position.z);
         //This code moves the player straight forward -- keep 4 ltr--- Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 100, Camera.main.transform.position.y, Camera.main.transform.position.z);
 
@@ -285,7 +300,7 @@ public class buttonMovement : MonoBehaviour
         */
 
         //Camera.main.transform.Translate(new Vector3(0, 0, 100));
-        Camera.main.transform.position -= Camera.main.transform.forward * Time.deltaTime * 19000; //change the 500 to a public variable named movement speed
+        Camera.main.transform.position += Camera.main.transform.forward * -fastMovementSpeed;
         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, Camera.main.transform.position.z);
         //This code moves the player straight forward -- keep 4 ltr--- Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 100, Camera.main.transform.position.y, Camera.main.transform.position.z);
 

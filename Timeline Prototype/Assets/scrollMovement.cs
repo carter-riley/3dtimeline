@@ -13,6 +13,8 @@ public class scrollMovement : MonoBehaviour {
     public Camera mainCamera;
 
     public Text yearText;
+
+    public bool isDown;
     // Use this for initialization
     void Start () {
         slider.GetComponent<Slider>().maxValue = maxDate;
@@ -32,6 +34,16 @@ public class scrollMovement : MonoBehaviour {
         float yearDisplay = slider.value;
         yearText.text = yearDisplay.ToString();
         //print(yearText.text);
+    }
+
+    public void OnMouseDown()
+    {
+        isDown = true;
+    }
+
+    public void OnMouseUp()
+    {
+        isDown = false;
     }
 
 }

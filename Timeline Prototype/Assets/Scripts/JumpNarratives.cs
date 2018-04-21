@@ -17,6 +17,8 @@ public class JumpNarratives : MonoBehaviour {
     public GameObject comingOfAgeCircle;
     public GameObject philanthropyCircle;
 
+    public Text yearText;
+    public Slider slider;
 
     public void JumpToGonzaga()
     {
@@ -58,5 +60,23 @@ public class JumpNarratives : MonoBehaviour {
     public void ResetToStart()
     {
         Camera.main.transform.position = new Vector3(-137, 11, Camera.main.transform.position.z);
+        updateTime();
+        updateSliderPosition();
+    }
+
+    public void updateTime()
+    {
+        Vector3 pos = transform.position;
+        pos.x = Camera.main.transform.position.x;
+        float yearValue = Mathf.Round((pos.x / 600) + 1900);
+        yearText.text = yearValue.ToString();
+        //print(yearText.text);
+    }
+
+    public void updateSliderPosition()
+    {
+        Vector3 pos = transform.position;
+        pos.x = Camera.main.transform.position.x;
+        slider.value = Mathf.Round((pos.x / 600) + 1900);
     }
 }

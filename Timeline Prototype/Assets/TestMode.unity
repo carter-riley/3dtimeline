@@ -1264,6 +1264,8 @@ MonoBehaviour:
   turnSpeed: 4
   panSpeed: 4
   zoomSpeed: 4
+  slider: {fileID: 1528863459}
+  isScrollBarDown: 0
 --- !u!81 &57482989
 AudioListener:
   m_ObjectHideFlags: 0
@@ -13735,8 +13737,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 349.7, y: -131.2}
-  m_SizeDelta: {x: 40, y: 89}
+  m_AnchoredPosition: {x: 349.7, y: -119.29}
+  m_SizeDelta: {x: 40, y: 130.48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &855037321
 MonoBehaviour:
@@ -17796,6 +17798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d4bcdf06a8cabb48b1d30a6939283d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reset: 300
   yearText: {fileID: 1752908701}
   yearDisplay: 0
   left: {fileID: 1297308990}
@@ -17804,13 +17807,13 @@ MonoBehaviour:
   philanthropyPathTitle: {fileID: 1126810275}
   comingOfAgePathTitle: {fileID: 1291745041}
   gonzagaPathTitle: {fileID: 1641398522}
-  speedH: 2
-  speedV: 2
   turnSpeed: 4
   panSpeed: 4
   zoomSpeed: 4
-  xForwardLimit: 2147483647
-  xBackwardsLimit: -2000000
+  xForwardLimit: 70200
+  xBackwardsLimit: -1300
+  movementSpeed: 650
+  fastMovementSpeed: 19000
   slider: {fileID: 1528863459}
   pathGameObject1: {fileID: 0}
 --- !u!114 &1044528119
@@ -17890,6 +17893,8 @@ MonoBehaviour:
   gonzagaBlueCircle: {fileID: 43711312}
   comingOfAgeCircle: {fileID: 1315951948}
   philanthropyCircle: {fileID: 466555089}
+  yearText: {fileID: 1752908701}
+  slider: {fileID: 1528863459}
 --- !u!114 &1044528123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17901,14 +17906,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58e95d0eac42eef4e8de4adf844f7ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xScaleGonzaga: 10000
+  xScaleGonzaga: 15000
   yScaleGonzaga: 1000
   zScaleGonzaga: 2
   xStartGonzaga: 0
   yStartGonzaga: 0.5
   zStartGonzaga: -257
   gonzagaMaterial: {fileID: 2100000, guid: e7d5d468af64aeb468a8270f17eb70da, type: 2}
-  xScalePhilanthropy: 10000
+  xScalePhilanthropy: 15000
   yScalePhilanthropy: 1000
   zScalePhilanthropy: 2
   xStartPhilanthropy: 0
@@ -17916,7 +17921,7 @@ MonoBehaviour:
   zStartPhilanthropy: 34
   philanthropyMaterial: {fileID: 2100000, guid: 4e3a35b4dc2be374595fc08105689fe0,
     type: 2}
-  xScaleComingOfAge: 10000
+  xScaleComingOfAge: 15000
   yScaleComingOfAge: 1000
   zScaleComingOfAge: 2
   xStartComingOfAge: 0
@@ -17950,7 +17955,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1044528114}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 747100ae1110a884381349d9efe20050, type: 3}
   m_Name: 
@@ -26405,6 +26410,7 @@ GameObject:
   - component: {fileID: 1528863457}
   - component: {fileID: 1528863459}
   - component: {fileID: 1528863458}
+  - component: {fileID: 1528863460}
   m_Layer: 0
   m_Name: Player Position Scroll Bar
   m_TagString: Untagged
@@ -26449,6 +26455,7 @@ MonoBehaviour:
   slider: {fileID: 1528863459}
   mainCamera: {fileID: 57482986}
   yearText: {fileID: 1752908701}
+  isDown: 0
 --- !u!114 &1528863459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26508,6 +26515,53 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1528863460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1528863456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1528863458}
+          m_MethodName: OnMouseDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1528863458}
+          m_MethodName: OnMouseUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &1537063394
 GameObject:
   m_ObjectHideFlags: 0
@@ -29731,7 +29785,7 @@ RectTransform:
   m_GameObject: {fileID: 1671721010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 135}
-  m_LocalScale: {x: 8204.6, y: 1, z: 214.738}
+  m_LocalScale: {x: 15000.6, y: 1, z: 214.738}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -32413,8 +32467,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 266.6, y: -133.3}
-  m_SizeDelta: {x: 40, y: 89}
+  m_AnchoredPosition: {x: 266.23, y: -120.03}
+  m_SizeDelta: {x: 39.3, y: 131.95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1834856951
 MonoBehaviour:
@@ -33278,7 +33332,7 @@ Transform:
   m_GameObject: {fileID: 1914602278}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1029.6797, y: -175, z: -79}
-  m_LocalScale: {x: 10000, y: 1, z: 5000}
+  m_LocalScale: {x: 15000, y: 1, z: 5000}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 25
@@ -36073,8 +36127,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 308, y: -131.9}
-  m_SizeDelta: {x: 40, y: 89}
+  m_AnchoredPosition: {x: 308, y: -118.3}
+  m_SizeDelta: {x: 40, y: 128.49}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2072599347
 MonoBehaviour:

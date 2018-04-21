@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 
@@ -26,6 +27,10 @@ public class CameraDirectionMovement : MonoBehaviour
     float xAngleTemp;
     float yAngleTemp;
 
+    public Slider slider;
+    public bool isScrollBarDown;
+    
+
     void Start()
     {
         xAngle = 90;
@@ -36,7 +41,7 @@ public class CameraDirectionMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        isScrollBarDown = slider.GetComponent<scrollMovement>().isDown;
         //yaw += speedH * Input.GetAxis("Mouse X");
         //if (!(pitch <= -35 && speedV * Input.GetAxis("Mouse Y") > 0 || pitch >= 20 && speedV * Input.GetAxis("Mouse Y") < 0))
         //{
@@ -72,22 +77,24 @@ public class CameraDirectionMovement : MonoBehaviour
         //    }
         //}
         //Source: https://answers.unity.com/questions/805630/how-can-%C4%B1-rotate-camera-with-touch.html
-        if (Input.touchCount > 0)
-        {
-            if (Input.GetTouch(0).phase == TouchPhase.Began)
+        if (!isScrollBarDown) {
+            if (Input.touchCount > 0)
             {
-                FirstPoint = Input.GetTouch(0).position;
-                xAngleTemp = xAngle;
-                yAngleTemp = yAngle;
-            }
-            if (Input.GetTouch(0).phase == TouchPhase.Moved)
-            {
-                SecondPoint = Input.GetTouch(0).position;
-                xAngle = xAngleTemp + (SecondPoint.x - FirstPoint.x) * 180 / Screen.width;
-                yAngle = yAngleTemp + (SecondPoint.y - FirstPoint.y) * -90 / Screen.height;
-                yAngle = Mathf.Clamp(yAngle, -20, 35);
-                xAngle = Mathf.Clamp(xAngle, 45, 155);
-                this.transform.rotation = Quaternion.Euler(yAngle, xAngle, 0.0f);
+                if (Input.GetTouch(0).phase == TouchPhase.Began)
+                {
+                    FirstPoint = Input.GetTouch(0).position;
+                    xAngleTemp = xAngle;
+                    yAngleTemp = yAngle;
+                }
+                if (Input.GetTouch(0).phase == TouchPhase.Moved)
+                {
+                    SecondPoint = Input.GetTouch(0).position;
+                    xAngle = xAngleTemp + (SecondPoint.x - FirstPoint.x) * 180 / Screen.width;
+                    yAngle = yAngleTemp + (SecondPoint.y - FirstPoint.y) * -90 / Screen.height;
+                    yAngle = Mathf.Clamp(yAngle, -20, 35);
+                    xAngle = Mathf.Clamp(xAngle, 45, 155);
+                    this.transform.rotation = Quaternion.Euler(yAngle, xAngle, 0.0f);
+                }
             }
         }
         //Vector3 pos = Camera.main.ScreenToViewportPoint(Input.GetTouch(0).position - TouchPhase.Began);
