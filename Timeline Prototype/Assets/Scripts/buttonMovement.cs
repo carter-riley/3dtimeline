@@ -86,11 +86,11 @@ public class buttonMovement : MonoBehaviour
 
 
     //void Update() {
-        //reset -= Time.deltaTime;
-        //if(reset < 1)
-        //{
-        //    //Application.LoadLevel("startScreen");
-        //}
+    //reset -= Time.deltaTime;
+    //if(reset < 1)
+    //{
+    //    //Application.LoadLevel("startScreen");
+    //}
 
     //}
 
@@ -161,9 +161,22 @@ public class buttonMovement : MonoBehaviour
                 }
             }
         }
-        else { //reverting location because boundary crossed
-            //Camera.main.transform.position -= Camera.main.transform.forward * Time.deltaTime * 3000;
-            Camera.main.transform.position = new Vector3(xForwardLimit, 11, Camera.main.transform.position.z);
+        else
+        { //reverting location because boundary crossed
+          //Camera.main.transform.position -= Camera.main.transform.forward * Time.deltaTime * 3000;
+            if (gonzagaPathTitle.IsActive())
+            {
+                Camera.main.transform.position = new Vector3(xForwardLimit, 11, middleOfGonzagaPath); // 11 is a magic number which is the height the camera should be at
+            }
+            else if (philanthropyPathTitle.IsActive())
+            {
+                Camera.main.transform.position = new Vector3(xForwardLimit, 11, middleOfPhilanthropyPath);
+            }
+            else if (comingOfAgePathTitle.IsActive())
+            {
+                Camera.main.transform.position = new Vector3(xForwardLimit, 11, middleOfComingOfAgePath);
+            }
+            //Camera.main.transform.position = new Vector3(xForwardLimit, 11, Camera.main.transform.position.z);
         }
         updateTime();
         updateSliderPosition();
@@ -218,8 +231,22 @@ public class buttonMovement : MonoBehaviour
                     }
                 }
             }
-        } else {
-            Camera.main.transform.position = new Vector3(xBackwardsLimit, 11, Camera.main.transform.position.z);
+        }
+        else
+        {
+            if (gonzagaPathTitle.IsActive())
+            {
+                Camera.main.transform.position = new Vector3(xBackwardsLimit, 11, middleOfGonzagaPath); // 11 is a magic number which is the height the camera should be at
+            }
+            else if (philanthropyPathTitle.IsActive())
+            {
+                Camera.main.transform.position = new Vector3(xBackwardsLimit, 11, middleOfPhilanthropyPath);
+            }
+            else if (comingOfAgePathTitle.IsActive())
+            {
+                Camera.main.transform.position = new Vector3(xBackwardsLimit, 11, middleOfComingOfAgePath);
+            }
+            //Camera.main.transform.position = new Vector3(xBackwardsLimit, 11, Camera.main.transform.position.z);
         }
         updateTime();
         updateSliderPosition();
@@ -281,11 +308,25 @@ public class buttonMovement : MonoBehaviour
                         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, middleOfComingOfAgePath);
                     }
                 }
-                
+
             }
-        } else { //reverting location because boundary crossed
+        }
+        else
+        { //reverting location because boundary crossed
             //Camera.main.transform.position -= Camera.main.transform.forward * Time.deltaTime * 150000;
-            Camera.main.transform.position = new Vector3(xForwardLimit, 11, Camera.main.transform.position.z);
+            if (gonzagaPathTitle.IsActive())
+            {
+                Camera.main.transform.position = new Vector3(xForwardLimit, 11, middleOfGonzagaPath); // 11 is a magic number which is the height the camera should be at
+            }
+            else if (philanthropyPathTitle.IsActive())
+            {
+                Camera.main.transform.position = new Vector3(xForwardLimit, 11, middleOfPhilanthropyPath);
+            }
+            else if (comingOfAgePathTitle.IsActive())
+            {
+                Camera.main.transform.position = new Vector3(xForwardLimit, 11, middleOfComingOfAgePath);
+            }
+            //Camera.main.transform.position = new Vector3(xForwardLimit, 11, Camera.main.transform.position.z);
         }
         updateTime();
         updateSliderPosition();
@@ -349,9 +390,22 @@ public class buttonMovement : MonoBehaviour
                 }
             }
         }
-        else {
+        else
+        {
             //Camera.main.transform.position += Camera.main.transform.forward * Time.deltaTime * 150000;
-            Camera.main.transform.position = new Vector3(xBackwardsLimit, 11, Camera.main.transform.position.z);
+            if (gonzagaPathTitle.IsActive())
+            {
+                Camera.main.transform.position = new Vector3(xBackwardsLimit, 11, middleOfGonzagaPath); // 11 is a magic number which is the height the camera should be at
+            }
+            else if (philanthropyPathTitle.IsActive())
+            {
+                Camera.main.transform.position = new Vector3(xBackwardsLimit, 11, middleOfPhilanthropyPath);
+            }
+            else if (comingOfAgePathTitle.IsActive())
+            {
+                Camera.main.transform.position = new Vector3(xBackwardsLimit, 11, middleOfComingOfAgePath);
+            }
+            //Camera.main.transform.position = new Vector3(xBackwardsLimit, 11, Camera.main.transform.position.z);
         }
         updateTime();
         updateSliderPosition();
