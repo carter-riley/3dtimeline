@@ -8,7 +8,10 @@ using UnityEngine.UI;
 
 public class AddNewBillboards : MonoBehaviour
 {
-
+    public float smallestYear = 1;
+    public float firstyear;
+    public float secondyear;
+    public float thirdyear;
     public GameObject prefab;
     public GameObject prefabIntersection;
     public GameObject prefabNoImage;
@@ -133,6 +136,71 @@ public class AddNewBillboards : MonoBehaviour
             }
             // print("objects: " + numberOfObjects);
 
+
+            //Finds earliest year in database
+            try
+            {
+                MySqlConnection connect;
+                string MyConString = "Server=147.222.163.1;UID=sdg7;Database=sdg7_DB;PWD=3dTimeline;Port=3306";
+                connect = new MySql.Data.MySqlClient.MySqlConnection();
+                connect.ConnectionString = MyConString;
+                connect.Open();
+                if (connect.State == ConnectionState.Open)
+                {
+                }
+                string query = "SELECT min(Date_id) FROM gonzagatable";
+                MySqlCommand cmd = new MySqlCommand(query, connect);
+                //Create a data reader and Execute the command
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                //Read the data and store them in the list
+                while (dataReader.Read())
+                {
+                    firstyear = dataReader.GetUInt16(0);
+                }
+                print("Firstyear: " + firstyear);
+                dataReader.Close();
+
+                query = "SELECT min(Date_id) FROM ComingofAgeTable";
+                cmd = new MySqlCommand(query, connect);
+                MySqlDataReader dataReader2 = cmd.ExecuteReader();
+                //Read the data and store them in the list
+                while (dataReader2.Read())
+                {
+                    secondyear = dataReader2.GetUInt16(0);
+                }
+                print("secondyear: " + secondyear);
+                dataReader2.Close();
+
+                query = "SELECT min(Date_id) FROM philanthropyTable";
+                cmd = new MySqlCommand(query, connect);
+                MySqlDataReader dataReader3 = cmd.ExecuteReader();
+                //Read the data and store them in the list
+                while (dataReader3.Read())
+                {
+                    thirdyear = dataReader3.GetUInt16(0);
+                }
+                print("thirdyear: " + thirdyear);
+                dataReader3.Close();
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                print("File: AddNewBillboards.cs. Exception: + " + ex);
+            }
+
+            if (firstyear < secondyear && firstyear < thirdyear)
+            {
+                smallestYear = firstyear;
+            }
+            else if (secondyear < firstyear && secondyear < thirdyear)
+            {
+                smallestYear = secondyear;
+            }
+            else
+            {
+                smallestYear = thirdyear;
+            }
+            print("smallestYear Year is: " + smallestYear);
+
             int x = 0;
 
             foreach (Artifact elementOne in FindObjectOfType<NarrativeManager>().artifactList)
@@ -223,7 +291,7 @@ public class AddNewBillboards : MonoBehaviour
                 float date1 = (float)date;
                 // print(FindObjectOfType<NarrativeManager>().titleList[i]);
                 // print(i + "," + date + "x: " + (date - 1950) * 100);
-                Vector3 pos = new Vector3((date1 - 1900) * 600, 0, xPosition);
+                Vector3 pos = new Vector3((date1 - smallestYear) * 600, 0, xPosition);
 
 
                 GameObject prefabName;

@@ -2,9 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
+using MySql.Data.MySqlClient;
+using System.Data;
+using System;
 
 public class buttonMovement : MonoBehaviour
 {
+    public float firstyear;
+    public float secondyear;
+    public float thirdyear;
+    public GameObject yearholder;
+    public float smallestYear;
     public float reset = 300;
     public Text yearText;
     public float yearDisplay;
@@ -67,9 +76,70 @@ public class buttonMovement : MonoBehaviour
     void Start()
     {
 
-        
+        try
+        {
+            MySqlConnection connect;
+            string MyConString = "Server=147.222.163.1;UID=sdg7;Database=sdg7_DB;PWD=3dTimeline;Port=3306";
+            connect = new MySql.Data.MySqlClient.MySqlConnection();
+            connect.ConnectionString = MyConString;
+            connect.Open();
+            if (connect.State == ConnectionState.Open)
+            {
+            }
+            string query = "SELECT min(Date_id) FROM gonzagatable";
+            MySqlCommand cmd = new MySqlCommand(query, connect);
+            //Create a data reader and Execute the command
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+            //Read the data and store them in the list
+            while (dataReader.Read())
+            {
+                firstyear = dataReader.GetUInt16(0);
+            }
+            //print("Firstyear: " + firstyear);
+            dataReader.Close();
 
-        yearDisplay = 0;
+            query = "SELECT min(Date_id) FROM ComingofAgeTable";
+            cmd = new MySqlCommand(query, connect);
+            MySqlDataReader dataReader2 = cmd.ExecuteReader();
+            //Read the data and store them in the list
+            while (dataReader2.Read())
+            {
+                secondyear = dataReader2.GetUInt16(0);
+            }
+            //print("secondyear: " + secondyear);
+            dataReader2.Close();
+
+            query = "SELECT min(Date_id) FROM philanthropyTable";
+            cmd = new MySqlCommand(query, connect);
+            MySqlDataReader dataReader3 = cmd.ExecuteReader();
+            //Read the data and store them in the list
+            while (dataReader3.Read())
+            {
+                thirdyear = dataReader3.GetUInt16(0);
+            }
+           // print("thirdyear: " + thirdyear);
+            dataReader3.Close();
+        }
+        catch (MySql.Data.MySqlClient.MySqlException ex)
+        {
+            print("File: AddNewBillboards.cs. Exception: + " + ex);
+        }
+
+        if (firstyear < secondyear && firstyear < thirdyear)
+        {
+            smallestYear = firstyear;
+        }
+        else if (secondyear < firstyear && secondyear < thirdyear)
+        {
+            smallestYear = secondyear;
+        }
+        else
+        {
+            smallestYear = thirdyear;
+        }
+        //print("smallestYear Year is: " + smallestYear);
+
+        yearDisplay = smallestYear;
         yearText.text = "Year:  " + yearDisplay.ToString();
         gonzagaPath = this.gameObject.GetComponent<addPathways>().planeGonzaga;
         philanthropyPath = this.gameObject.GetComponent<addPathways>().planePhilanthropy;
@@ -101,10 +171,11 @@ public class buttonMovement : MonoBehaviour
     //GameObject GonzagaPath = this.GetComponent<addPathways>().GonzagaPath;
     //GameObject PhilanthropyPath;
     //GameObject ComingOfAgePath;
-
+   
 
     public void moveCameraForward()
     {
+        print("ButtonMovement script smallest year; " + smallestYear);
         /*
         Camera.main.transform.position = new Vector3(
 
@@ -445,7 +516,7 @@ public class buttonMovement : MonoBehaviour
     {
         Vector3 pos = transform.position;
         pos.x = Camera.main.transform.position.x;
-        yearDisplay = Mathf.Round((pos.x / 600) + 1900);
+        yearDisplay = Mathf.Round((pos.x / 600) + smallestYear);
         yearText.text = yearDisplay.ToString();
         //print(yearText.text);
     }
@@ -453,6 +524,6 @@ public class buttonMovement : MonoBehaviour
     public void updateSliderPosition() {
         Vector3 pos = transform.position;
         pos.x = Camera.main.transform.position.x;
-        slider.value = Mathf.Round((pos.x / 600) + 1900);
+        slider.value = Mathf.Round((pos.x / 600) + smallestYear);
     }
 }
