@@ -199,7 +199,7 @@ public class AddNewBillboards : MonoBehaviour
             {
                 smallestYear = thirdyear;
             }
-            print("smallestYear Year is: " + smallestYear);
+            //print("smallestYear Year is: " + smallestYear);
 
             int x = 0;
 

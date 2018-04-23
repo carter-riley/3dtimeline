@@ -175,7 +175,7 @@ public class buttonMovement : MonoBehaviour
 
     public void moveCameraForward()
     {
-        print("ButtonMovement script smallest year; " + smallestYear);
+        //print("ButtonMovement script smallest year; " + smallestYear);
         /*
         Camera.main.transform.position = new Vector3(
 
