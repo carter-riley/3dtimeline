@@ -24,6 +24,12 @@ public class scrollMovement : MonoBehaviour {
         //print("SMALLEST YEAR ==" + smallestYear);
         slider.GetComponent<Slider>().maxValue = maxDate;
         slider.GetComponent<Slider>().minValue = smallestYear;
+
+        float cameraXPos = PlayerPrefs.GetFloat("xpos");
+        //float sliderValue = (cameraXPos - (600 * (smallestYear))) / 600;
+        float sliderValue = (cameraXPos / 600) + smallestYear;
+        print("sliderValue SHOULD EQUALL ==" + sliderValue);
+        slider.value = sliderValue;
 	}
 
     public void onValueHasChanged() {
@@ -50,5 +56,15 @@ public class scrollMovement : MonoBehaviour {
     {
         isDown = false;
     }
+    //float cameraXPos = PlayerPrefs.GetFloat("xpos");
+    //float cameraZPos = PlayerPrefs.GetFloat("zpos");
+
+    //    print("cameraXpos in ButtonMovement == " + cameraXPos);
+    //    print("cameraZPos in buttonMovement == " + cameraZPos);
+
+    //Camera.main.transform.position = new Vector3(cameraXPos, 11, cameraZPos);
+
+    //PlayerPrefs.SetFloat("xpos", Camera.main.transform.position.x);
+    //PlayerPrefs.SetFloat("zpos", Camera.main.transform.position.z);
 
 }

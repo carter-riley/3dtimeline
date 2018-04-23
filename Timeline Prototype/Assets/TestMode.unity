@@ -3114,7 +3114,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 100, y: -100, z: -100}
 --- !u!1 &216036053
 GameObject:
@@ -3912,7 +3912,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &296120952
 GameObject:
@@ -16856,7 +16856,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4068029343373206, guid: 859d9c679ead1074b882e3bb5b0e29e9, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1300219492213116, guid: 859d9c679ead1074b882e3bb5b0e29e9, type: 2}
       propertyPath: m_Name
@@ -17717,11 +17717,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1044528115}
+  - component: {fileID: 1044528117}
   - component: {fileID: 1044528121}
   - component: {fileID: 1044528116}
   - component: {fileID: 1044528120}
   - component: {fileID: 1044528119}
-  - component: {fileID: 1044528117}
   - component: {fileID: 1044528123}
   - component: {fileID: 1044528118}
   - component: {fileID: 1044528122}
@@ -17745,7 +17745,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1044528116
 MonoBehaviour:
@@ -17912,6 +17912,8 @@ MonoBehaviour:
   philanthropyCircle: {fileID: 466555089}
   yearText: {fileID: 1752908701}
   slider: {fileID: 1528863459}
+  smallestYear: 0
+  managerObject: {fileID: 0}
 --- !u!114 &1044528123
 MonoBehaviour:
   m_ObjectHideFlags: 0

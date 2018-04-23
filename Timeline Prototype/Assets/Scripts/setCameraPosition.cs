@@ -24,8 +24,10 @@ public class setCameraPosition : MonoBehaviour {
         
 
         //int cameraPosition = PlayerPrefs.GetInt("cameraPosition");
-        float cameraXPos = PlayerPrefs.GetFloat("xPos");
-        float cameraZPos = PlayerPrefs.GetFloat("zPos");
+        float cameraXPos = PlayerPrefs.GetFloat("xpos");
+        float cameraZPos = PlayerPrefs.GetFloat("zpos");
+
+        print("cameraXPos == " + cameraXPos + "!!!!!!!!!!!!!!!!!!!!!!!!!");
 
         mainCamera.transform.position = new Vector3(cameraXPos, 11, cameraZPos); //starting postion
 
@@ -35,7 +37,7 @@ public class setCameraPosition : MonoBehaviour {
 
 
         print(middleOfGonzagaPath);
-        print(cameraZPos);
+        //print(cameraZPos);
         if (cameraZPos == middleOfGonzagaPath || cameraZPos + 1 == middleOfGonzagaPath || cameraZPos - 1 == middleOfGonzagaPath)
         {
             gonzagaPathTitle.gameObject.SetActive(true);

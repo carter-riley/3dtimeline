@@ -56,11 +56,12 @@ public class buttonMovement : MonoBehaviour
         transform.eulerAngles = new Vector3(pitch, yaw, 0.0f); */
     //void Start()
     //{
-    //    left.gameObject.SetActive(false);
-    //    right.gameObject.SetActive(false);
-    //    pathwayName1.gameObject.SetActive(false);
-    //    pathwayName2.gameObject.SetActive(false);
-    //    pathwayName3.gameObject.SetActive(false);
+        
+    //    //    left.gameObject.SetActive(false);
+    //    //    right.gameObject.SetActive(false);
+    //    //    pathwayName1.gameObject.SetActive(false);
+    //    //    pathwayName2.gameObject.SetActive(false);
+    //    //    pathwayName3.gameObject.SetActive(false);
     //}
 
     //public GameObject referenceToManager;
@@ -75,6 +76,7 @@ public class buttonMovement : MonoBehaviour
 
     void Start()
     {
+        
 
         try
         {
@@ -152,6 +154,7 @@ public class buttonMovement : MonoBehaviour
         //print("HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         //print(test);
         //print(gonzagaPath);
+        
     }
 
 
@@ -483,42 +486,41 @@ public class buttonMovement : MonoBehaviour
     }
 
 
-    public void moveLeft()
-    {
-        Camera.main.transform.Translate(new Vector2(-20, 0));
-    }
-    public void moveRight()
-    {
-        Camera.main.transform.Translate(new Vector2(20, 0));
-    }
+    //public void moveLeft()
+    //{
+    //    Camera.main.transform.Translate(new Vector2(-20, 0));
+    //}
+    //public void moveRight()
+    //{
+    //    Camera.main.transform.Translate(new Vector2(20, 0));
+    //}
 
 
-    public void startAtBeginning()
-    {
-        //Camera.main.transform.position += Camera.main.transform.forward * Time.deltaTime * -500; //change the 500 to a public variable named movement speed
-        Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, Camera.main.transform.position.z);
+    //public void startAtBeginning()
+    //{
+    //    //Camera.main.transform.position += Camera.main.transform.forward * Time.deltaTime * -500; //change the 500 to a public variable named movement speed
+    //    Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, Camera.main.transform.position.z);
 
-        RaycastHit hit;
-        Ray downRay = new Ray(Camera.main.transform.position, Vector3.down);
-        if (Physics.Raycast(downRay, out hit, 20))
-        {
-            if (hit.transform.gameObject == pathGameObject1)
-            {
+    //    RaycastHit hit;
+    //    Ray downRay = new Ray(Camera.main.transform.position, Vector3.down);
+    //    if (Physics.Raycast(downRay, out hit, 20))
+    //    {
+    //        if (hit.transform.gameObject == pathGameObject1)
+    //        {
 
-            }
-            else
-            {
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, 50); // 11 is a magic number which is the height the camera should be at// 20 is a magic number which is the center of the path
-            }
-        }
-    }
+    //        }
+    //        else
+    //        {
+    //            Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, 50); // 11 is a magic number which is the height the camera should be at// 20 is a magic number which is the center of the path
+    //        }
+    //    }
+    //}
     public void updateTime()
     {
         Vector3 pos = transform.position;
         pos.x = Camera.main.transform.position.x;
         yearDisplay = Mathf.Round((pos.x / 600) + smallestYear);
         yearText.text = yearDisplay.ToString();
-        //print(yearText.text);
     }
 
     public void updateSliderPosition() {

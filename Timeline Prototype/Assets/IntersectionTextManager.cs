@@ -27,7 +27,7 @@ public class IntersectionTextManager : MonoBehaviour
         string intersectingNarrative = GetComponentInParent<BillboardMonobehaviorFunctions>().thisArtifact.IntersectWith;
 
         // int count = FindObjectOfType<NarrativeManager>().textCount;
-        print("Intersection text is: " + intersectingNarrative);
+        //print("Intersection text is: " + intersectingNarrative);
         theText.text = intersectingNarrative;
 
         // print(currentDate + " " + currentTitle);

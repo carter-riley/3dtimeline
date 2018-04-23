@@ -244,10 +244,10 @@ public class AddNewBillboards : MonoBehaviour
                 {
                     // isIntersection = intersectionList[FindObjectOfType<NarrativeManager>().intersectionNumber];
                     isIntersection = FindObjectOfType<NarrativeManager>().artifactList[created].IsIntersection;
-                    print("isInteresction " + isIntersection);
+                   // print("isInteresction " + isIntersection);
                     // intersectionList.RemoveAt(0);
                     // FindObjectOfType<NarrativeManager>().intersectionNumber++;
-                    print("isInteresction2 " + isIntersection);
+                    //print("isInteresction2 " + isIntersection);
                 }
                 catch (Exception e)
                 {
@@ -296,28 +296,28 @@ public class AddNewBillboards : MonoBehaviour
 
                 GameObject prefabName;
 
-                print("script is running");
+                //print("script is running");
                 if (FindObjectOfType<NarrativeManager>().artifactList[created].IsIntersection && FindObjectOfType<NarrativeManager>().artifactList[created].URL != null)
                 {
-                    print(FindObjectOfType<NarrativeManager>().artifactList[created].Title + " Has intersection and URL is not null");
+                    //print(FindObjectOfType<NarrativeManager>().artifactList[created].Title + " Has intersection and URL is not null");
                     // newBillboard = Instantiate(prefabIntersection, pos, Quaternion.identity);
                     prefabName = prefabIntersection;
                 }
                 else if (!FindObjectOfType<NarrativeManager>().artifactList[created].IsIntersection && FindObjectOfType<NarrativeManager>().artifactList[created].URL != null)
                 {
-                    print(FindObjectOfType<NarrativeManager>().artifactList[created].Title + " Does not have intersection and URL is not null");
+                    //print(FindObjectOfType<NarrativeManager>().artifactList[created].Title + " Does not have intersection and URL is not null");
                     // newBillboard = Instantiate(prefab, pos, Quaternion.identity);
                     prefabName = prefab;
                 }
                 else if (FindObjectOfType<NarrativeManager>().artifactList[created].IsIntersection && FindObjectOfType<NarrativeManager>().artifactList[created].URL == null)
                 {
-                    print(FindObjectOfType<NarrativeManager>().artifactList[created].Title + " Has intersection and URL is null");
+                    //print(FindObjectOfType<NarrativeManager>().artifactList[created].Title + " Has intersection and URL is null");
                     // newBillboard = Instantiate(prefabIntersectionNoImage, pos, Quaternion.identity);
                     prefabName = prefabIntersectionNoImage;
                 }
                 else if (!FindObjectOfType<NarrativeManager>().artifactList[created].IsIntersection && FindObjectOfType<NarrativeManager>().artifactList[created].URL == null)
                 {
-                    print(FindObjectOfType<NarrativeManager>().artifactList[created].Title + " Does not have intersection and URL is null");
+                    //print(FindObjectOfType<NarrativeManager>().artifactList[created].Title + " Does not have intersection and URL is null");
                     prefabName = prefabNoImage;
                 } else
                 {
