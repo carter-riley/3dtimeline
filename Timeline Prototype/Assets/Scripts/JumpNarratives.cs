@@ -20,6 +20,14 @@ public class JumpNarratives : MonoBehaviour {
     public Text yearText;
     public Slider slider;
 
+    public float smallestYear;
+    public GameObject managerObject;
+
+    void Start()
+    {
+        smallestYear = managerObject.GetComponent<buttonMovement>().smallestYear;
+    }
+
     public void JumpToGonzaga()
     {
         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, gonzagaZLoc);
@@ -68,7 +76,7 @@ public class JumpNarratives : MonoBehaviour {
     {
         Vector3 pos = transform.position;
         pos.x = Camera.main.transform.position.x;
-        float yearValue = Mathf.Round((pos.x / 600) + 1900);
+        float yearValue = Mathf.Round((pos.x / 600) + smallestYear);
         yearText.text = yearValue.ToString();
         //print(yearText.text);
     }
@@ -77,6 +85,6 @@ public class JumpNarratives : MonoBehaviour {
     {
         Vector3 pos = transform.position;
         pos.x = Camera.main.transform.position.x;
-        slider.value = Mathf.Round((pos.x / 600) + 1900);
+        slider.value = Mathf.Round((pos.x / 600) + smallestYear);
     }
 }

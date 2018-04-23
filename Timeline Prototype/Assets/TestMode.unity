@@ -17758,6 +17758,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dc1504ce236f4302a51308930f461b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  smallestYear: 1
+  firstyear: 0
+  secondyear: 0
+  thirdyear: 0
   prefab: {fileID: 1300219492213116, guid: 859d9c679ead1074b882e3bb5b0e29e9, type: 2}
   prefabIntersection: {fileID: 1965217742385426, guid: 4d81eccfab361af4ab52e1d32a5a9317,
     type: 2}
@@ -17798,6 +17802,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d4bcdf06a8cabb48b1d30a6939283d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstyear: 0
+  secondyear: 0
+  thirdyear: 0
+  yearholder: {fileID: 0}
+  smallestYear: 0
   reset: 300
   yearText: {fileID: 1752908701}
   yearDisplay: 0
@@ -17810,7 +17819,7 @@ MonoBehaviour:
   turnSpeed: 4
   panSpeed: 4
   zoomSpeed: 4
-  xForwardLimit: 70200
+  xForwardLimit: 58200
   xBackwardsLimit: -1300
   movementSpeed: 650
   fastMovementSpeed: 19000
@@ -17827,6 +17836,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dc1504ce236f4302a51308930f461b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  smallestYear: 1
+  firstyear: 0
+  secondyear: 0
+  thirdyear: 0
   prefab: {fileID: 1300219492213116, guid: 859d9c679ead1074b882e3bb5b0e29e9, type: 2}
   prefabIntersection: {fileID: 1965217742385426, guid: 4d81eccfab361af4ab52e1d32a5a9317,
     type: 2}
@@ -17849,6 +17862,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dc1504ce236f4302a51308930f461b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  smallestYear: 1
+  firstyear: 0
+  secondyear: 0
+  thirdyear: 0
   prefab: {fileID: 1300219492213116, guid: 859d9c679ead1074b882e3bb5b0e29e9, type: 2}
   prefabIntersection: {fileID: 1965217742385426, guid: 4d81eccfab361af4ab52e1d32a5a9317,
     type: 2}
@@ -26456,6 +26473,8 @@ MonoBehaviour:
   mainCamera: {fileID: 57482986}
   yearText: {fileID: 1752908701}
   isDown: 0
+  smallestYear: 0
+  managerObject: {fileID: 1044528114}
 --- !u!114 &1528863459
 MonoBehaviour:
   m_ObjectHideFlags: 0

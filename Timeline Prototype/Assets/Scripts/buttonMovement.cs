@@ -254,7 +254,7 @@ public class buttonMovement : MonoBehaviour
     }
     public void moveBackwards()
     {
-        Camera.main.transform.position += Camera.main.transform.forward * -movementSpeed;
+        Camera.main.transform.position -= Camera.main.transform.forward * movementSpeed;
         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 11, Camera.main.transform.position.z);
 
         RaycastHit hit;

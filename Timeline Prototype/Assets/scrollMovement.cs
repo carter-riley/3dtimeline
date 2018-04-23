@@ -15,15 +15,20 @@ public class scrollMovement : MonoBehaviour {
     public Text yearText;
 
     public bool isDown;
+    
+    public float smallestYear;
+    public GameObject managerObject;
     // Use this for initialization
     void Start () {
+        smallestYear = managerObject.GetComponent<buttonMovement>().smallestYear;
+        //print("SMALLEST YEAR ==" + smallestYear);
         slider.GetComponent<Slider>().maxValue = maxDate;
-        slider.GetComponent<Slider>().minValue = minDate;
+        slider.GetComponent<Slider>().minValue = smallestYear;
 	}
 
     public void onValueHasChanged() {
         float sliderCurrentVal = slider.value;
-        float newXPos = (sliderCurrentVal - 1900) * 600;
+        float newXPos = (sliderCurrentVal - smallestYear) * 600;
         //print("newXPos ==" + newXPos);
         mainCamera.transform.position = new Vector3(newXPos, mainCamera.transform.position.y, mainCamera.transform.position.z);
         updateTime();
