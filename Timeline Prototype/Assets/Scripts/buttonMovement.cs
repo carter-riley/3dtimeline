@@ -76,56 +76,10 @@ public class buttonMovement : MonoBehaviour
 
     void Start()
     {
-        
+        firstyear = FindObjectOfType<NarrativeManager>().minDates[0];
+        secondyear = FindObjectOfType<NarrativeManager>().minDates[1];
+        thirdyear = FindObjectOfType<NarrativeManager>().minDates[2];
 
-        try
-        {
-            MySqlConnection connect;
-            string MyConString = "Server=147.222.163.1;UID=sdg7;Database=sdg7_DB;PWD=3dTimeline;Port=3306";
-            connect = new MySql.Data.MySqlClient.MySqlConnection();
-            connect.ConnectionString = MyConString;
-            connect.Open();
-            if (connect.State == ConnectionState.Open)
-            {
-            }
-            string query = "SELECT min(Date_id) FROM gonzagatable";
-            MySqlCommand cmd = new MySqlCommand(query, connect);
-            //Create a data reader and Execute the command
-            MySqlDataReader dataReader = cmd.ExecuteReader();
-            //Read the data and store them in the list
-            while (dataReader.Read())
-            {
-                firstyear = dataReader.GetUInt16(0);
-            }
-            //print("Firstyear: " + firstyear);
-            dataReader.Close();
-
-            query = "SELECT min(Date_id) FROM ComingofAgeTable";
-            cmd = new MySqlCommand(query, connect);
-            MySqlDataReader dataReader2 = cmd.ExecuteReader();
-            //Read the data and store them in the list
-            while (dataReader2.Read())
-            {
-                secondyear = dataReader2.GetUInt16(0);
-            }
-            //print("secondyear: " + secondyear);
-            dataReader2.Close();
-
-            query = "SELECT min(Date_id) FROM philanthropyTable";
-            cmd = new MySqlCommand(query, connect);
-            MySqlDataReader dataReader3 = cmd.ExecuteReader();
-            //Read the data and store them in the list
-            while (dataReader3.Read())
-            {
-                thirdyear = dataReader3.GetUInt16(0);
-            }
-           // print("thirdyear: " + thirdyear);
-            dataReader3.Close();
-        }
-        catch (MySql.Data.MySqlClient.MySqlException ex)
-        {
-            print("File: AddNewBillboards.cs. Exception: + " + ex);
-        }
 
         if (firstyear < secondyear && firstyear < thirdyear)
         {

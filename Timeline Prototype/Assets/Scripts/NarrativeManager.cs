@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NarrativeManager : MonoBehaviour {
+public class NarrativeManager : MonoBehaviour
+{
 
     public List<Artifact> artifactList = new List<Artifact>();
 
@@ -16,17 +17,23 @@ public class NarrativeManager : MonoBehaviour {
 
     public int currentNumber = 0;
     public int created = 0;
+
+    public string[] narratives;
+
+    public List<int> minDates = new List<int>();
     // public int pictureCount = 0;
     // public int textCount = 0;
 
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         DontDestroyOnLoad(this.gameObject);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 }
