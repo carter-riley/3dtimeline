@@ -48,14 +48,14 @@ public class openPDF : MonoBehaviour
 
             WWW www = new WWW(webAddress);
             yield return www;
-            System.IO.File.WriteAllBytes(@"C:\\Users\\Carte\\Documents\\" + address, www.bytes);
+            System.IO.File.WriteAllBytes(@"C:\\PDFImages\\" + address, www.bytes);
 
             PDFConvert converter = new PDFConvert();
 
             
 
-            converter.Convert(@"C:\\Users\\Carte\\Documents\\" + address,
-                             @"C:\\Users\\Carte\\Documents\\PdfImages\\%01d.jpg",
+            converter.Convert(@"C:\\PDFImages\\" + address,
+                             @"C:\\PdfImages\\%01d.jpg",
                              1,
                              3,
                              "jpeg",
@@ -81,11 +81,11 @@ public class openPDF : MonoBehaviour
     {
 
 
-        DirectoryInfo dir = new DirectoryInfo(@"C:\\Users\\Carte\\Documents\\");
+        DirectoryInfo dir = new DirectoryInfo(@"C:\\PDFImages\\");
         List<FileInfo> info = dir.GetFiles("*.jpg")
                              .Where(file => Regex.IsMatch(file.Name, "^[0-9]+")).ToList();
 
-        Resources.Load(@"C:\\Users\\Carte\\Documents\\");
+        Resources.Load(@"C:\\PDFImages\\");
 
         foreach (FileInfo f in info)
         {

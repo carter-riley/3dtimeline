@@ -596,10 +596,10 @@ PlayerSettings:
   cloudServicesEnabled:
     UNet: 1
   facebookSdkVersion: 7.9.4
-  apiCompatibilityLevel: 2
-  cloudProjectId: 9492c30a-5667-4554-9272-73bdeabd60a5
+  apiCompatibilityLevel: 3
+  cloudProjectId: 2396124e-3fa5-44f2-a07b-44356f476233
   projectName: Unity Test Project
-  organizationId: nkona808
+  organizationId: sdg7
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
