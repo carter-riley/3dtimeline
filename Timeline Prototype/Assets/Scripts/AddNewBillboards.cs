@@ -145,7 +145,7 @@ public class AddNewBillboards : MonoBehaviour
             double date;
             if (double.TryParse(FindObjectOfType<NarrativeManager>().artifactList[j].Date, out date))
             {
-                Console.WriteLine(date);
+                print(date + " is " + FindObjectOfType<NarrativeManager>().artifactList[j].Date);
 
             }
             else
@@ -159,10 +159,14 @@ public class AddNewBillboards : MonoBehaviour
             int stag = 0;
             for (int i = 0; i < j; i++)
             {
-                if (FindObjectOfType<NarrativeManager>().artifactList[j].Date == FindObjectOfType<NarrativeManager>().artifactList[i].Date)
+                if (FindObjectOfType<NarrativeManager>().artifactList[j].Table == FindObjectOfType<NarrativeManager>().artifactList[i].Table)
                 {
-                    date = date + 0.1;
-                    stag++;
+                    if (FindObjectOfType<NarrativeManager>().artifactList[j].Date == FindObjectOfType<NarrativeManager>().artifactList[i].Date)
+                    {
+
+                        date = date + 0.1;
+                        stag++;
+                    }
                 }
             }
             float date1 = (float)date;
@@ -218,7 +222,7 @@ public class AddNewBillboards : MonoBehaviour
                     zOffset = 20;
                 }
             }
-
+            print(date + ", " + FindObjectOfType<NarrativeManager>().artifactList[j].Table + ", " + FindObjectOfType<NarrativeManager>().artifactList[j].Title);
             newBillboard.transform.position = new Vector3(newBillboard.transform.position.x, newBillboard.transform.position.y + 7, newBillboard.transform.position.z + zOffset);
             newBillboard.transform.Rotate(0, 180, 0);
             newBillboard.GetComponent<BillboardMonobehaviorFunctions>().boardNumber = billboardsList.Count;
