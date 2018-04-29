@@ -18,8 +18,10 @@ public class scrollMovement : MonoBehaviour {
     
     public float smallestYear;
     public GameObject managerObject;
+    public bool firstTime;
     // Use this for initialization
     void Start () {
+        firstTime = true;
         smallestYear = managerObject.GetComponent<buttonMovement>().smallestYear;
         //print("SMALLEST YEAR ==" + smallestYear);
         slider.GetComponent<Slider>().maxValue = maxDate;
@@ -35,8 +37,18 @@ public class scrollMovement : MonoBehaviour {
     public void onValueHasChanged() {
         float sliderCurrentVal = slider.value;
         float newXPos = (sliderCurrentVal - smallestYear) * 600;
+        float cameraXPos = PlayerPrefs.GetFloat("xpos");
         //print("newXPos ==" + newXPos);
-        mainCamera.transform.position = new Vector3(newXPos, mainCamera.transform.position.y, mainCamera.transform.position.z);
+        if (firstTime)
+        {
+            //print("IN FIRST TIME!!!!!!!");
+            firstTime = false;
+            mainCamera.transform.position = new Vector3(cameraXPos, mainCamera.transform.position.y, mainCamera.transform.position.z);
+        }
+        else {
+            //print("IN THE ELSE!!!!!");      
+            mainCamera.transform.position = new Vector3(newXPos, mainCamera.transform.position.y, mainCamera.transform.position.z);
+        }
         updateTime();
     }
 
