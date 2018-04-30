@@ -67,7 +67,7 @@ public class JumpNarratives : MonoBehaviour {
 
     public void ResetToStart()
     {
-        Camera.main.transform.position = new Vector3(-137, 11, Camera.main.transform.position.z);
+        Camera.main.transform.position = new Vector3(-218, 11, Camera.main.transform.position.z);
         updateTime();
         updateSliderPosition();
     }

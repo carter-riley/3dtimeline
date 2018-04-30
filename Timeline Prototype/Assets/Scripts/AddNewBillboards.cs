@@ -163,7 +163,7 @@ public class AddNewBillboards : MonoBehaviour
             float date1 = (float)date;
             // print(FindObjectOfType<NarrativeManager>().titleList[i]);
             // print(i + "," + date + "x: " + (date - 1950) * 100);
-            Vector3 pos = new Vector3((date1 - smallestYear) * 600, 0, xPosition);
+            Vector3 pos = new Vector3((date1 - smallestYear) * 600, 7, xPosition);
 
 
             GameObject prefabName;

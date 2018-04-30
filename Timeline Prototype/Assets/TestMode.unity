@@ -17812,7 +17812,7 @@ MonoBehaviour:
   panSpeed: 4
   zoomSpeed: 4
   xForwardLimit: 58200
-  xBackwardsLimit: -1300
+  xBackwardsLimit: -299
   movementSpeed: 81
   fastMovementSpeed: 2375
   slider: {fileID: 1528863459}
