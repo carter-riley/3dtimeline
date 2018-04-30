@@ -137,7 +137,10 @@ public class initializeVariables : MonoBehaviour
 
         print("There are " + FindObjectOfType<NarrativeManager>().artifactList.Count + " items in artifact list.");
 
-
+        //for(int i = 0; i < FindObjectOfType<NarrativeManager>().artifactList.Count; i++)
+        //{
+        //    print(FindObjectOfType<NarrativeManager>().artifactList[i].title);
+        //}
 
     }
 

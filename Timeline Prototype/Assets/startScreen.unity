@@ -469,6 +469,8 @@ GameObject:
   - component: {fileID: 727076213}
   - component: {fileID: 727076211}
   - component: {fileID: 727076212}
+  - component: {fileID: 727076214}
+  - component: {fileID: 727076215}
   m_Layer: 0
   m_Name: _Manager
   m_TagString: Untagged
@@ -540,6 +542,50 @@ MonoBehaviour:
   created: 0
   narratives: []
   minDates: 
+--- !u!114 &727076214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 727076209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dc1504ce236f4302a51308930f461b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1300219492213116, guid: 859d9c679ead1074b882e3bb5b0e29e9, type: 2}
+  prefabIntersection: {fileID: 1921198733130658, guid: bc1ccbeb8041be34385c8bc8dc4615da,
+    type: 2}
+  prefabNoImage: {fileID: 1204753040269878, guid: f5824bbf8b430fd43b6ccf4abeae80a1,
+    type: 2}
+  prefabIntersectionNoImage: {fileID: 1613620010667328, guid: 860c7055824778c49b4eef549e7fa1e1,
+    type: 2}
+  zPosition: 0
+  howClose: -800
+  billboardsList: []
+--- !u!114 &727076215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 727076209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 747100ae1110a884381349d9efe20050, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xLengthFlowers: 100000
+  xStartFlowers: -200
+  yStartFlowers: 1
+  zStartGonzagaLeftFlowers: -242
+  zStartGonzagaRightFlowers: -272
+  zStartPhilanthropyLeftFlowers: 49
+  zStartPhilanthropyRightFlowers: 19
+  zStartComingOfAgeLeftFlowers: 353
+  zStartComingOfAgeRightFlowers: 323
+  flowerPot: {fileID: 100004, guid: 0353d7430d945be47b7deb8a9a193983, type: 3}
+  bluePlants: {fileID: 100004, guid: 8148bab12d6c4774090c91e96b6507a0, type: 3}
+  yellowPlants: {fileID: 100004, guid: ef275eb8eb9669949ad0f4a31466e4f2, type: 3}
 --- !u!1 &872027914
 GameObject:
   m_ObjectHideFlags: 0
