@@ -27,7 +27,7 @@ public class scrollMovement : MonoBehaviour {
         smallestYear = managerObject.GetComponent<buttonMovement>().smallestYear;
         //print("SMALLEST YEAR ==" + smallestYear);
         slider.GetComponent<Slider>().maxValue = maxDate;
-        slider.GetComponent<Slider>().minValue = smallestYear;
+        slider.GetComponent<Slider>().minValue = smallestYear-1;
 
         float cameraXPos = PlayerPrefs.GetFloat("xpos");
         //float sliderValue = (cameraXPos - (600 * (smallestYear))) / 600;

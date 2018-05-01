@@ -585,7 +585,7 @@ MonoBehaviour:
   zStartComingOfAgeRightFlowers: 323
   flowerPot: {fileID: 100004, guid: 0353d7430d945be47b7deb8a9a193983, type: 3}
   bluePlants: {fileID: 100004, guid: 8148bab12d6c4774090c91e96b6507a0, type: 3}
-  yellowPlants: {fileID: 100004, guid: ef275eb8eb9669949ad0f4a31466e4f2, type: 3}
+  yellowPlants: {fileID: 100004, guid: 98e2bcc51e457ea419e8e1e9d06155f6, type: 3}
 --- !u!1 &872027914
 GameObject:
   m_ObjectHideFlags: 0
