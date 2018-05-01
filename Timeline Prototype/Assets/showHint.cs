@@ -66,7 +66,7 @@ public class showHint : MonoBehaviour {
             //    print("billboard hit");
             //}
             if (hit.transform.gameObject.tag == "billboard") {
-                hintText.text = "Double Click On An Event To Learn More";
+                hintText.text = "Double Click on an Event To Learn More";
                // print("HIT THE BILLBOARD");
             }
         }
