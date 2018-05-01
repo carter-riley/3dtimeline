@@ -57,7 +57,7 @@ public class openPDF : MonoBehaviour
             converter.Convert(@"C:\\PDFImages\\" + address,
                              @"C:\\PdfImages\\%01d.jpg",
                              1,
-                             3,
+                             1,
                              "jpeg",
                              600,
                              800);

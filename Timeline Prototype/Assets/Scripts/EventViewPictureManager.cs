@@ -24,6 +24,7 @@ public class EventViewPictureManager : MonoBehaviour
         //yield return www;
         //www.LoadImageIntoTexture(tex);
 
+
         Texture2D tex = EventViewData.TheArtifact.Image;
 
         GetComponent<Image>().material.mainTexture = tex;

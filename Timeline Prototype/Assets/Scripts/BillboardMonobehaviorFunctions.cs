@@ -32,7 +32,7 @@ public class BillboardMonobehaviorFunctions : MonoBehaviour
 
 
         if(thisArtifact.URL == null) {
-
+            thisArtifact.Image = null;
         } else if (thisArtifact.URL.Contains(".mp4"))
         {
             Texture2D tex = null;
@@ -43,6 +43,8 @@ public class BillboardMonobehaviorFunctions : MonoBehaviour
             WWW www = new WWW("http://as-dh.gonzaga.edu/omeka/files/original/" + thisArtifact.URL);
             yield return www;
             www.LoadImageIntoTexture(tex);
+
+            // print(thisArtifact.Title + " http://as-dh.gonzaga.edu/omeka/files/original/" + thisArtifact.URL);
 
             thisArtifact.Image = tex;
         } else if(thisArtifact.URL.Contains(".pdf"))

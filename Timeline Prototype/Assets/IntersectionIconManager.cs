@@ -15,21 +15,23 @@ public class IntersectionIconManager : MonoBehaviour
 
         string intersectingNarrative = GetComponentInParent<BillboardMonobehaviorFunctions>().thisArtifact.IntersectWith;
 
+        print("Intersection Icon Manager, artifact intersects with: " + intersectingNarrative);
 
-        switch (intersectingNarrative)
+        if (intersectingNarrative.Contains("phil"))
         {
-            case "philanthropy":
-                GetComponent<Renderer>().material.mainTexture = philanthropy;
-                break;
-            case "comingofAge":
-                GetComponent<Renderer>().material.mainTexture = comingofAge;
-                break;
-            case "gonzaga":
-                GetComponent<Renderer>().material.mainTexture = gonzaga;
-                break;
-            default:
-                print("Default case, no texture applied");
-                break;
+            GetComponent<Renderer>().material.mainTexture = philanthropy;
+        }
+        else if (intersectingNarrative.Contains("Age"))
+        {
+            GetComponent<Renderer>().material.mainTexture = comingofAge;
+        }
+        else if (intersectingNarrative.Contains("zag"))
+        {
+            GetComponent<Renderer>().material.mainTexture = gonzaga;
+        }
+        else
+        {
+            print("Default case, no texture applied");
         }
 
     }

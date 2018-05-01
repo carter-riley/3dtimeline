@@ -28,7 +28,31 @@ public class IntersectionTextManager : MonoBehaviour
 
         // int count = FindObjectOfType<NarrativeManager>().textCount;
         //print("Intersection text is: " + intersectingNarrative);
-        theText.text = intersectingNarrative;
+
+        print("Intersection Text Manager, artifact intersects with: " + intersectingNarrative);
+
+
+        string intersectionText;
+
+        if(intersectingNarrative.Contains("phil"))
+        {
+            intersectionText = "Philanthropy";
+        }
+        else if(intersectingNarrative.Contains("Age"))
+        {
+            intersectionText = "Coming of Age";
+        }
+        else if(intersectingNarrative.Contains("zag"))
+        {
+            intersectionText = "Gonzaga";
+        }
+        else
+        {
+            intersectionText = "error";
+            print("Default case, error text");
+        }
+
+        theText.text = intersectionText;
 
         // print(currentDate + " " + currentTitle);
 
