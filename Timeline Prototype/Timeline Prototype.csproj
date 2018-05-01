@@ -109,6 +109,9 @@
     <Reference Include="MySql.Web">
       <HintPath>Assets/Scripts/MySql.Web.dll</HintPath>
     </Reference>
+    <Reference Include="System.Data">
+      <HintPath>Assets/Scripts/System.Data.dll</HintPath>
+    </Reference>
     <Reference Include="Patagames.Pdf">
       <HintPath>Assets/Scripts/PDFIUM.NET/Patagames.Pdf.dll</HintPath>
     </Reference>
@@ -117,9 +120,6 @@
     </Reference>
     <Reference Include="Patagames.Pdf.Wpf">
       <HintPath>Assets/Scripts/PDFIUM.NET/Patagames.Pdf.Wpf.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data">
-      <HintPath>Assets/Scripts/System.Data.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -236,6 +236,7 @@
     <Compile Include="Assets\Scripts\transitionToTimeline.cs" />
     <Compile Include="Assets\Scripts\VideoStreamButton.cs" />
     <Compile Include="Assets\scrollMovement.cs" />
+    <Compile Include="Assets\showHint.cs" />
     <Compile Include="Assets\stopRotating.cs" />
     <Compile Include="Assets\StreamVideo2.cs" />
     <Compile Include="Assets\VideoController.cs" />

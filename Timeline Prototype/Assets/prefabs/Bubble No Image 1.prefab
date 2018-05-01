@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 65458473768509022}
   m_Layer: 0
   m_Name: Bubble No Image 1
-  m_TagString: Untagged
+  m_TagString: billboard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -346,6 +346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aa6a073ca188ae4684bcd1fe416dc0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialTouch: 0
   boardNumber: 0
   table: 
 --- !u!114 &114190596130111900

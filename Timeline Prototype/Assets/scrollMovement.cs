@@ -27,12 +27,12 @@ public class scrollMovement : MonoBehaviour {
         smallestYear = managerObject.GetComponent<buttonMovement>().smallestYear;
         //print("SMALLEST YEAR ==" + smallestYear);
         slider.GetComponent<Slider>().maxValue = maxDate;
-        slider.GetComponent<Slider>().minValue = smallestYear-1;
+        slider.GetComponent<Slider>().minValue = smallestYear;
 
         float cameraXPos = PlayerPrefs.GetFloat("xpos");
         //float sliderValue = (cameraXPos - (600 * (smallestYear))) / 600;
         float sliderValue = (cameraXPos / 600) + smallestYear;
-        print("sliderValue SHOULD EQUALL ==" + sliderValue);
+        //print("sliderValue SHOULD EQUALL ==" + sliderValue);
         slider.value = sliderValue;
 	}
 
@@ -43,15 +43,15 @@ public class scrollMovement : MonoBehaviour {
         //print("newXPos ==" + newXPos);
         if (firstTime)
         {
-            print("IN FIRST TIME!!!!!!!");
+            //print("IN FIRST TIME!!!!!!!");
             firstTime = false;
             mainCamera.transform.position = new Vector3(cameraXPos, mainCamera.transform.position.y, mainCamera.transform.position.z);
         } else if(secondTime) {
-            print("In SECOND TIME!!!");
+            //print("In SECOND TIME!!!");
             secondTime = false;
             mainCamera.transform.position = new Vector3(cameraXPos, mainCamera.transform.position.y, mainCamera.transform.position.z);
         } else {
-            print("IN THE ELSE!!!!!");      
+            //print("IN THE ELSE!!!!!");      
             mainCamera.transform.position = new Vector3(newXPos, mainCamera.transform.position.y, mainCamera.transform.position.z);
         }
         updateTime();

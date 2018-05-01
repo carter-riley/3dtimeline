@@ -27,7 +27,7 @@ public class setCameraPosition : MonoBehaviour {
         float cameraXPos = PlayerPrefs.GetFloat("xpos");
         float cameraZPos = PlayerPrefs.GetFloat("zpos");
 
-        print("cameraXPos == " + cameraXPos + "!!!!!!!!!!!!!!!!!!!!!!!!!");
+        //print("cameraXPos == " + cameraXPos + "!!!!!!!!!!!!!!!!!!!!!!!!!");
 
         mainCamera.transform.position = new Vector3(cameraXPos, 11, cameraZPos); //starting postion
 
@@ -36,7 +36,7 @@ public class setCameraPosition : MonoBehaviour {
         middleOfComingOfAgePath = this.gameObject.GetComponent<JumpNarratives>().comingOfAgeZLoc;
 
 
-        print(middleOfGonzagaPath);
+        //print(middleOfGonzagaPath);
         //print(cameraZPos);
         if (cameraZPos == middleOfGonzagaPath || cameraZPos + 1 == middleOfGonzagaPath || cameraZPos - 1 == middleOfGonzagaPath)
         {
