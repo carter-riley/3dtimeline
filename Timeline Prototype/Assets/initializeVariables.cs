@@ -25,122 +25,136 @@ public class initializeVariables : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        PlayerPrefs.SetInt("created", 0);
 
-        string[] narrativeArrays = narratives.Split(',');
+        print("play time is: " + Time.realtimeSinceStartup.ToString());
+        
 
 
-        FindObjectOfType<NarrativeManager>().narratives = narrativeArrays;
+        if (Time.realtimeSinceStartup < 15) {
+            print("Pulling data from database");
 
-        string MyConString = "Server=147.222.163.1;UID=sdg7;Database=sdg7_DB;PWD=3dTimeline;Port=3306";
-        MySqlConnection connect = new MySql.Data.MySqlClient.MySqlConnection(MyConString);
+            PlayerPrefs.SetInt("created", 0);
 
-        try
-        {
-            connect.Open();
+            string[] narrativeArrays = narratives.Split(',');
 
-            // Read in data from all narratives
-            int count = 0;
-            foreach (string narrative in narrativeArrays)
+
+            FindObjectOfType<NarrativeManager>().narratives = narrativeArrays;
+
+            string MyConString = "Server=147.222.163.1;UID=sdg7;Database=sdg7_DB;PWD=3dTimeline;Port=3306";
+            MySqlConnection connect = new MySql.Data.MySqlClient.MySqlConnection(MyConString);
+
+            try
             {
-                string sql = "SELECT COUNT(*) FROM " + narrative;
+                connect.Open();
 
-                MySqlCommand command = new MySqlCommand(sql, connect);
-                MySqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
+                // Read in data from all narratives
+                int count = 0;
+                foreach (string narrative in narrativeArrays)
                 {
-                    print(narrative + " has " + reader[0] + " items");
-                    numArtifacts += Convert.ToInt16(reader[0]);
+                    string sql = "SELECT COUNT(*) FROM " + narrative;
+
+                    MySqlCommand command = new MySqlCommand(sql, connect);
+                    MySqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        print(narrative + " has " + reader[0] + " items");
+                        numArtifacts += Convert.ToInt16(reader[0]);
+                    }
+
+                    reader.Close();
+
+                    //
+                    // New Query Block
+                    //
+
+                    sql = "SELECT * FROM " + narrative;
+
+                    command = new MySqlCommand(sql, connect);
+                    reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        string title;
+                        string date;
+                        string source;
+                        string typeOf;
+                        string format_type;
+                        string description;
+                        string webAddress;
+
+                        title = reader.GetString(1);
+                        description = reader.GetString(6);
+                        try
+                        {
+                            date = reader.GetString(2);
+                        }
+                        catch
+                        {
+                            date = "Null";
+                        }
+                        try
+                        {
+                            typeOf = reader.GetString(5);
+                        }
+                        catch
+                        {
+                            typeOf = "Null";
+                        }
+                        try
+                        {
+                            webAddress = reader.GetString(7);
+                        }
+                        catch
+                        {
+                            webAddress = null;
+                        }
+
+                        FindObjectOfType<NarrativeManager>().artifactList.Add(new Artifact(title, date, description, typeOf, webAddress, narrative));
+                    }
+
+                    reader.Close();
+
+                    //
+                    // New Query Block
+                    //
+
+                    sql = "SELECT min(Date_id) FROM " + narrative;
+
+                    command = new MySqlCommand(sql, connect);
+                    reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        FindObjectOfType<NarrativeManager>().minDates.Add(reader.GetUInt16(0));
+                    }
+
+                    reader.Close();
+
                 }
-
-                reader.Close();
-
-                //
-                // New Query Block
-                //
-
-                sql = "SELECT * FROM " + narrative;
-
-                command = new MySqlCommand(sql, connect);
-                reader = command.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    string title;
-                    string date;
-                    string source;
-                    string typeOf;
-                    string format_type;
-                    string description;
-                    string webAddress;
-
-                    title = reader.GetString(1);
-                    description = reader.GetString(6);
-                    try
-                    {
-                        date = reader.GetString(2);
-                    }
-                    catch
-                    {
-                        date = "Null";
-                    }
-                    try
-                    {
-                        typeOf = reader.GetString(5);
-                    }
-                    catch
-                    {
-                        typeOf = "Null";
-                    }
-                    try
-                    {
-                        webAddress = reader.GetString(7);
-                    }
-                    catch
-                    {
-                        webAddress = null;
-                    }
-
-                    FindObjectOfType<NarrativeManager>().artifactList.Add(new Artifact(title, date, description, typeOf, webAddress, narrative));
-                }
-
-                reader.Close();
-
-                //
-                // New Query Block
-                //
-
-                sql = "SELECT min(Date_id) FROM " + narrative;
-
-                command = new MySqlCommand(sql, connect);
-                reader = command.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    FindObjectOfType<NarrativeManager>().minDates.Add(reader.GetUInt16(0));
-                }
-
-                reader.Close();
 
             }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                print("File: AddNewBillboards.cs. Exception: + " + ex);
+            }
 
-        }
-        catch (MySql.Data.MySqlClient.MySqlException ex)
+            connect.Close();
+
+            // print("There are " + numArtifacts + " in all of the tables");
+
+            // print("There are " + FindObjectOfType<NarrativeManager>().artifactList.Count + " items in artifact list.");
+
+            //for(int i = 0; i < FindObjectOfType<NarrativeManager>().artifactList.Count; i++)
+            //{
+            //    print(FindObjectOfType<NarrativeManager>().artifactList[i].title);
+            //}
+        } else
         {
-            print("File: AddNewBillboards.cs. Exception: + " + ex);
+            print("Data has already been pulled, skipping");
         }
 
-        connect.Close();
-
-        print("There are " + numArtifacts + " in all of the tables");
-
-        print("There are " + FindObjectOfType<NarrativeManager>().artifactList.Count + " items in artifact list.");
-
-        //for(int i = 0; i < FindObjectOfType<NarrativeManager>().artifactList.Count; i++)
-        //{
-        //    print(FindObjectOfType<NarrativeManager>().artifactList[i].title);
-        //}
+        print("play time is: " + Time.realtimeSinceStartup.ToString());
 
     }
 

@@ -1024,6 +1024,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7eec8f9847318249a44840de029355f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thisThing: {fileID: 1384348692}
+  expand: {fileID: 1828944380}
   pictureFrame: {fileID: 0}
   URL: {fileID: 0}
   webAddress: 
@@ -1399,6 +1401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95bbd61fe32d659419a9f34dd61f18bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  theVideo: {fileID: 1960478238}
   image: {fileID: 1960478243}
   playIcon: {fileID: 1004776121}
   videoToPlay: {fileID: 0}

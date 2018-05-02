@@ -78,14 +78,14 @@ public class JumpNarratives : MonoBehaviour {
         Vector3 pos = transform.position;
         pos.x = Camera.main.transform.position.x;
         float yearValue = Mathf.Round((pos.x / 600) + smallestYear);
-        print("Before if: yearText.text == " + yearText.text);
-        print("smallestYear == " + smallestYear);
+        // print("Before if: yearText.text == " + yearText.text);
+        // print("smallestYear == " + smallestYear);
         if (yearValue < slider.GetComponent<Slider>().minValue) {
-            print("Im in da if bro");
+            // print("Im in da if bro");
             yearValue = slider.GetComponent<Slider>().minValue;
         }
         yearText.text = yearValue.ToString();
-        print("After: yearText.text == " + yearText.text);
+        // print("After: yearText.text == " + yearText.text);
     }
 
     public void updateSliderPosition()

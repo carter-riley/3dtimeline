@@ -92,10 +92,10 @@ public class StreamVideo : MonoBehaviour
         //image.texture = videoPlayer.texture;
 
         //Play Video
-        videoPlayer.Play();
+        videoPlayer.Pause();
 
         //Play Sound
-        audioSource.Play();
+        audioSource.Pause();
 
         Debug.Log("Playing Video");
         while (videoPlayer.isPlaying)

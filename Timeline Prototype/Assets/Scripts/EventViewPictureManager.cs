@@ -7,6 +7,8 @@ using System.Data;
 
 public class EventViewPictureManager : MonoBehaviour
 {
+    public GameObject thisThing;
+    public GameObject expand;
 
     public GameObject pictureFrame;
     public MeshRenderer URL;
@@ -23,14 +25,20 @@ public class EventViewPictureManager : MonoBehaviour
         //WWW www = new WWW(webAddress);
         //yield return www;
         //www.LoadImageIntoTexture(tex);
+        if (EventViewData.TheArtifact.URL == null)
+        {
+            Destroy(thisThing);
+            Destroy(expand);
+        }
+        else
+        {
 
+            Texture2D tex = EventViewData.TheArtifact.Image;
 
-        Texture2D tex = EventViewData.TheArtifact.Image;
+            GetComponent<Image>().material.mainTexture = tex;
 
-        GetComponent<Image>().material.mainTexture = tex;
-
-        tex = null;
-
+            tex = null;
+        }
         // print("Texture: x = " + tex.width + ", y = " + tex.height);
         // print("Texture ratio is " + tex.width/tex.height);
 

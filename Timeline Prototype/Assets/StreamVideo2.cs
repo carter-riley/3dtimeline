@@ -16,6 +16,7 @@ using UnityEngine.Video;
 
 public class StreamVideo2 : MonoBehaviour
 {
+    public GameObject theVideo;
 
     public RawImage image;
     public GameObject playIcon;
@@ -37,14 +38,15 @@ public class StreamVideo2 : MonoBehaviour
 
         // print("Address contains MP4: " + EventViewData.Address + " " + EventViewData.Address.Contains(".mp4"));
 
-        if (EventViewData.TheArtifact.URL.Contains(".mp4"))
+        if (EventViewData.TheArtifact.URL == null || !EventViewData.TheArtifact.URL.Contains(".mp4"))
         {
-
+            Destroy(theVideo);
+            Destroy(this.gameObject);
             //image.RawImage = video; //Video component is enabled
         }
         else
         {
-            Destroy(this.gameObject);
+
         }
     }
 

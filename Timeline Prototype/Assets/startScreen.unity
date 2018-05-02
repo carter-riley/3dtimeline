@@ -554,11 +554,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1300219492213116, guid: 859d9c679ead1074b882e3bb5b0e29e9, type: 2}
-  prefabIntersection: {fileID: 1921198733130658, guid: bc1ccbeb8041be34385c8bc8dc4615da,
+  prefabIntersection: {fileID: 1536771891146162, guid: 8293fe1ad5d286d4bb2778c6a2c2bae1,
     type: 2}
   prefabNoImage: {fileID: 1204753040269878, guid: f5824bbf8b430fd43b6ccf4abeae80a1,
     type: 2}
-  prefabIntersectionNoImage: {fileID: 1613620010667328, guid: 860c7055824778c49b4eef549e7fa1e1,
+  prefabIntersectionNoImage: {fileID: 1549637716451210, guid: c7c67b3aef36a1f4e8a87adb8471922f,
     type: 2}
   zPosition: 0
   howClose: -800
