@@ -115,7 +115,7 @@ public class AddNewBillboards : MonoBehaviour
                         // print("i is " + i + ", j is " + j);
                         // print(FindObjectOfType<NarrativeManager>().artifactList[i].Title + " intersects with " + FindObjectOfType<NarrativeManager>().artifactList[j].Title);
                         FindObjectOfType<NarrativeManager>().artifactList[j].IsIntersection = true;
-                        FindObjectOfType<NarrativeManager>().artifactList[j].IntersectWith = FindObjectOfType<NarrativeManager>().artifactList[j].Table;
+                        FindObjectOfType<NarrativeManager>().artifactList[j].IntersectWith = FindObjectOfType<NarrativeManager>().artifactList[i].Table;
                     }
                     else
                     {
