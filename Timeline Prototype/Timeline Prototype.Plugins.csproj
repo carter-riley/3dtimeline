@@ -97,18 +97,6 @@
     <Reference Include="MySql.Data">
       <HintPath>Assets/Scripts/MySql.Data.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data.Entity.EF6">
-      <HintPath>Assets/Scripts/MySql.Data.Entity.EF6.dll</HintPath>
-    </Reference>
-    <Reference Include="MySQL.Data.EntityFrameworkCore.Design">
-      <HintPath>Assets/Scripts/MySQL.Data.EntityFrameworkCore.Design.dll</HintPath>
-    </Reference>
-    <Reference Include="MySQL.Data.EntityFrameworkCore">
-      <HintPath>Assets/Scripts/MySQL.Data.EntityFrameworkCore.dll</HintPath>
-    </Reference>
-    <Reference Include="MySql.Web">
-      <HintPath>Assets/Scripts/MySql.Web.dll</HintPath>
-    </Reference>
     <Reference Include="System.Data">
       <HintPath>Assets/Scripts/System.Data.dll</HintPath>
     </Reference>
@@ -117,9 +105,6 @@
     </Reference>
     <Reference Include="Patagames.Pdf.WinForms">
       <HintPath>Assets/Scripts/PDFIUM.NET/Patagames.Pdf.WinForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Patagames.Pdf.Wpf">
-      <HintPath>Assets/Scripts/PDFIUM.NET/Patagames.Pdf.Wpf.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

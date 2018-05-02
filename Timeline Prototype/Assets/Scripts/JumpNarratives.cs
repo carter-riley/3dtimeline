@@ -25,7 +25,7 @@ public class JumpNarratives : MonoBehaviour {
 
     void Start()
     {
-        smallestYear = managerObject.GetComponent<buttonMovement>().smallestYear;
+        //smallestYear = managerObject.GetComponent<buttonMovement>().smallestYear;
     }
 
     public void JumpToGonzaga()

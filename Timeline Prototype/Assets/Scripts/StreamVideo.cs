@@ -89,7 +89,7 @@ public class StreamVideo : MonoBehaviour
         Debug.Log("Done Preparing Video");
 
         //Assign the Texture from Video to RawImage to be displayed
-        image.texture = videoPlayer.texture;
+        //image.texture = videoPlayer.texture;
 
         //Play Video
         videoPlayer.Play();
