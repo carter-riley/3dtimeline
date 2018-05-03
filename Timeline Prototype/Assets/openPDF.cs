@@ -55,7 +55,7 @@ public class openPDF : MonoBehaviour
             
 
             converter.Convert(@"C:\\PDFImages\\" + address,
-                             @"C:\\PdfImages\\%01d.jpg",
+                             @"C:\\PdfImages\\" + GetComponentInParent<BillboardMonobehaviorFunctions>().thisArtifact.URL.Substring(0, GetComponentInParent<BillboardMonobehaviorFunctions>().thisArtifact.URL.Length - 4) + ".jpg",
                              1,
                              1,
                              "jpeg",
